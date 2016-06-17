@@ -1,5 +1,5 @@
 var App = angular.module('cver', [
-  'ngRoute',
+  'ui.router',
   'myApp.version',
   'ngResource',
   'ngSanitize']);

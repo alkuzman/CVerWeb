@@ -20,13 +20,14 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     autoprefixer = require('gulp-autoprefixer'),
     browserSync = require('browser-sync'),
+    gulpHeader = require("gulp-header");
     reload = browserSync.reload,
     fs = require("fs");
 
 
 var CSS_LIB = [
     'app/bower_components/html5-boilerplate/dist/css/normalize.css',
-    'bower_components/html5-boilerplate/dist/css/main.css',
+    'app/bower_components/html5-boilerplate/dist/css/main.css',
     'app/bower_components/bootstrap/dist/css/bootstrap.min.css',
     'app/bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css'
 ];
@@ -39,6 +40,7 @@ var CSS_APP = [
 var JS_LIB = [
     'app/bower_components/angular/angular.js',
     'app/bower_components/angular-route/angular-route.js',
+    'app/bower_components/angular-ui-router/release/angular-ui-router.min.js',
     'app/bower_components/angular-resource/angular-resource.min.js',
     'app/bower_components/angular-translate/angular-translate.min.js',
     'app/bower_components/angular-sanitize/angular-sanitize.min.js',
@@ -144,7 +146,8 @@ gulp.task('templates', function () {
                 module: MODULE_NAME,        // from module MODULE_NAME
                 root: ''             // of the app
             }))
-        .pipe(gulp.dest(DESTINATION));
+        .pipe(gulp.dest(DESTINATION))
+        .pipe(reload({stream: true}));
 });
 
 /**
@@ -214,4 +217,4 @@ gulp.task("browser-sync", function () {
 
 gulp.task('start', ['templates', 'browser-sync', 'watch']);
 
-gulp.task('reload', tasks);
+gulp.task('package', tasks);
