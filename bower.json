@@ -1,0 +1,19 @@
+{
+  "name": "CVer",
+  "description": "Platform on which you can create Resume",
+  "version": "0.0.0",
+  "homepage": "https://cver.com",
+  "license": "CVerTeam",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.5.0",
+    "angular-route": "~1.5.0",
+    "angular-loader": "~1.5.0",
+    "angular-mocks": "~1.5.0",
+    "angular-resource": "~1.4.8",
+    "angular-translate": "~2.8.1",
+    "angular-sanitize": "~1.5.3",
+    "html5-boilerplate": "^5.3.0",
+    "bootstrap-material-design": "~0.5.10"
+  }
+}
