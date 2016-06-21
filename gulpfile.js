@@ -49,7 +49,7 @@ var JS_LIB = [
     'app/bower_components/bootstrap-material-design/dist/js/material.min.js',
     'app/components/version/version.js',
     'app/components/version/version-directive.js',
-    'app/components/version/interpolate-filter.js',
+    'app/components/version/interpolate-filter.js'
 ];
 
 var JS_APP = [
@@ -218,3 +218,10 @@ gulp.task("browser-sync", function () {
 gulp.task('start', ['templates', 'browser-sync', 'watch']);
 
 gulp.task('package', tasks);
+
+var runTasks = [
+    'package',
+    'start'
+];
+
+gulp.task("run", runTasks);
