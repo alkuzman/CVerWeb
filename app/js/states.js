@@ -13,9 +13,37 @@ App.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             },
             navbar: {
                 templateUrl: "views/navbar.html"
+            },
+            footer: {
+                templateUrl: "views/footer.html"
+            }
+        }
+    }).state("cvs", {
+        url: '/cvs',
+        views: {
+            main: {
+                templateUrl: "views/cvs/cvs.html"
+            },
+            navbar: {
+                templateUrl: "views/navbar.html"
+            },
+            footer: {
+                templateUrl: "views/footer.html"
+            }
+        }
+    }).state("cv", {
+        url: '/cv',
+        views: {
+            main: {
+                templateUrl: "views/cv/cv.html"
+            },
+            navbar: {
+                templateUrl: "views/navbar.html"
+            },
+            footer: {
+                templateUrl: "views/footer.html"
             }
         }
     });
-
 }]);
 

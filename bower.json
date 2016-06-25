@@ -18,5 +18,9 @@
   },
   "resolutions": {
     "angular": "1.5.7"
+  },
+  "devDependencies": {
+    "textillate": "~0.4.0",
+    "material-design-icons": "~2.2.3"
   }
 }

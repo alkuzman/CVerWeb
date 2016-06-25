@@ -29,7 +29,9 @@ var CSS_LIB = [
     'app/bower_components/html5-boilerplate/dist/css/normalize.css',
     'app/bower_components/html5-boilerplate/dist/css/main.css',
     'app/bower_components/bootstrap/dist/css/bootstrap.min.css',
-    'app/bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css'
+    'app/bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
+    'app/bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css',
+    'app/bower_components/bootstrap-material-design/dist/css/ripples.min.css'
 ];
 
 var CSS_APP = [
@@ -47,6 +49,7 @@ var JS_LIB = [
     'app/bower_components/jquery/dist/jquery.min.js',
     'app/bower_components/bootstrap/dist/js/bootstrap.min.js',
     'app/bower_components/bootstrap-material-design/dist/js/material.min.js',
+    'app/bower_components/bootstrap-material-design/dist/js/ripples.min.js',
     'app/components/version/version.js',
     'app/components/version/version-directive.js',
     'app/components/version/interpolate-filter.js'
