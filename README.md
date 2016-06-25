@@ -1,297 +1,95 @@
-# angular-seed — the seed for AngularJS apps
-
-This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
-You can use it to quickly bootstrap your angular webapp projects and dev environment for these
-projects.
-
-The seed contains a sample AngularJS application and is preconfigured to install the Angular
-framework and a bunch of development and testing tools for instant web development gratification.
-
-The seed app doesn't do much, just shows how to wire two controllers and views together.
-
-
-## Getting Started
-
-To get you started you can simply clone the angular-seed repository and install the dependencies:
-
-### Prerequisites
-
-You need git to clone the angular-seed repository. You can get git from
-[http://git-scm.com/](http://git-scm.com/).
-
-We also use a number of node.js tools to initialize and test angular-seed. You must have node.js and
-its package manager (npm) installed.  You can get them from [http://nodejs.org/](http://nodejs.org/).
-
-### Clone angular-seed
-
-Clone the angular-seed repository using [git][git]:
-
-```
-git clone https://github.com/angular/angular-seed.git
-cd angular-seed
-```
-
-If you just want to start a new project without the angular-seed commit history then you can do:
-
-```bash
-git clone --depth=1 https://github.com/angular/angular-seed.git <your-project-name>
-```
-
-The `depth=1` tells git to only pull down one commit worth of historical data.
-
-### Install Dependencies
-
-We have two kinds of dependencies in this project: tools and angular framework code.  The tools help
-us manage and test the application.
-
-* We get the tools we depend upon via `npm`, the [node package manager][npm].
-* We get the angular code via `bower`, a [client-side code package manager][bower].
-
-We have preconfigured `npm` to automatically run `bower` so we can simply do:
-
-```
-npm install
-```
-
-Behind the scenes this will also call `bower install`.  You should find that you have two new
-folders in your project.
-
-* `node_modules` - contains the npm packages for the tools we need
-* `app/bower_components` - contains the angular framework files
-
-*Note that the `bower_components` folder would normally be installed in the root folder but
-angular-seed changes this location through the `.bowerrc` file.  Putting it in the app folder makes
-it easier to serve the files by a webserver.*
-
-### Run the Application
-
-We have preconfigured the project with a simple development web server.  The simplest way to start
-this server is:
-
-```
-npm start
-```
-
-Now browse to the app at `http://localhost:8000/index.html`.
-
-
-
-## Directory Layout
-
-```
-app/                    --> all of the source files for the application
-  app.css               --> default stylesheet
-  components/           --> all app specific modules
-    version/              --> version related components
-      version.js                 --> version module declaration and basic "version" value service
-      version_test.js            --> "version" value service tests
-      version-directive.js       --> custom directive that returns the current app version
-      version-directive_test.js  --> version directive tests
-      interpolate-filter.js      --> custom interpolation filter
-      interpolate-filter_test.js --> interpolate filter tests
-  view1/                --> the view1 view template and logic
-    view1.html            --> the partial template
-    view1.js              --> the controller logic
-    view1_test.js         --> tests of the controller
-  view2/                --> the view2 view template and logic
-    view2.html            --> the partial template
-    view2.js              --> the controller logic
-    view2_test.js         --> tests of the controller
-  app.js                --> main application module
-  index.html            --> app layout file (the main html template file of the app)
-  index-async.html      --> just like index.html, but loads js files asynchronously
-karma.conf.js         --> config file for running unit tests with Karma
-e2e-tests/            --> end-to-end tests
-  protractor-conf.js    --> Protractor config file
-  scenarios.js          --> end-to-end scenarios to be run by Protractor
-```
-
-## Testing
-
-There are two kinds of tests in the angular-seed application: Unit tests and End to End tests.
-
-### Running Unit Tests
-
-The angular-seed app comes preconfigured with unit tests. These are written in
-[Jasmine][jasmine], which we run with the [Karma Test Runner][karma]. We provide a Karma
-configuration file to run them.
-
-* the configuration is found at `karma.conf.js`
-* the unit tests are found next to the code they are testing and are named as `..._test.js`.
-
-The easiest way to run the unit tests is to use the supplied npm script:
-
-```
-npm test
-```
-
-This script will start the Karma test runner to execute the unit tests. Moreover, Karma will sit and
-watch the source and test files for changes and then re-run the tests whenever any of them change.
-This is the recommended strategy; if your unit tests are being run every time you save a file then
-you receive instant feedback on any changes that break the expected code functionality.
-
-You can also ask Karma to do a single run of the tests and then exit.  This is useful if you want to
-check that a particular version of the code is operating as expected.  The project contains a
-predefined script to do this:
-
-```
-npm run test-single-run
-```
-
-
-### End to end testing
-
-The angular-seed app comes with end-to-end tests, again written in [Jasmine][jasmine]. These tests
-are run with the [Protractor][protractor] End-to-End test runner.  It uses native events and has
-special features for Angular applications.
-
-* the configuration is found at `e2e-tests/protractor-conf.js`
-* the end-to-end tests are found in `e2e-tests/scenarios.js`
-
-Protractor simulates interaction with our web app and verifies that the application responds
-correctly. Therefore, our web server needs to be serving up the application, so that Protractor
-can interact with it.
-
-```
-npm start
-```
-
-In addition, since Protractor is built upon WebDriver we need to install this.  The angular-seed
-project comes with a predefined script to do this:
-
-```
-npm run update-webdriver
-```
-
-This will download and install the latest version of the stand-alone WebDriver tool.
-
-Once you have ensured that the development web server hosting our application is up and running
-and WebDriver is updated, you can run the end-to-end tests using the supplied npm script:
-
-```
-npm run protractor
-```
-
-This script will execute the end-to-end tests against the application being hosted on the
-development server.
-
-
-## Updating Angular
-
-Previously we recommended that you merge in changes to angular-seed into your own fork of the project.
-Now that the angular framework library code and tools are acquired through package managers (npm and
-bower) you can use these tools instead to update the dependencies.
-
-You can update the tool dependencies by running:
-
-```
-npm update
-```
-
-This will find the latest versions that match the version ranges specified in the `package.json` file.
-
-You can update the Angular dependencies by running:
-
-```
-bower update
-```
-
-This will find the latest versions that match the version ranges specified in the `bower.json` file.
-
-
-## Loading Angular Asynchronously
-
-The angular-seed project supports loading the framework and application scripts asynchronously.  The
-special `index-async.html` is designed to support this style of loading.  For it to work you must
-inject a piece of Angular JavaScript into the HTML page.  The project has a predefined script to help
-do this.
-
-```
-npm run update-index-async
-```
-
-This will copy the contents of the `angular-loader.js` library file into the `index-async.html` page.
-You can run this every time you update the version of Angular that you are using.
-
-
-## Serving the Application Files
-
-While angular is client-side-only technology and it's possible to create angular webapps that
-don't require a backend server at all, we recommend serving the project files using a local
-webserver during development to avoid issues with security restrictions (sandbox) in browsers. The
-sandbox implementation varies between browsers, but quite often prevents things like cookies, xhr,
-etc to function properly when an html page is opened via `file://` scheme instead of `http://`.
-
-
-### Running the App during Development
-
-The angular-seed project comes preconfigured with a local development webserver.  It is a node.js
-tool called [http-server][http-server].  You can start this webserver with `npm start` but you may choose to
-install the tool globally:
-
-```
-sudo npm install -g http-server
-```
-
-Then you can start your own development web server to serve static files from a folder by
-running:
-
-```
-http-server -a localhost -p 8000
-```
-
-Alternatively, you can choose to configure your own webserver, such as apache or nginx. Just
-configure your server to serve the files under the `app/` directory.
-
-
-### Running the App in Production
-
-This really depends on how complex your app is and the overall infrastructure of your system, but
-the general rule is that all you need in production are all the files under the `app/` directory.
-Everything else should be omitted.
-
-Angular apps are really just a bunch of static html, css and js files that just need to be hosted
-somewhere they can be accessed by browsers.
-
-If your Angular app is talking to the backend server via xhr or other means, you need to figure
-out what is the best way to host the static files to comply with the same origin policy if
-applicable. Usually this is done by hosting the files by the backend server or through
-reverse-proxying the backend server(s) and webserver(s).
-
-
-## Continuous Integration
-
-### Travis CI
-
-[Travis CI][travis] is a continuous integration service, which can monitor GitHub for new commits
-to your repository and execute scripts such as building the app or running tests. The angular-seed
-project contains a Travis configuration file, `.travis.yml`, which will cause Travis to run your
-tests when you push to GitHub.
-
-You will need to enable the integration between Travis and GitHub. See the Travis website for more
-instruction on how to do this.
-
-### CloudBees
-
-CloudBees have provided a CI/deployment setup:
-
-<a href="https://grandcentral.cloudbees.com/?CB_clickstart=https://raw.github.com/CloudBees-community/angular-js-clickstart/master/clickstart.json">
-<img src="https://d3ko533tu1ozfq.cloudfront.net/clickstart/deployInstantly.png"/></a>
-
-If you run this, you will get a cloned version of this repo to start working on in a private git repo,
-along with a CI service (in Jenkins) hosted that will run unit and end to end tests in both Firefox and Chrome.
-
-
-## Contact
-
-For more information on AngularJS please check out http://angularjs.org/
-
-[git]: http://git-scm.com/
-[bower]: http://bower.io
-[npm]: https://www.npmjs.org/
-[node]: http://nodejs.org
-[protractor]: https://github.com/angular/protractor
-[jasmine]: http://jasmine.github.io
-[karma]: http://karma-runner.github.io
-[travis]: https://travis-ci.org/
-[http-server]: https://github.com/nodeapps/http-server
+# CVer Web
+<i>Curriculum Vitae Creator</i>
+![alt tag](http://inspirationfeed.com/wp-content/uploads/2011/04/Music-resume.jpg)
+
+CVer е систем кој им овозможува на корисниците (најавени или ненајавени) да креираат CV. Креирањето може да се изведе мануелно, полуавтоматизирано или автоматизирано. Мануелното креирање може да биде изведено на два начини: преку пополнување на форма или директно менување во превјуто на CV-то. Полуавтоматизираното креирање се реализира преку превземање на податоци од социјалните медиуми, додека пак автоматизираното преку семантичко пребарување, прво внате во системот, а потоа надвор (на веб).
+
+Корисникот исто така има можност да избере од повеќе различни темплејти, во зависност од изгледот и примената (за работа, приказ на достигнувања, образование, гејмерско CV...). Во приказот на темплејтот корисникот може да го менува овој темплејт да го зачува и да го предложи за јавен стандард. Може да се креираат и целосно нови темплејти.
+
+Во системот постојат и други корисници, а тоа се фирмите. Фирмите имаат можност да пребаруваат корисници со одредени спецификации (доколку CV то е јавно) тие можат веднаш да ги видат, доколку не е, автоматски се испраќа нотификација на корисникот за да го испрати CV то на барателот. Доколку корисникот го испрати, CV-то му пристигнува на барателот.
+
+Исто така на овој систем фирмите може да објавуваат конкурси. На конкурсите може да се пријават сите корисници но доколку корисникот не ги задоволува минималните барања на конкурсот, тој автоматски ќе биде одбиен. За овие конкурси се напкаќа. Кога фирмата го креира конкурсот може да избере локација, вештини возраст па и се останато дефинирано во CV-то на корисникот.
+
+![alt tag](https://lh3.googleusercontent.com/-cXc57_WpCDM/VtYbLac1piI/AAAAAAAAAM4/iQlAYpMoEA0/s1600/UseCaseDiagram.png)
+
+# Верзија 1.0
+
+1. Мануелно креирање на CV со еден од двата начини.
+<b>Remark: </b> CV-то не мора да биде целосно но треба да биде имплементирано со RDF.
+2. Системот се состои од сервер и клиент. Клиентот го сочинуваат Ангулар и Андроид.
+
+
+# Ресурси <img src="https://s-media-cache-ak0.pinimg.com/236x/c6/a6/eb/c6a6ebcd1a2d9ecbd4311f8a4048c3c2.jpg" width="5%" />
+
+<ul>
+  <li>
+    <a href="https://www.dropbox.com/sh/u0wknr58jo7hvbg/AABwkSeSJUZvkk_J4lgzcZfwa?dl=0" target="_blank">Dropbox Resources</a>
+  </li>
+  <li>
+    <a href="https://teamcver.visualstudio.com/DefaultCollection/CVer/_backlogs/taskboard/Design%20and%20Development#fullScreen=true" target="_blank">Project Management</a>
+  </li>
+  <li>
+    <a href="https://groups.google.com/forum/#!forum/cverdiscussions" target="_blank">Google Groups Discussion</a>
+  </li>
+  <li>
+    <a href="https://trello.com/b/5O8N5nXi" target="_blank">Trello Discussion</a>
+  </li>
+</ul>
+
+# Ми текна! <img src="https://tagesgeldheute.com/wp-content/uploads/2014/05/einfall.png" width="5%" style="display: inline-block" />
+
+<p>
+  <strong> Безбедност </strong> 21.09.2015 <br />
+  <i> Воведи сертификати за да може безбедно да се чуваат податоците.  </i>
+</p>
+
+<p>
+  <strong> API </strong> 21.09.2015 <br />
+  <i> Направи добро API кое ќе може да се користи од други апликации.  </i>
+</p>
+
+<p>
+  <strong> Можност за давање на признание </strong> 20.02.2016 <br />
+  <i> Соодветна фирма или друг корисник да може да даде признание на корисник или друга фирма дека нешто направиле или се заслужни за некоја идеја. Ова добро да се обезбеди и да се знае кој го дал признанието. Корисникот ова признание нема да може да го менува само ќе може да одлучи дали ќе го вклучи во неговото CV или не. </i>
+</p>
+
+<p>
+  <strong> API </strong> 20.02.2016 <br />
+  <i> Секоја компанија (работодавач) да може да поседува листа од "омилени" CV-a.  </i>
+</p>
+
+<p>
+  <strong> Валидација на нов корисник </strong> 20.02.2016 <br />
+  <i> Доколку корисникот сака само да креира CV но не и да се најави и попатно да добие помош (автоматско пополнување на податоци)
+  тој треба да даде негова официјална email адреса. Бидејќи ова може да го направи секој автентикацијата може да оди преку прифаќање на порака која ќе биде испратена на дадената маил адреса. Ова да се прави секогаш кога ќе се прати барање за ново CV, а корисникот не е најавен.</i>
+</p>
+
+<p>
+  <strong> Релевантност на податок </strong> 20.02.2016 <br />
+  <i> За оваа цел треба да се зачува изворот на податокот. Исто така потребно е да се пресметаат два типа на релевантност. Извор, својство за почетно подредување и Извор, Својство и Корисник за прилагодување на корисничките барања.</i>
+</p>
+
+<p>
+  <strong> Право на пристап до податок </strong> 20.02.2016 <br />
+  <i> За секој податок доколку се чува неговиот креатор можно е да се чува и правото на пристап за секоја од групите.</i>
+</p>
+
+<p>
+  <strong> View за бирање на податоци што ќе се содржат во CV </strong> 02.03.2016 <br />
+  <i> Да постои можност на корисникот да му се прикаже view во кое ќе му се излистаат сите податоци кои системот ги има пронајдено за тој корисник и истиот да може да ги обележи податоците кои сака да му се прикажат во CVто, потоа кога ќе избере креирај CV системот автоматски да пронајде од листата на CV-а кое CV е најсоодветно во зависност од избраните податоци.</i>
+</p>
+
+# Прашања и дилеми. <img src="http://eoi-eivissa.com/images/stories/recursos/question%202.png" width="5%" style="display: inline-block" />
+
+<p>
+  <strong> Што да биде урито на CV, корисник, проект или фирма </strong> 20.02.2016 <br />
+  <i> Слично како DBPedia треба да овозможиме секој ресурс да се пристапува преку REST адреса. За ова е потребно линкот да биде
+  разбирлив за корисниците. Но исто така како што прави фејзбук треба да се овозможи и промена на акаунтот или името на проектот, фирмата...</i> <br />
+  <strong>Проблем: </strong> Доколку одиме со темплејтот www.cver.com/resource/(name, account ...) тогаш станува тешко да се промени акаунтот. <br />
+  <strong>Решенија: </strong>
+  <ul>
+    <li>
+    <strong>За: </strong>Доколку корисникот го смени акаунтот, името тогаш да креираме нов ресурс и да кажеме дека е sameAs на претходниот. <br />
+    <strong>Против:</strong> Многу акаунти ќе останат зафатени и корисникот ќе може да се пристапи преку секој од нив.
+  </ul>
+</p>
