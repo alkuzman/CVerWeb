@@ -12,20 +12,23 @@ App.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                 templateUrl: "views/home.html"
             },
             navbar: {
-                templateUrl: "views/navbar.html"
+                templateUrl: "views/navbar.html",
+                controller: "AuthController"
             },
             footer: {
                 templateUrl: "views/footer.html"
             }
         }
-    }).state("cvs", {
-        url: '/cvs',
+    }).state("results", {
+        url: '/results',
         views: {
             main: {
-                templateUrl: "views/cvs/cvs.html"
+                templateUrl: "views/results/results.html",
+                controller: "ResultsController"
             },
             navbar: {
-                templateUrl: "views/navbar.html"
+                templateUrl: "views/navbar.html",
+                controller: "AuthController"
             },
             footer: {
                 templateUrl: "views/footer.html"
@@ -35,15 +38,28 @@ App.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
         url: '/cv',
         views: {
             main: {
-                templateUrl: "views/cv/cv.html"
+                templateUrl: "views/cv/cv.html",
+                controller: "CvController"
             },
             navbar: {
-                templateUrl: "views/navbar.html"
+                templateUrl: "views/navbar.html",
+                controller: "AuthController"
             },
             footer: {
                 templateUrl: "views/footer.html"
             }
         }
-    });
+    }).state("auth", {
+        url: '/login',
+        views: {
+            main: {
+                templateUrl: "views/auth/auth.html",
+                controller: "AuthController"
+            },
+            footer: {
+                templateUrl: "views/footer.html"
+            }
+        }
+    })
 }]);
 

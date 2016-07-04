@@ -1,0 +1,206 @@
+<div class="full-page-container homepage header-padding footer-padding flex-center">
+    <div class="container" style="width: 100%;">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 col-xl-6 col-xl-offset-3">
+                <div class="row">
+                    <div class="col-md-12 text-xs-center text-sm-center text-md-center text-lg-center text-xl-center"
+                         style="margin-bottom: 20px;">
+                        <a href="/">
+                            <img ng-src="/img/CVerCleanLogo.png" width="150" height="70"/>
+                        </a>
+                        <h1 class="white-text" style="margin-top: 30px;">Login or Register</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-xl-12 col-lg-12 col-xs-12 col-sm-12">
+                        <div class="card">
+                            <div class="card-block text-xs-center text-sm-center text-md-center text-lg-center text-xl-center">
+                                <div style="height: 35px;">
+                                    <a ng-click="statusBack()" class="pull-xs-left teal-text"
+                                       ng-hide="checkStatus(getUserStatus)"><i class="material-icons">arrow_back</i></a>
+                                </div>
+                                <img ng-src="/img/user.jpg" class="img-circle" ng-hide="current.image" width="150"
+                                     height="150"/>
+                                <img ng-src="{{current.image}}" class="img-circle animated bounceIn"
+                                     ng-show="current.image" width="150" height="150"/>
+                                <div class="row" style="padding-top: 10px;">
+                                    <div class="col-xs-12">
+                                        <strong>{{current.firstName}} {{current.lastName}}</strong>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <span>{{current.email}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-block">
+                                <form id="getUserForm" name="getUserForm"
+                                      ng-submit="getUserForm.$valid && getUser()" ng-show="checkStatus(getUserStatus);">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="md-form form-group" style="padding-right: 20px;">
+                                                <i class="material-icons prefix">email</i>
+                                                <input type="email" id="emailLogin" name="username"
+                                                       ng-model="current.email"
+                                                       class="form-control validate" required/>
+                                                <label for="emailLogin">Type
+                                                    your
+                                                    email</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="md-form form-group">
+                                                <input type="submit"
+                                                       class="btn btn-default btn-block btn-lg waves-effect"
+                                                       value="Next"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="pull-xs-right">
+                                                <a class="teal-text" href="/#/login/help">Need help?</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form id="loginForm" name="loginForm" ng-submit="loginForm.$valid && login()"
+                                      ng-show="checkStatus(loginStatus);">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="md-form form-group" style="padding-right: 20px;">
+                                                <i class="material-icons prefix">lock</i>
+                                                <input type="password" id="passwordLogin" name="password"
+                                                       ng-model="current.password"
+                                                       class="form-control validate" required/>
+                                                <label for="passwordLogin">Type
+                                                    your
+                                                    password</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="md-form form-group">
+                                                <input type="submit"
+                                                       class="btn btn-default btn-block btn-lg waves-effect"
+                                                       value="Login"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="pull-sm-left text-xs-center check-md">
+                                                <div class="form-group check-awesome">
+                                                    <input type="checkbox" id="check-me">
+
+                                                    <label for="check-me">
+                                                        <span></span>
+                                                        <span class="check"></span>
+                                                        <span class="box"></span>
+                                                        Stay signed in
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="pull-sm-right text-xs-center">
+                                                <a class="teal-text" href="/#/login/help">Forgot password?</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form id="registerForm" name="registerForm"
+                                      ng-submit="registerForm.$valid && register()"
+                                      ng-show="checkStatus(registerStatus);">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="md-form form-group" style="padding-right: 20px;">
+                                                <i class="material-icons prefix">person</i>
+                                                <input type="text" id="firstNameRegister" name="firstName"
+                                                       ng-model="current.firstName"
+                                                       class="form-control validate" required/>
+                                                <label for="firstNameRegister">Type
+                                                    your
+                                                    First Name</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="md-form form-group" style="padding-right: 20px;">
+                                                <i class="material-icons prefix">person</i>
+                                                <input type="text" id="lastNameRegister" name="lastName"
+                                                       ng-model="current.lastName"
+                                                       class="form-control validate" required/>
+                                                <label for="lastNameRegister">Type
+                                                    your
+                                                    Last Name</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="md-form form-group" style="padding-right: 20px;">
+                                                <i class="material-icons prefix">lock</i>
+                                                <input type="password" id="passwordRegister" name="password"
+                                                       ng-model="current.password"
+                                                       class="form-control validate" required/>
+                                                <label for="passwordRegister">Type
+                                                    your
+                                                    password</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="md-form form-group" style="padding-right: 20px;">
+                                                <i class="material-icons prefix">lock</i>
+                                                <input type="password" id="passwordConfirmRegister" name="password"
+                                                       ng-model="current.confirmPassword"
+                                                       class="form-control validate" required/>
+                                                <label for="passwordConfirmRegister">Type
+                                                    your
+                                                    password</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="md-form form-group">
+                                                <input type="submit"
+                                                       class="btn btn-default btn-block btn-lg waves-effect"
+                                                       value="Register"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="padding-right: 10px;">
+                    <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 col-xl-6">
+                        <a href="/login/facebook" role="button" class="btn btn-block btn-lg btn-primary"><i
+                                class="fa fa-facebook left"></i>
+                            Facebook</a>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 col-xl-6">
+                        <a href="/login/google" type="button" class="btn btn-block btn-lg btn-danger"><i
+                                class="fa fa-google-plus left"></i>
+                            Google +</a>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 col-xl-6">
+                        <a href="/login/linkedin" type="button" class="btn btn-block btn-lg blue"><i
+                                class="fa fa-linkedin left"></i>
+                            Linkedin</a>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 col-xl-6">
+                        <a href="/login/pinterest" type="button" class="btn btn-block btn-lg btn-danger"><i
+                                class="fa fa-pinterest left"></i>
+                            Pinterest</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

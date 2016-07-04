@@ -1,0 +1,18 @@
+<div class="header-padding">
+    <div class="container" style="max-width: 100%; padding: 0px">
+        <div class="card-columns">
+            <div class="card" ng-repeat="result in results">
+                <img class="wow fadeIn card-img-top img-fluid img-responsive" ng-src="{{result.image}}" alt="Card image cap">
+                <div class="row">
+                    <div class="col-xs-6 col-xs-offset-3">
+                        <img class="img-responsive img-fluid img-circle border-teal center-image" ng-src="{{result.owner.image}}"/>
+                    </div>
+                </div>
+                <div class="card-block">
+                    <h4 class="card-title text-xs-center">{{result.owner.firstName}} {{result.owner.lastName}}</h4>
+                    <p class="card-text">{{result.name}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

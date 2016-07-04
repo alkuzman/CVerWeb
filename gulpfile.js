@@ -29,13 +29,16 @@ var CSS_LIB = [
     'app/bower_components/html5-boilerplate/dist/css/normalize.css',
     'app/bower_components/html5-boilerplate/dist/css/main.css',
     'app/bower_components/bootstrap/dist/css/bootstrap.min.css',
-    'app/bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
-    'app/bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css',
-    'app/bower_components/bootstrap-material-design/dist/css/ripples.min.css'
+    //'app/bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
+    /*'app/bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css',
+    'app/bower_components/bootstrap-material-design/dist/css/ripples.min.css',*/
+    'app/bower_components/textAngular/dist/textAngular.css',
+    'app/bower_components/font-awesome/css/font-awesome.min.css'
 ];
 
 var CSS_APP = [
     'app/css/**/*.css',
+    'app/css/**/*.scss',
     '!app/css/**/*.min.css'
 ];
 
@@ -45,14 +48,17 @@ var JS_LIB = [
     'app/bower_components/angular-ui-router/release/angular-ui-router.min.js',
     'app/bower_components/angular-resource/angular-resource.min.js',
     'app/bower_components/angular-translate/angular-translate.min.js',
-    'app/bower_components/angular-sanitize/angular-sanitize.min.js',
+    //'app/bower_components/angular-sanitize/angular-sanitize.min.js',
     'app/bower_components/jquery/dist/jquery.min.js',
     'app/bower_components/bootstrap/dist/js/bootstrap.min.js',
-    'app/bower_components/bootstrap-material-design/dist/js/material.min.js',
-    'app/bower_components/bootstrap-material-design/dist/js/ripples.min.js',
+    /*'app/bower_components/bootstrap-material-design/dist/js/material.min.js',
+    'app/bower_components/bootstrap-material-design/dist/js/ripples.min.js',*/
     'app/components/version/version.js',
     'app/components/version/version-directive.js',
-    'app/components/version/interpolate-filter.js'
+    'app/components/version/interpolate-filter.js',
+    'app/bower_components/textAngular/dist/textAngular-rangy.min.js',
+    'app/bower_components/textAngular/dist/textAngular-sanitize.min.js',
+    'app/bower_components/textAngular/dist/textAngular.min.js'
 ];
 
 var JS_APP = [
@@ -163,12 +169,18 @@ gulp.task('cache-break', function () {
         .pipe(gulp.dest('app/'));  // save the modified file at the same destination
 });
 
+gulp.task('fonts', function() {
+    return gulp.src('app/bower_components/font-awesome/fonts/*')
+        .pipe(gulp.dest('app/fonts/'));
+});
+
 var tasks = [
     'concat_js_lib',
     'concat_css_lib',
     'concat_js_app',
     'concat_css_app',
-    'templates'
+    'templates',
+    'fonts'
 ];
 
 gulp.task('build', tasks, function () {

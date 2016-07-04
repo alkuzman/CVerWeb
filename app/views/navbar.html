@@ -1,35 +1,34 @@
-<nav class="navbar navbar-primary navbar-fixed-top" nav-scroll ng-class="{slideUp:boolChangeClass}">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/"><img ng-src="/img/CVerCleanLogo.png" height="25" width="55"> </a>
-        </div>
-        <div class="navbar-collapse collapse navbar-responsive-collapse">
-            <form class="navbar-form navbar-left">
-                <div class="form-group">
-                    <input type="text" class="form-control col-md-8" placeholder="Search">
-                </div>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="/login" class="navbar-link">Login</a>
+<nav class="navbar navbar-dark teal navbar-fixed-top" nav-scroll ng-class="{slideUp:boolChangeClass}">
+
+    <!-- Collapse button-->
+    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapse">
+        <i class="fa fa-bars"></i>
+    </button>
+    <a class="navbar-brand" href="/"><img ng-src="/img/CVerCleanLogo.png" height="25" width="55"> </a>
+    <div class="container" style="max-width: 100% !important;">
+        <!--Collapse content-->
+        <div class="collapse navbar-toggleable-xs" id="collapse">
+            <!--Navbar Brand-->
+            <a class="navbar-brand" href="/#/"></a>
+            <!--Links-->
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <form class="" style="width: 100%;">
+                        <input class="form-control" type="text" placeholder="Search">
+                    </form>
                 </li>
-                <li class="dropdown" style="display: none">
-                    <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="material-icons">face</i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="javascript:void(0)">Action</a></li>
-                        <li><a href="javascript:void(0)">Another action</a></li>
-                        <li><a href="javascript:void(0)">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="javascript:void(0)">Separated link</a></li>
-                    </ul>
+                <li class="nav-item pull-md-right pull-lg-right pull-xl-right pull-sm-right" ng-hide="me">
+                    <a class="nav-link" href="/#/login">Login</a>
+                </li>
+                <li class="nav-item pull-md-right pull-lg-right pull-xl-right pull-sm-right" ng-show="me">
+                    <img class="img-circle" width="40" height="40" ng-src="{{me.image}}"/>
                 </li>
             </ul>
+            <!--Search form-->
         </div>
+        <!--/.Collapse content-->
+
     </div>
+
 </nav>
+<!--/.Navbar-->

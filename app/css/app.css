@@ -40,6 +40,10 @@
     padding-top: 60px;
 }
 
+.bg-teal {
+    background-color: #008080;
+}
+
 .footer-padding {
     padding-bottom: 50px;
 }
@@ -49,8 +53,8 @@
 }
 
 .footer-item {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 
 .footer-fixed-bottom {
@@ -59,7 +63,12 @@
     bottom: 0;
 }
 
-.vertical-center {
+.full-page-container {
+    min-height: 100%; /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+}
+
+.content-vertical-center {
     min-height: 100%; /* Fallback for browsers do NOT support vh unit */
     min-height: 100vh; /* These two lines are counted as one :-)       */
     display: flex;
@@ -72,7 +81,7 @@
     font-size: 6vw !important;
 }
 
-@media only screen and (min-width : 768px) {
+@media only screen and (min-width: 768px) {
     .btn-prominent {
         font-size: 2vw !important;
     }
@@ -94,7 +103,7 @@
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
-    font-size: 24px;  /* Preferred icon size */
+    font-size: 24px; /* Preferred icon size */
     display: inline-block;
     line-height: 1;
     text-transform: none;
@@ -116,27 +125,229 @@
 }
 
 /* Rules for sizing the icon. */
-.material-icons.md-18 { font-size: 18px; }
-.material-icons.md-24 { font-size: 24px; }
-.material-icons.md-36 { font-size: 36px; }
-.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-18 {
+    font-size: 18px;
+}
+
+.material-icons.md-24 {
+    font-size: 24px;
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
+}
 
 /* Rules for using icons as black on a light background. */
-.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
-.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+.material-icons.md-dark {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.material-icons.md-dark.md-inactive {
+    color: rgba(0, 0, 0, 0.26);
+}
 
 /* Rules for using icons as white on a dark background. */
-.material-icons.md-light { color: rgba(255, 255, 255, 1); }
-.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+.material-icons.md-light {
+    color: rgba(255, 255, 255, 1);
+}
 
-.navbar {
-
+.material-icons.md-light.md-inactive {
+    color: rgba(255, 255, 255, 0.3);
 }
 
 .slideUp {
     top: -60px;
     -webkit-transition: all 500ms ease;
     -moz-transition: all 500ms ease;
-    -o-transition:  all 500ms ease;
+    -o-transition: all 500ms ease;
     transition: all 500ms ease;
+}
+
+.slideDown {
+    bottom: -60px;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+
+.ta-toolbar {
+    background-color: #eeeeee;
+    margin: 0 auto;
+}
+
+.ta-editor {
+    margin: 0 auto;
+}
+
+@media (min-width: 34em) {
+    .card-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media (min-width: 48em) {
+    .card-columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+    }
+}
+
+@media (min-width: 62em) {
+    .card-columns {
+        -webkit-column-count: 4;
+        -moz-column-count: 4;
+        column-count: 4;
+    }
+}
+
+@media (min-width: 75em) {
+    .card-columns {
+        -webkit-column-count: 4;
+        -moz-column-count: 4;
+        column-count: 4;
+    }
+}
+
+#loginForm .form-group {
+    margin-right: 10px;
+}
+
+/* basic css */
+.check-md input[type=checkbox] {
+    display: none;
+}
+
+.check-md label, p {
+    padding-left: 35px;
+}
+
+.check-md .check-awesome {
+    position: relative;
+}
+
+/* checkbox css */
+.check-md label {
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.check-md label span {
+    display: block;
+    position: absolute;
+    left: 0;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+.check-md label .circle {
+    background: #FFF;
+    left: -30px;
+    top: -30px;
+    height: 80px;
+    width: 80px;
+    z-index: -1;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+
+.check-md label .box {
+    border: 2px solid #aaa;
+    height: 20px;
+    width: 20px;
+    z-index: 888;
+    -webkit-transition-delay: 0.2s;
+    -moz-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+}
+
+.check-md label .check {
+    top: -7px;
+    left: 6px;
+    width: 12px;
+    height: 24px;
+    border: 2px solid #0f9d58;
+    border-top: none;
+    border-left: none;
+    opacity: 0;
+    z-index: 888;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -webkit-transition-delay: 0.3s;
+    -moz-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+}
+
+/* handling click events */
+
+/* when checkbox is checked */
+.check-md label .circle {
+    -webkit-animation: growCircle 0.3s ease;
+    -moz-animation: growCircle 0.3s ease;
+    animation: growCircle 0.3s ease;
+}
+
+.check-md input[type=checkbox]:checked ~ label .box {
+    opacity: 0;
+    -webkit-transform: scale(0) rotate(-180deg);
+    -moz-transform: scale(0) rotate(-180deg);
+    transform: scale(0) rotate(-180deg);
+}
+
+.check-md input[type=checkbox]:checked ~ label .check {
+    opacity: 1;
+    -webkit-transform: scale(1) rotate(45deg);
+    -moz-transform: scale(1) rotate(45deg);
+    transform: scale(1) rotate(45deg);
+}
+
+/* bubble animation */
+
+@-webkit-keyframes growCircle {
+    0%, 100% {
+        -webkit-transform: scale(0);
+    }
+    70% {
+        background: #DDD;
+        -webkit-transform: scale(1.25);
+    }
+}
+
+@-moz-keyframes growCircle {
+    0%, 100% {
+        -moz-transform: scale(0);
+    }
+    70% {
+        background: #DDD;
+        -moz-transform: scale(1.25);
+    }
+}
+
+@keyframes growCircle {
+    0%, 100% {
+        transform: scale(0);
+    }
+    70% {
+        background: #DDD;
+        transform: scale(1.25);
+    }
+}
+
+.border-teal {
+    border: white solid thick;
+}
+
+.center-image {
+    position:relative;
+    margin-top: -50%;
 }
