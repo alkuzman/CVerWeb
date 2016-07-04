@@ -125,6 +125,10 @@
 }
 
 /* Rules for sizing the icon. */
+.material-icons.md-16 {
+    font-size: 16px;
+}
+
 .material-icons.md-18 {
     font-size: 18px;
 }
@@ -348,6 +352,10 @@
 }
 
 .center-image {
-    position:relative;
+    position: relative;
     margin-top: -50%;
+}
+
+.btn-flat, .btn-flat:hover {
+    box-shadow: none;
 }
