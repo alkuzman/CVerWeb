@@ -1,0 +1,43 @@
+<md-card ng-controller="ContextMenuController as cntxMenuCtrl">
+    <img ng-src="{{template.image}}" class="md-card-image" alt="Washed Out">
+    <md-card-actions layout="row" layout-align="end center">
+        <md-menu>
+            <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="cntxMenuCtrl.openMenu($mdOpenMenu, $event)">
+                <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+            </md-button>
+            <md-menu-content width="4">
+                <md-menu-item>
+                    <md-button>
+                        <md-icon md-font-set="material-icons">open_in_new</md-icon>
+                        Open
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button>
+                        <md-icon md-font-set="material-icons">done</md-icon>
+                        Apply
+                    </md-button>
+                </md-menu-item>
+                <md-menu-divider></md-menu-divider>
+                <md-menu-item>
+                    <md-button>
+                        <md-icon md-font-set="material-icons">file_download</md-icon>
+                        Download
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button>
+                        <md-icon md-font-set="material-icons">watch_later</md-icon>
+                        Save for later
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button>
+                        <md-icon md-font-set="material-icons">share</md-icon>
+                        Share
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+    </md-card-actions>
+</md-card>

@@ -1,5 +1,12 @@
 App.controller('AuthController', ['$scope', function($scope) {
-    $scope.me;
+    $scope.me = {
+        id: 1,
+        firstName: "Aleksandar",
+        lastName: "Kuzmanoski",
+        email: "aleksandarkuzmanoski.official@gmail.com",
+        password: "",
+        image: "https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/11225436_10203432866617044_729904542407639638_n.jpg?oh=3b32be74a68498495535dc25c6cb2cc5&oe=57FAAB30"
+    }
 
     $scope.current = defaultUser;
 

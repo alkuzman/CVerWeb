@@ -1,7 +1,15 @@
 <div class="header-padding">
     <div class="container" style="max-width: 100%; padding: 0px">
+        <div class="text-xs-center" style="padding-bottom: 10px;">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary-outline btn-margin btn-active">{{ 'other.resume' | translate }}</button>
+                <button type="button" class="btn btn-secondary-outline btn-margin">{{ 'other.person' | translate }}</button>
+                <button type="button" class="btn btn-secondary-outline btn-margin">{{ 'other.organization' | translate }}</button>
+                <button type="button" class="btn btn-secondary-outline btn-margin">{{ 'other.project' | translate }}</button>
+            </div>
+        </div>
         <div class="card-columns">
-                <div cver-result-card="result" ng-repeat="result in results"></div>
+            <div cver-result-card="result" ng-repeat="result in results"></div>
         </div>
     </div>
 </div>

@@ -1,6 +1,10 @@
 var App = angular.module('cver', [
+    'pascalprecht.translate',
     'ui.router',
     'myApp.version',
     'ngResource',
     'ngSanitize',
-    'textAngular']);
+    'textAngular',
+    'ngMaterial',
+    'ngMessages',
+    'material.svgAssetsCache']);

@@ -1,0 +1,41 @@
+<md-toolbar layout-padding class="md-theme-indigo">
+    <img ng-src="{{me.image}}" class="img-circle" width="80" height="80"/>
+    <div>
+        <span>{{me.firstName}} {{me.lastName}}</span>
+    </div>
+</md-toolbar>
+<md-content layout-padding>
+    <md-menu-content width="4">
+        <md-menu-item>
+            <md-button>
+                <md-icon md-font-set="material-icons">open_in_new</md-icon>
+                Open
+            </md-button>
+        </md-menu-item>
+        <md-menu-item>
+            <md-button>
+                <md-icon md-font-set="material-icons">done</md-icon>
+                Apply
+            </md-button>
+        </md-menu-item>
+        <md-menu-divider></md-menu-divider>
+        <md-menu-item>
+            <md-button>
+                <md-icon md-font-set="material-icons">file_download</md-icon>
+                Download
+            </md-button>
+        </md-menu-item>
+        <md-menu-item>
+            <md-button>
+                <md-icon md-font-set="material-icons">watch_later</md-icon>
+                Save for later
+            </md-button>
+        </md-menu-item>
+        <md-menu-item>
+            <md-button>
+                <md-icon md-font-set="material-icons">share</md-icon>
+                Share
+            </md-button>
+        </md-menu-item>
+    </md-menu-content>
+</md-content>

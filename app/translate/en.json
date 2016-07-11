@@ -1,0 +1,49 @@
+{
+  "cver": {
+    "create_your_resume": "CREATE YOUR RESUME"
+  },
+  "actions": {
+    "login": "Login",
+    "search": "Search",
+    "register": "Register",
+    "type_your_email": "Type your email",
+    "type_your_password": "Type your password",
+    "retype_your_password": "Retype your password",
+    "type_your_first_name": "Type your First Name",
+    "type_your_last_name": "Type your Last Name",
+    "next": "Next",
+    "stay_signed_in": "Remember me",
+    "forgot_password": "Forgot password"
+  },
+  "other": {
+    "or": "or",
+    "help": "Help",
+    "about": "About",
+    "blog": "Blog",
+    "business": "Business",
+    "education": "Education",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "android": "Android",
+    "app": "App",
+    "&": "&",
+    "developers": "Developers",
+    "resume": "Resume",
+    "person": "Person",
+    "project": "Project",
+    "organization": "Organization",
+    "data": "Data",
+    "name": "Name",
+    "templates": "Templates",
+    "template": "Template",
+    "sync": "Sync",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "skill": "Skill",
+    "all": "All",
+    "educational": "Educational",
+    "job": "Job",
+    "chronogogical": "Chronogogical",
+    "functional": "Functional"
+  }
+}

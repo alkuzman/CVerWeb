@@ -13,10 +13,20 @@ App.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             },
             navbar: {
                 templateUrl: "views/navbar.html",
-                controller: "AuthController"
+                controller: "SideNavigationController"
             },
             footer: {
                 templateUrl: "views/footer.html"
+            },
+            container: {
+                templateUrl: "views/container/container.html",
+                controller: "TabController",
+                controllerAs: "tabCtrl"
+            },
+            sidebar: {
+                templateUrl: "views/sidebar.html",
+                controller: "AuthController",
+                controllerAs: "AuthCtrl"
             }
         }
     }).state("results", {

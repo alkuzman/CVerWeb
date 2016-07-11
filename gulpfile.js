@@ -32,6 +32,7 @@ var CSS_LIB = [
     //'app/bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
     /*'app/bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css',
     'app/bower_components/bootstrap-material-design/dist/css/ripples.min.css',*/
+    /*'app/bower_components/angular-material/angular.material.css',*/
     'app/bower_components/textAngular/dist/textAngular.css',
     'app/bower_components/font-awesome/css/font-awesome.min.css'
 ];
@@ -48,6 +49,7 @@ var JS_LIB = [
     'app/bower_components/angular-ui-router/release/angular-ui-router.min.js',
     'app/bower_components/angular-resource/angular-resource.min.js',
     'app/bower_components/angular-translate/angular-translate.min.js',
+    'app/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js',
     //'app/bower_components/angular-sanitize/angular-sanitize.min.js',
     'app/bower_components/jquery/dist/jquery.min.js',
     'app/bower_components/bootstrap/dist/js/bootstrap.min.js',
@@ -58,7 +60,10 @@ var JS_LIB = [
     'app/components/version/interpolate-filter.js',
     'app/bower_components/textAngular/dist/textAngular-rangy.min.js',
     'app/bower_components/textAngular/dist/textAngular-sanitize.min.js',
-    'app/bower_components/textAngular/dist/textAngular.min.js'
+    'app/bower_components/textAngular/dist/textAngular.min.js',
+    /*'app/bower_components/angular-aria/angular-aria.js',
+    'app/bower_components/angular-animate/angular-animate.js',
+    'app/bower_components/angular-material/angular-material.js'*/
 ];
 
 var JS_APP = [
@@ -197,6 +202,7 @@ gulp.task('watch', function () {
     gulp.watch('app/js/**/*.js', ['concat_js_app', 'cache-break']);
     gulp.watch('app/views/**/*.html', ['templates', 'cache-break']);
     gulp.watch('app/css/**/*.css', ['concat_css_app', 'cache-break']);
+    gulp.watch('app/translate/**/*.json', ['concat_js_app', 'cache-break']);
 });
 
 gulp.task('serve', function () {

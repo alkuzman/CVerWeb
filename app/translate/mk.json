@@ -1,0 +1,49 @@
+{
+  "cver": {
+    "create_your_resume": "Креирај го твоето CV"
+  },
+  "actions": {
+    "login": "Најави се",
+    "search": "Пребарај",
+    "register": "Регистрирај се",
+    "type_your_email": "Внеси ја твојата емаил адреса",
+    "type_your_password": "Внеси ја твојата лозинка",
+    "retype_your_password": "Потврди ја твојата лозинка",
+    "type_your_first_name": "Внеси го твоето име",
+    "type_your_last_name": "Внеси го твоето презиме",
+    "next": "Понатаму",
+    "stay_signed_in": "Запомни ме",
+    "forgot_password": "Заборавена лозинка"
+  },
+  "other": {
+    "or": "или",
+    "help": "Помош",
+    "about": "Информации за",
+    "blog": "Блог",
+    "business": "Бизнис",
+    "education": "Образование",
+    "terms": "Услови",
+    "privacy": "Полиси",
+    "android": "Андроид",
+    "app": "Апликација",
+    "&": "и",
+    "developers": "Развивачи",
+    "resume": "CV",
+    "person": "Човек",
+    "project": "Проект",
+    "organization": "Организација",
+    "data": "Податоци",
+    "name": "Име",
+    "templates": "Шаблони",
+    "template": "Шаблон",
+    "sync": "Синхронизација",
+    "firstName": "Име",
+    "lastName": "Презиме",
+    "skill": "Вештина",
+    "all": "Сите",
+    "educational": "Образовни",
+    "job": "Работни",
+    "chronogogical": "Хронолошки",
+    "functional": "Функционални"
+  }
+}

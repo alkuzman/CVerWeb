@@ -1,0 +1,19 @@
+<md-input-container flex="none" class="md-icon-float md-block">
+    <!-- Use floating label instead of placeholder -->
+    <label>{{ 'actions.search' | translate }} {{ 'other.templates' | translate}}</label>
+    <md-icon md-font-set="material-icons">search</md-icon>
+    <input type="search">
+</md-input-container>
+<md-content flex="none">
+    <md-tabs md-dynamic-height>
+        <md-tab label='{{ "other.all" | translate }}'>
+        </md-tab>
+        <md-tab ng-repeat="type in templatesCtrl.types" label='{{ "other." + type.type | lowercase | translate }}'>
+        </md-tab>
+    </md-tabs>
+</md-content>
+<md-content flex>
+    <div cver-template-card="template" ng-repeat="template in templatesCtrl.templates">
+
+    </div>
+</md-content>

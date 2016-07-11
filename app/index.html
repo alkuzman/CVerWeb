@@ -16,7 +16,7 @@
     <!-- Material Design fonts -->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,700">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
     <!-- Application Stylesheets -->
     <link href="components/mdb/css/mdb.min.css" rel="stylesheet">
     <link rel="stylesheet" href="dist/lib.min.css">
@@ -25,15 +25,40 @@
 
 </head>
 <body>
-<div ui-view="navbar"></div>
-<div class="main" ui-view="main"></div>
-<div ui-view="footer"></div>
+<div layout="column" ng-cloak>
+    <section layout="row" flex>
+        <md-sidenav
+                class="md-sidenav-left"
+                md-component-id="left"
+                md-is-locked-open="$mdMedia('gt-md')"
+                md-disable-backdrop
+                md-whiteframe="4" ui-view="sidebar"></md-sidenav>
+        <md-content flex>
+            <div ui-view="navbar"></div>
+            <md-content class="main" ui-view="main"></md-content>
+            <div ui-view="footer"></div>
+        </md-content>
+        <md-sidenav
+                class="md-sidenav-right md-whiteframe-4dp"
+                layout="column"
+                style="width: 550px !important; min-width: 550px !important; max-width: 1000px !important;"
+                md-component-id="right"
+                ui-view="container">
+        </md-sidenav>
+    </section>
+</div>
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
 -->
 <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script>
 <script src="dist/lib.min.js"></script>
+<script src="/bower_components/angular-aria/angular-aria.js"></script>
+<script src="/bower_components/angular-animate/angular-animate.js"></script>
+<script src="/bower_components/angular-material/angular-material.js"></script>
+<script src="/bower_components/angular-messages/angular-messages.js"></script>
+<script src="/bower_components/angular-loader/angular-loader.js"></script>
 <script type="text/javascript" src="components/mdb/js/mdb.min.js"></script>
+<script src="http://ngmaterial.assets.s3.amazonaws.com/svg-assets-cache.js"></script>
 <script src="dist/src.min.js"></script>
 <script src="dist/templates.js"></script>
 </body>
