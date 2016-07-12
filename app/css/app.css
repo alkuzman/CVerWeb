@@ -81,6 +81,10 @@
     font-size: 6vw !important;
 }
 
+.btn-prominent-radius {
+    border-radius: 15px;
+}
+
 @media only screen and (min-width: 768px) {
     .btn-prominent {
         font-size: 2vw !important;
@@ -372,6 +376,10 @@
     padding: 0px !important;
 }
 
+.no-margin {
+    margin: 0px !important;
+}
+
 .navigation-drawer-container {
     height: 100vh;
     position: fixed;
@@ -429,3 +437,29 @@
     margin: 16px;
     border-radius: 48px;
     border: 1px solid #ddd; }
+
+.text-white {
+    color: white;
+}
+
+.text-teal {
+    color: teal;
+}
+
+.text-bold {
+    font-weight: bold !important;
+}
+
+.footer-fixed-bottom {
+    width: inherit;
+}
+
+md-toolbar:not(.md-hue-1) {
+    fill: #fff;
+}
+
+.btn-small {
+    min-width: 60px !important;
+    width: 60px !important;
+    margin: 0px;
+}

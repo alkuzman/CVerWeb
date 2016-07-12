@@ -1,14 +1,31 @@
-<md-toolbar>
+<md-toolbar ng-hide="mainNavCtrl.showSearch">
     <div class="md-toolbar-tools">
-        <md-button ng-click="toggleLeft()" hide-gt-md class="md-icon-button" aria-label="Settings">
-            <md-icon md-font-set="material-icons">menu</md-icon>
+        <md-button ng-click="toggleLeft()" aria-label="Menu" class="btn-small">
+            <ng-md-icon icon="menu"></ng-md-icon>
         </md-button>
-        <a href="/">
-            <img ng-src="/img/CVerCleanLogo.png" width="60" height="30"/>
-        </a>
+        <md-button ui-sref="home" aria-label="Home" class="btn-small" style="width: 85px !important;">
+            <img ng-src="img/CverCleanLogo.png" width="80" height="40"/>
+        </md-button>
         <span flex></span>
-        <md-button ng-click="toggleRight()" class="md-icon-button" aria-label="Settings">
-            <md-icon md-font-set="material-icons">folder_shared</md-icon>
+        <md-button aria-label="Search" ng-click="mainNavCtrl.toggleShowSearch()" class="btn-small">
+            <ng-md-icon icon="search"></ng-md-icon>
+        </md-button>
+        <md-button aria-label="Open Settings" ng-click="toggleRight()" class="btn-small">
+            <ng-md-icon icon="more_vert"></ng-md-icon>
+        </md-button>
+    </div>
+</md-toolbar>
+<md-toolbar class="md-hue-1" ng-show="mainNavCtrl.showSearch">
+    <div class="md-toolbar-tools md-hue-1">
+        <md-button aria-label="Back" ng-click="mainNavCtrl.toggleShowSearch()">
+            <ng-md-icon icon="arrow_back"></ng-md-icon> Back
+        </md-button>
+        <md-input-container md-theme="input" flex>
+            <label>&nbsp;</label>
+            <input placeholder="Search CVer" style="margin-top: 25px;">
+        </md-input-container>
+        <md-button aria-label="Search" class="btn-small">
+            <ng-md-icon icon="search"></ng-md-icon>
         </md-button>
     </div>
 </md-toolbar>

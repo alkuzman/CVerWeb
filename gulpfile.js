@@ -26,15 +26,20 @@ var gulp = require('gulp'),
 
 
 var CSS_LIB = [
-    'app/bower_components/html5-boilerplate/dist/css/normalize.css',
-    'app/bower_components/html5-boilerplate/dist/css/main.css',
+    /*'app/bower_components/html5-boilerplate/dist/css/normalize.css',
+    'app/bower_components/html5-boilerplate/dist/css/main.css',*/
+    'app/bower_components/tether/dist/css/tether.css',
+    'app/bower_components/tether/dist/css/tether-theme-basic.css',
+    'app/bower_components/tether/dist/css/tether-theme-arrows.css',
     'app/bower_components/bootstrap/dist/css/bootstrap.min.css',
+    'app/bower_components/angular-material/angular-material.css',
+    'app/bower_components/angular-material-icons/angular-material-icons.css'
     //'app/bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
     /*'app/bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css',
     'app/bower_components/bootstrap-material-design/dist/css/ripples.min.css',*/
     /*'app/bower_components/angular-material/angular.material.css',*/
-    'app/bower_components/textAngular/dist/textAngular.css',
-    'app/bower_components/font-awesome/css/font-awesome.min.css'
+    /*'app/bower_components/textAngular/dist/textAngular.css',*/
+    /*'app/bower_components/font-awesome/css/font-awesome.min.css'*/
 ];
 
 var CSS_APP = [
@@ -44,23 +49,26 @@ var CSS_APP = [
 ];
 
 var JS_LIB = [
+    'app/bower_components/tether/dist/js/tether.js',
     'app/bower_components/angular/angular.js',
-    'app/bower_components/angular-route/angular-route.js',
+/*  'app/bower_components/angular-route/angular-route.js',*/
     'app/bower_components/angular-ui-router/release/angular-ui-router.min.js',
     'app/bower_components/angular-resource/angular-resource.min.js',
     'app/bower_components/angular-translate/angular-translate.min.js',
     'app/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js',
-    //'app/bower_components/angular-sanitize/angular-sanitize.min.js',
+    'app/bower_components/angular-sanitize/angular-sanitize.min.js',
     'app/bower_components/jquery/dist/jquery.min.js',
     'app/bower_components/bootstrap/dist/js/bootstrap.min.js',
+    'app/bower_components/angular-aria/angular-aria.js',
+    'app/bower_components/angular-animate/angular-animate.js',
+    'app/bower_components/angular-material/angular-material.js',
+    'app/bower_components/angular-messages/angular-messages.js',
+    'app/bower_components/angular-material-icons/angular-material-icons.js'
     /*'app/bower_components/bootstrap-material-design/dist/js/material.min.js',
     'app/bower_components/bootstrap-material-design/dist/js/ripples.min.js',*/
-    'app/components/version/version.js',
+    /*'app/components/version/version.js',
     'app/components/version/version-directive.js',
-    'app/components/version/interpolate-filter.js',
-    'app/bower_components/textAngular/dist/textAngular-rangy.min.js',
-    'app/bower_components/textAngular/dist/textAngular-sanitize.min.js',
-    'app/bower_components/textAngular/dist/textAngular.min.js',
+    'app/components/version/interpolate-filter.js',*/
     /*'app/bower_components/angular-aria/angular-aria.js',
     'app/bower_components/angular-animate/angular-animate.js',
     'app/bower_components/angular-material/angular-material.js'*/

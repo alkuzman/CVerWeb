@@ -8,9 +8,26 @@ App.config(['$resourceProvider', function($resourceProvider){
 }]);
 
 App.config(['$mdThemingProvider', function($mdThemingProvider) {
+    var customTealMap = $mdThemingProvider.extendPalette('teal', {
+        'contrastDefaultColor': 'light',
+        'contrastDarkColors': ['50'],
+        '50': 'ffffff'
+    });
+
+    $mdThemingProvider.definePalette('customTeal', customTealMap);
+
     $mdThemingProvider.theme('default')
-        .primaryPalette('teal')
+        .primaryPalette('customTeal', {
+            'default': '500',
+            'hue-1': '50'
+        })
         .accentPalette('grey');
+    $mdThemingProvider.theme('secondary')
+        .primaryPalette('cyan')
+        .accentPalette('grey');
+    $mdThemingProvider.theme('input', 'default')
+        .primaryPalette('grey')
+
 }]);
 
 App.config(['$mdIconProvider', function($mdIconProvider) {

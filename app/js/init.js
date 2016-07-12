@@ -1,9 +1,8 @@
 /**
  * Created by User on 6/25/2016.
  */
-//$('body').bootstrapMaterialDesign();
-new WOW().init();
 
+/*
 $(document).ready(function() {
     $('label').click(function () {
 
@@ -22,4 +21,4 @@ $(document).ready(function() {
         // remove the original so that it is ready to run on next click
         $("." + el.attr("class") + ":last").remove();
     });
-});
+});*/

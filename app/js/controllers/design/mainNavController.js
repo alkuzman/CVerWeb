@@ -1,7 +1,13 @@
 /**
  * Created by User on 7/11/2016.
  */
-App.controller('SideNavigationController',["$scope", "$timeout", "$mdSidenav", "$log", function ($scope, $timeout, $mdSidenav, $log) {
+App.controller('MainNavigationController',["$scope", "$timeout", "$mdSidenav", "$log", function ($scope, $timeout, $mdSidenav, $log) {
+    this.showSearch = false;
+    
+    this.toggleShowSearch = function() {
+        this.showSearch = !this.showSearch;
+    }
+    
     $scope.toggleLeft = buildDelayedToggler('left');
     $scope.toggleRight = buildToggler('right');
     $scope.isOpenRight = function(){
