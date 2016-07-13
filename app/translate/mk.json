@@ -38,12 +38,14 @@
     "template": "Шаблон",
     "sync": "Синхронизација",
     "firstName": "Име",
+    "cv": "CV",
     "lastName": "Презиме",
     "skill": "Вештина",
     "all": "Сите",
     "educational": "Образовни",
     "job": "Работни",
     "chronogogical": "Хронолошки",
-    "functional": "Функционални"
+    "functional": "Функционални",
+    "my": "Мои"
   }
 }

@@ -41,9 +41,11 @@
     "lastName": "Last Name",
     "skill": "Skill",
     "all": "All",
+    "cv": "Resume",
     "educational": "Educational",
     "job": "Job",
     "chronogogical": "Chronogogical",
-    "functional": "Functional"
+    "functional": "Functional",
+    "my": "My"
   }
 }

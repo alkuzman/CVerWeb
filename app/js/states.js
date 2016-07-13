@@ -32,7 +32,8 @@ App.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
         views: {
             main: {
                 templateUrl: "views/results/results.html",
-                controller: "ResultsController"
+                controller: "ResultsController",
+                controllerAs: "resCtrl"
             },
             navbar: {
                 templateUrl: "views/navbar.html",

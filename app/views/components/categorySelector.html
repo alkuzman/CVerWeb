@@ -1,0 +1,5 @@
+<section layout="row" layout-align="center center">
+    <md-button class="groupX left" ng-class="{true: 'md-primary md-raised'}[ categoryData.selected === 'all']" ng-click="selectorCtrl.setSelected('all')">{{ "other.all" | translate }}</md-button>
+    <md-button class="groupX middle" ng-repeat="category in categoryData.categories" ng-class="{true: 'md-primary md-raised'}[ categoryData.selected === category]" ng-click="selectorCtrl.setSelected(category)">{{ "other." + category | lowercase | translate }}</md-button>
+    <md-button class="groupX right" ng-class="{true: 'md-primary md-raised'}[ categoryData.selected === 'my']" ng-click="selectorCtrl.setSelected('my')">{{ "other.my" | translate }}</md-button>
+</section>
