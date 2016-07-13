@@ -24,7 +24,7 @@ App.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             sidebar: {
                 templateUrl: "views/sidebar.html",
                 controller: "AuthController",
-                controllerAs: "AuthCtrl"
+                controllerAs: "authCtrl"
             }
         }
     }).state("results", {
@@ -39,6 +39,16 @@ App.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                 controller: "MainNavigationController",
                 controllerAs: "mainNavCtrl"
             },
+            container: {
+                templateUrl: "views/container/container.html",
+                controller: "TabController",
+                controllerAs: "tabCtrl"
+            },
+            sidebar: {
+                templateUrl: "views/sidebar.html",
+                controller: "AuthController",
+                controllerAs: "authCtrl"
+            }
         }
     }).state("cv", {
         url: '/cv',
@@ -52,13 +62,24 @@ App.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                 controller: "MainNavigationController",
                 controllerAs: "mainNavCtrl"
             },
+            container: {
+                templateUrl: "views/container/container.html",
+                controller: "TabController",
+                controllerAs: "tabCtrl"
+            },
+            sidebar: {
+                templateUrl: "views/sidebar.html",
+                controller: "AuthController",
+                controllerAs: "authCtrl"
+            }
         }
     }).state("auth", {
         url: '/login',
         views: {
             main: {
                 templateUrl: "views/auth/auth.html",
-                controller: "AuthController"
+                controller: "AuthController",
+                controllerAs: "authCtrl"
             }
         }
     })

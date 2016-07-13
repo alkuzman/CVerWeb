@@ -1,206 +1,124 @@
-<div class="full-page-container homepage header-padding footer-padding flex-center">
-    <div class="container" style="width: 100%;">
-        <div class="row">
-            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 col-xl-6 col-xl-offset-3">
-                <div class="row">
-                    <div class="col-md-12 text-xs-center text-sm-center text-md-center text-lg-center text-xl-center"
-                         style="margin-bottom: 20px;">
-                        <a href="/">
-                            <img ng-src="/img/CVerCleanLogo.png" width="150" height="70"/>
-                        </a>
-                        <h2 class="white-text" style="margin-top: 30px;">
-                            {{ 'actions.login' | translate }} {{ 'other.or' | translate }} {{ 'actions.register' | translate }}
-                        </h2>
+<div class="homepage" layout="column" flex>
+    <div layout="row" flex>
+        <div layout="column" flex-xs="90" flex-offset-xs="5" flex-sm="70" flex-offset-sm="15" flex-md="50"
+             flex-offset-md="25" flex-lg="30" flex-offset-lg="35" flex-xl="30" flex-offset-xl="35">
+            <div flex="10">
+            </div>
+            <div flex="none" class="text-xs-center">
+                <a href="/">
+                    <img ng-src="/img/CVerCleanLogo.png" width="150" height="70"/>
+                </a>
+                <h2 class="text-white" style="margin-top: 30px;">
+                    {{ 'actions.login' | translate }} {{ 'other.or' | translate }} {{ 'actions.register' | translate }}
+                </h2>
+            </div>
+            <div flex="none" class="card">
+                <div class="card-block">
+                    <div style="height: 35px;">
+                        <md-button class="md-icon-button md-primary" aria-label="Back"
+                                   ng-hide="authCtrl.checkStatus(authCtrl.getUserStatus)"
+                                   ng-click="authCtrl.statusBack()" class="pull-xs-left teal-text">
+                            <ng-md-icon icon="arrow_back"></ng-md-icon>
+                        </md-button>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 col-xl-12 col-lg-12 col-xs-12 col-sm-12">
-                        <div class="card">
-                            <div class="card-block text-xs-center text-sm-center text-md-center text-lg-center text-xl-center">
-                                <div style="height: 35px;">
-                                    <a ng-click="statusBack()" class="pull-xs-left teal-text"
-                                       ng-hide="checkStatus(getUserStatus)"><i class="material-icons">arrow_back</i></a>
-                                </div>
-                                <img ng-src="/img/user.jpg" class="img-circle" ng-hide="current.image" width="150"
-                                     height="150"/>
-                                <img ng-src="{{current.image}}" class="img-circle animated bounceIn"
-                                     ng-show="current.image" width="150" height="150"/>
-                                <div class="row" style="padding-top: 10px;">
-                                    <div class="col-xs-12">
-                                        <strong>{{current.firstName}} {{current.lastName}}</strong>
-                                    </div>
-                                    <div class="col-xs-12">
-                                        <span>{{current.email}}</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-block">
-                                <form id="getUserForm" name="getUserForm"
-                                      ng-submit="getUserForm.$valid && getUser()" ng-show="checkStatus(getUserStatus);">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="md-form form-group" style="padding-right: 20px;">
-                                                <i class="material-icons prefix">email</i>
-                                                <input type="email" id="emailLogin" name="username"
-                                                       ng-model="current.email"
-                                                       class="form-control validate" required/>
-                                                <label for="emailLogin">
-                                                    {{ 'actions.type_your_email' | translate }}
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-12">
-                                            <div class="md-form form-group">
-                                                <input type="submit"
-                                                       class="btn btn-default btn-block btn-lg waves-effect"
-                                                       value="{{ 'actions.next' | translate }}"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-12">
-                                            <div class="pull-xs-right">
-                                                <a class="teal-text" href="/#/login/help">{{ 'other.help' | translate }}?</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                                <form id="loginForm" name="loginForm" ng-submit="loginForm.$valid && login()"
-                                      ng-show="checkStatus(loginStatus);">
-                                    <div class="row">
-                                        <div class="col-xs-12">
-                                            <div class="md-form form-group" style="padding-right: 20px;">
-                                                <i class="material-icons prefix">lock</i>
-                                                <input type="password" id="passwordLogin" name="password"
-                                                       ng-model="current.password"
-                                                       class="form-control validate" required/>
-                                                <label for="passwordLogin">
-                                                    {{ 'actions.type_your_password' | translate }}
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-12">
-                                            <div class="md-form form-group">
-                                                <input type="submit"
-                                                       class="btn btn-default btn-block btn-lg waves-effect"
-                                                       value="{{ 'actions.login' | translate }}"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-12">
-                                            <div class="pull-sm-left text-xs-center check-md">
-                                                <div class="form-group check-awesome">
-                                                    <input type="checkbox" id="check-me">
-
-                                                    <label for="check-me">
-                                                        <span></span>
-                                                        <span class="check"></span>
-                                                        <span class="box"></span>
-                                                        {{'actions.stay_signed_in' | translate}}
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="pull-sm-right text-xs-center">
-                                                <a class="teal-text" href="/#/login/help">{{'actions.forgot_password' | translate}}?</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                                <form id="registerForm" name="registerForm"
-                                      ng-submit="registerForm.$valid && register()"
-                                      ng-show="checkStatus(registerStatus);">
-                                    <div class="row">
-                                        <div class="col-xs-12">
-                                            <div class="md-form form-group" style="padding-right: 20px;">
-                                                <i class="material-icons prefix">person</i>
-                                                <input type="text" id="firstNameRegister" name="firstName"
-                                                       ng-model="current.firstName"
-                                                       class="form-control validate" required/>
-                                                <label for="firstNameRegister">
-                                                    {{ 'actions.type_your_first_name' | translate }}
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-12">
-                                            <div class="md-form form-group" style="padding-right: 20px;">
-                                                <i class="material-icons prefix">person</i>
-                                                <input type="text" id="lastNameRegister" name="lastName"
-                                                       ng-model="current.lastName"
-                                                       class="form-control validate" required/>
-                                                <label for="lastNameRegister">
-                                                    {{ 'actions.type_your_last_name' | translate }}
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-12">
-                                            <div class="md-form form-group" style="padding-right: 20px;">
-                                                <i class="material-icons prefix">lock</i>
-                                                <input type="password" id="passwordRegister" name="password"
-                                                       ng-model="current.password"
-                                                       class="form-control validate" required/>
-                                                <label for="passwordRegister">
-                                                    {{ 'actions.type_your_password' | translate }}
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-12">
-                                            <div class="md-form form-group" style="padding-right: 20px;">
-                                                <i class="material-icons prefix">lock</i>
-                                                <input type="password" id="passwordConfirmRegister" name="password"
-                                                       ng-model="current.confirmPassword"
-                                                       class="form-control validate" required/>
-                                                <label for="passwordConfirmRegister">
-                                                    {{ 'actions.retype_your_password' | translate }}
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-12">
-                                            <div class="md-form form-group">
-                                                <input type="submit"
-                                                       class="btn btn-default btn-block btn-lg waves-effect"
-                                                       value="{{ 'actions.register' | translate }}"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+                    <div class="text-xs-center">
+                        <img ng-src="/img/user.jpg" class="img-circle" ng-hide="authCtrl.current.image" width="150"
+                             height="150"/>
+                        <img ng-src="{{authCtrl.current.image}}" class="img-circle"
+                             ng-show="authCtrl.current.image" width="150" height="150"/>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <div class="text-xs-center">
+                            <strong>{{ authCtrl.current.firstName }} {{ authCtrl.current.lastName }}</strong>
+                        </div>
+                        <div class="text-xs-center">
+                            <span>{{authCtrl.current.email}}</span>
                         </div>
                     </div>
                 </div>
-                <div class="row" style="padding-right: 10px;">
-                    <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 col-xl-6">
-                        <a href="/login/facebook" role="button" class="btn btn-block btn-lg btn-primary"><i
-                                class="fa fa-facebook left"></i>
-                            Facebook</a>
-                    </div>
-                    <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 col-xl-6">
-                        <a href="/login/google" type="button" class="btn btn-block btn-lg btn-danger"><i
-                                class="fa fa-google-plus left"></i>
-                            Google +</a>
-                    </div>
-                    <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 col-xl-6">
-                        <a href="/login/linkedin" type="button" class="btn btn-block btn-lg blue"><i
-                                class="fa fa-linkedin left"></i>
-                            Linkedin</a>
-                    </div>
-                    <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 col-xl-6">
-                        <a href="/login/pinterest" type="button" class="btn btn-block btn-lg btn-danger"><i
-                                class="fa fa-pinterest left"></i>
-                            Pinterest</a>
-                    </div>
+                <div class="card-block" style="padding-right: 35px;">
+                    <form id="getUserForm" name="getUserForm"
+                          ng-submit="getUserForm.$valid && authCtrl.getUser()" ng-show="authCtrl.checkStatus(authCtrl.getUserStatus);">
+                        <md-input-container flex="none" class="md-icon-float md-block">
+                            <!-- Use floating label instead of placeholder -->
+                            <label>{{ 'actions.type_your_email' | translate }}</label>
+                            <md-icon md-font-set="material-icons">email</md-icon>
+                            <input type="email" id="emailLogin" name="username"
+                                   ng-model="authCtrl.current.email" required>
+                        </md-input-container>
+                        <md-button type="submit" flex="none" class="md-raised md-primary full-width">{{ 'actions.next'
+                            | translate }}
+                        </md-button>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="pull-xs-right">
+                                    <md-button ui-sref="authHelp" class="md-primary">{{ 'other.help' | translate
+                                        }}?
+                                    </md-button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <form id="loginForm" name="loginForm" ng-submit="loginForm.$valid && authCtrl.login()"
+                          ng-show="authCtrl.checkStatus(authCtrl.loginStatus);">
+                        <md-input-container flex="none" class="md-icon-float md-block">
+                            <!-- Use floating label instead of placeholder -->
+                            <label>{{ 'actions.type_your_email' | translate }}</label>
+                            <md-icon md-font-set="material-icons">lock</md-icon>
+                            <input type="password" id="passwordLogin" name="password"
+                                   ng-model="authCtrl.current.password" required>
+                        </md-input-container>
+                        <md-button type="submit" class="md-raised md-primary full-width">{{ 'actions.login'
+                            | translate }}
+                        </md-button>
+                        <div>
+                            <div class="pull-sm-left text-xs-center">
+                                <md-checkbox class="md-primary" aria-label="Stay signed in" style="margin: 10px 25px;">
+                                    {{'actions.stay_signed_in' | translate}}
+                                </md-checkbox>
+                            </div>
+                            <div class="pull-sm-right text-xs-center">
+                                <md-button ui-sref="loginPasswordHelp" class="md-primary">{{'actions.forgot_password' |
+                                    translate}}?
+                                </md-button>
+                            </div>
+                        </div>
+                    </form>
+                    <form id="registerForm" name="registerForm"
+                          ng-submit="registerForm.$valid && authCtrl.register()"
+                          ng-show="authCtrl.checkStatus(authCtrl.registerStatus);">
+                        <md-input-container class="md-icon-float md-block">
+                            <!-- Use floating label instead of placeholder -->
+                            <label>{{ 'actions.type_your_first_name' | translate }}</label>
+                            <md-icon md-font-set="material-icons">person</md-icon>
+                            <input type="text" id="firstNameRegister" name="firstName"
+                                   ng-model="authCtrl.current.firstName" required>
+                        </md-input-container>
+                        <md-input-container class="md-icon-float md-block">
+                            <!-- Use floating label instead of placeholder -->
+                            <label>{{ 'actions.type_your_last_name' | translate }}</label>
+                            <md-icon md-font-set="material-icons">person</md-icon>
+                            <input type="text" id="lastNameRegister" name="lastName"
+                                   ng-model="authCtrl.current.lastName" required>
+                        </md-input-container>
+                        <md-input-container class="md-icon-float md-block">
+                            <!-- Use floating label instead of placeholder -->
+                            <label>{{ 'actions.type_your_password' | translate }}</label>
+                            <md-icon md-font-set="material-icons">lock</md-icon>
+                            <input type="password" id="passwordRegister" name="password"
+                                   ng-model="authCtrl.current.password" required>
+                        </md-input-container>
+                        <md-input-container class="md-icon-float md-block">
+                            <!-- Use floating label instead of placeholder -->
+                            <label> {{ 'actions.retype_your_password' | translate }}</label>
+                            <md-icon md-font-set="material-icons">lock</md-icon>
+                            <input type="password" id="passwordConfirmRegister" name="password"
+                                   ng-model="authCtrl.current.confirmPassword"
+                                    required >
+                        </md-input-container>
+                        <md-button type="submit" class="md-raised md-primary full-width">{{ 'actions.register' | translate }}
+                        </md-button>
+                    </form>
                 </div>
             </div>
         </div>

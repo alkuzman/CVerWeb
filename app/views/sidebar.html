@@ -1,16 +1,16 @@
 <md-toolbar layout-padding class="md-theme-indigo">
-    <img ng-src="{{me.image}}" class="img-circle" width="80" height="80"/>
+    <img ng-src="{{authCtrl.me.image}}" class="img-circle" width="80" height="80"/>
     <div>
-        <span class="md-caption">{{me.firstName}} {{me.lastName}}</span> <br/>
-        <span class="md-caption">{{me.email}}</span>
+        <span class="md-caption">{{authCtrl.me.firstName}} {{authCtrl.me.lastName}}</span> <br/>
+        <span class="md-caption">{{authCtrl.me.email}}</span>
     </div>
 </md-toolbar>
 <md-content layout-padding>
     <md-menu-content width="4">
         <md-menu-item>
-            <md-button>
+            <md-button ng-click="authCtrl.logout()">
                 <ng-md-icon icon="pen_in_new"></ng-md-icon>
-                Open
+                Logout
             </md-button>
         </md-menu-item>
         <md-menu-item>
