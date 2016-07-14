@@ -6,4 +6,5 @@ var App = angular.module('cver', [
     'ngMaterial',
     'ngMessages',
     'ngMdIcons',
-    'material.svgAssetsCache']);
+    'material.svgAssetsCache',
+    'masonry']);

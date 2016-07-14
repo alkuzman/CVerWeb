@@ -23,10 +23,13 @@
     "angular-translate-loader-url": "^2.11.0",
     "angular-translate-loader-static-files": "^2.11.0",
     "angular-material": "^1.0.9",
-    "angular-material-icons": "^0.7.1"
+    "angular-material-icons": "^0.7.1",
+    "jquery": "^3.1.0",
+    "angular-masonry-directive": "*"
   },
   "resolutions": {
     "angular": "1.5.7",
-    "angular-translate": "~2.11.0"
+    "angular-translate": "~2.11.0",
+    "jquery": "^2.2"
   }
 }

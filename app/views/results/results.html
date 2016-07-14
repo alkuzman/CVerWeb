@@ -1,6 +1,10 @@
 <div flex layout="column">
     <div cver-category-selector="resCtrl.categoryData"></div>
-    <div flex class="card-columns">
-        <div cver-result-card="result" ng-repeat="result in results"></div>
+    <div>
+        <div class="grid" cver-masonry='{ "itemSelector": ".grid-item", "columnWidth": 0 }'>
+            <div class="grid-item" cver-masonry-tile ng-repeat="result in results">
+                <div cver-result-card="result"></div>
+            </div>
+        </div>
     </div>
 </div>
