@@ -364,6 +364,7 @@
     box-shadow: none;
 }
 
+
 .full-width {
     min-width: 100%;
 }
@@ -436,7 +437,8 @@
     width: 48px;
     margin: 16px;
     border-radius: 48px;
-    border: 1px solid #ddd; }
+    border: 1px solid #ddd;
+}
 
 .text-white {
     color: white;
@@ -446,16 +448,24 @@
     color: teal;
 }
 
+.text-grey {
+    color: grey;
+}
+
+.text-dark-red {
+    color: darkred;
+}
+
+.text-gold {
+    color: gold;
+}
+
 .text-bold {
     font-weight: bold !important;
 }
 
 .footer-fixed-bottom {
     width: inherit;
-}
-
-md-toolbar:not(.md-hue-1) {
-    fill: #fff;
 }
 
 .btn-small {
@@ -472,24 +482,108 @@ md-toolbar:not(.md-hue-1) {
     background-color: rgba(224, 224, 224, 0.96);
     text-transform: none;
     font-weight: 400;
-    min-width:100px;
+    min-width: 100px;
 }
+
 .md-button.left {
     border-radius: 10px 0 0 10px;
 }
+
 .md-button.middle {
     border-radius: 0;
     border-left: 1px solid rgba(230, 230, 230, 0.96);
     border-right: 1px solid rgba(230, 230, 230, 0.96);
 }
+
 .md-button.right {
     border-radius: 0 10px 10px 0;
 }
+
 .md-button:not([disabled]):hover {
     background-color: rgba(193, 193, 193, 0.96);
     transition: 0.3s;
 }
 
-md-content.md-default-theme {
+md-content {
     background-color: #eee;
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width: 320px) {
+    .grid-sizer,
+    .grid-item {
+        width: 100%;
+    }
+    .fixed-bottom-right {
+        position: fixed;
+        bottom: 0.5cm;
+        right:  0.5cm;
+    }
+    .md-button.md-fab.md-big {
+    }
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+    .grid-sizer,
+    .grid-item {
+        width: 50%;
+    }
+    .fixed-bottom-right {
+        position: fixed;
+        bottom: 0.5cm;
+        right:  0.5cm;
+    }
+    .md-button.md-fab.md-big {
+    }
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+    .grid-sizer,
+    .grid-item {
+        width: 33%;
+    }
+    .fixed-bottom-right {
+        position: fixed;
+        bottom: 0.6cm;
+        right:  0.6cm;
+    }
+    .md-button.md-fab.md-big {
+        line-height: 4.8rem;
+        width: 4.8rem;
+        height: 4.8rem;
+    }
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+    .grid-sizer,
+    .grid-item {
+        width: 25%;
+    }
+    .fixed-bottom-right {
+        position: fixed;
+        bottom: 0.7cm;
+        right:  0.7cm;
+    }
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1200px) {
+    .grid-sizer,
+    .grid-item {
+        width: 20%;
+        margin: 0px !important;
+    }
+    .fixed-bottom-right {
+        position: fixed;
+        bottom: 0.8cm;
+        right:  0.8cm;
+    }
+
 }

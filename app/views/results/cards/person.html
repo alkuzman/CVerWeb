@@ -1,30 +1,95 @@
-<div class="card">
+<md-card>
     <a href="/#/user/{{result.id}}" class="teal-text">
-        <img class="wow fadeIn card-img-top img-fluid img-responsive full-width" ng-src="{{result.cover}}" alt="Card image cap">
+        <img class="wow fadeIn card-img-top img-fluid img-responsive full-width" ng-src="{{result.cover}}"
+             alt="Card image cap">
     </a>
-    <div class="row">
-        <div class="col-xs-6 col-xs-offset-3">
+    <div layout="row">
+        <md-card-actions flex="25" layout="row" layout-align="start start">
+
+            <md-button class="md-icon-button" aria-label="Invite">
+                <md-tooltip style="font-size: 12pt;">
+                    {{ "actions.invite" | translate }} {{ "other.to" | translate | lowercase}} {{"other.call" |
+                    translate | lowercase}}
+                </md-tooltip>
+                <ng-md-icon icon="contact_phone" class="text-grey"></ng-md-icon>
+            </md-button>
+        </md-card-actions>
+        <div flex="50">
             <a href="/#/user/{{result.id}}" class="teal-text">
-                <img class="img-responsive img-fluid img-circle border-teal center-image" ng-src="{{result.image}}"/>
+                <img class="img-responsive img-fluid img-circle border-teal center-image"
+                     ng-src="{{result.image}}"/>
             </a>
         </div>
-        <div class="col-xs-3">
-            <div class="dropup pull-xs-right">
-                <a class="btn btn-flat teal-text" id="dropdownMenu4" data-toggle="dropdown"
-                   aria-haspopup="false" aria-expanded="true"><i class="material-icons">more_vert</i></a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu4" style="z-index: 1000;">
-                    <a class="dropdown-item"><i class="material-icons md-18">person</i> Profile</a>
-                    <a class="dropdown-item"><i class="material-icons md-18">receipt</i> Resumes</a>
-                    <a class="dropdown-item"><i class="material-icons md-18">extension</i> Projects</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item"><i class="material-icons md-18">share</i> Share</a>
-                </div>
-            </div>
+        <md-card-actions flex="25" layout="row" layout-align="end start">
+            <md-menu class="no-padding" ng-controller="ContextMenuController as cntxMenuCtrl">
+                <md-button aria-label="Open phone interactions menu" class="md-icon-button"
+                           ng-click="cntxMenuCtrl.openMenu($mdOpenMenu, $event)">
+                    <md-tooltip style="font-size: 12pt;">
+                        {{ "other.more" | translate}} {{"other.options" | translate | lowercase}}
+                    </md-tooltip>
+                    <ng-md-icon icon="more_vert" class="text-grey"></ng-md-icon>
+                </md-button>
+                <md-menu-content width="4">
+                    <md-menu-item>
+                        <md-button>
+                            <ng-md-icon icon="open_in_new" class="text-grey"></ng-md-icon>
+                            {{"actions.open" | translate}}
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button>
+                            <ng-md-icon icon="receipt" class="text-grey"></ng-md-icon>
+                            {{"other.cvs" | translate}}
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button>
+                            <ng-md-icon icon="card_membership" class="text-grey"></ng-md-icon>
+                            {{"other.certificates" | translate}}
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button>
+                            <ng-md-icon icon="extension" class="text-grey"></ng-md-icon>
+                            {{"other.projects" | translate}}
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-divider></md-menu-divider>
+                    <md-menu-item>
+                        <md-button>
+                            <ng-md-icon icon="person_add" class="text-grey"></ng-md-icon>
+                            {{"actions.follow" | translate}}
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button>
+                            <ng-md-icon icon="share" class="text-grey"></ng-md-icon>
+                            {{"actions.share" | translate}}
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </md-card-actions>
+    </div>
+    <md-card-title>
+        <md-card-title-text class="text-xs-center">
+            <span class="md-headline"><a href="/#/user/{{result.id}}" class="teal-text">{{result.firstName}} {{result.lastName}}</a></span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-footer layout="row" layout-align="space-between" style="background-color: #eee">
+        <div>
+            <md-tooltip style="font-size: 12pt">
+                {{ "other.number_of" | translate }} {{ "other.cvs" | translate | lowercase }}
+            </md-tooltip>
+            <ng-md-icon icon="receipt" class="text-grey md-subhead"></ng-md-icon>
+            <span class="text-grey md-subhead">{{result.numberOfCvs}}</span>
         </div>
-    </div>
-    <div class="card-block">
-        <a href="/#/user/{{result.id}}" class="teal-text">
-            <h4 class="card-title text-xs-center">{{result.firstName}} {{result.lastName}}</h4>
-        </a>
-    </div>
-</div>
+        <div>
+            <md-tooltip style="font-size: 12pt">
+                {{ "other.rating" | translate }}
+            </md-tooltip>
+            <ng-md-icon icon="star_border" class="text-gold md-subhead"></ng-md-icon>
+            <span class="text-gold md-subhead">{{result.rating}}</span>
+        </div>
+    </md-card-footer>
+</md-card>
