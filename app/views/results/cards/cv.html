@@ -1,37 +1,106 @@
 <md-card>
-    <div class="card">
-        <a href="/#/user/{{result.id}}" class="teal-text">
-            <img class="wow fadeIn card-img-top img-fluid img-responsive full-width" ng-src="{{result.cover}}"
-                 alt="Card image cap">
-        </a>
-        <div class="row">
-            <div class="col-xs-9" style="padding-left: 30px;">
-                <a href="/#/user/{{result.id}}" class="teal-text">
-                    <img class="img-circle" style="width: 50px; height: 50px" ng-src="{{result.owner.image}}"/>
+    <md-card-header>
+        <md-card-avatar>
+            <a href="/#/person/{{result.owner.id}}"><img class="md-user-avatar" ng-src="{{result.owner.image}}"/></a>
+        </md-card-avatar>
+        <md-card-header-text>
+            <span class="md-title">
+                <a href="/#/person/{{result.owner.id}}">
+                    <b>{{result.owner.firstName}} {{result.owner.lastName}}</b>
                 </a>
-                <a href="/#/user/{{result.id}}" class="teal-text">
-                    <strong>{{result.owner.firstName}} {{result.owner.lastName}}</strong>
-                </a>
-            </div>
-            <div class="col-xs-3">
-                <div class="dropup pull-xs-right">
-                    <a class="btn btn-flat teal-text" id="dropdownMenu4" data-toggle="dropdown"
-                       aria-haspopup="false" aria-expanded="true"><i class="material-icons">more_vert</i></a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu4"
-                         style="z-index: 1000;">
-                        <a class="dropdown-item"><i class="material-icons md-18">open_in_new</i> Open</a>
-                        <a class="dropdown-item"><i class="material-icons md-18">book</i> Template</a>
-                        <a class="dropdown-item"><i class="material-icons md-18">person</i> Owner</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item"><i class="material-icons md-18">share</i> Share</a>
-                        <a class="dropdown-item"><i class="material-icons md-18">watch_later</i> Watch later</a>
-                        <a class="dropdown-item"><i class="material-icons md-18">file_download</i> Download</a>
-                    </div>
-                </div>
-            </div>
+            </span>
+            <span class="md-subhead text-grey">3 hrs</span>
+        </md-card-header-text>
+    </md-card-header>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">{{result.name}}</span>
+            <span class="md-subhead">{{ "other." + result.template.category + "_sing" | lowercase | translate}} {{ "other.cv" | translate}}</span>
+        </md-card-title-text>
+    </md-card-title>
+    <a href="/#/cv/{{result.id}}">
+        <img class="md-card-image" ng-src="{{result.cover}}"
+             alt="Card image cap">
+    </a>
+    <md-card-actions layout="row" layout-align="start center">
+        <md-button class="md-icon-button" aria-label="Like">
+            <md-tooltip style="font-size: 12pt;">
+                {{"actions.like" | translate}}
+            </md-tooltip>
+            <ng-md-icon icon="favorite" class="text-grey"></ng-md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Invite">
+            <md-tooltip style="font-size: 12pt;">
+                {{ "actions.invite" | translate }} {{ "other.to" | translate | lowercase}} {{"other.call" | translate | lowercase}}
+            </md-tooltip>
+            <ng-md-icon icon="contact_phone" class="text-grey"></ng-md-icon>
+        </md-button>
+        <md-card-icon-actions>
+            <md-menu class="no-padding" ng-controller="ContextMenuController as cntxMenuCtrl">
+                <md-button aria-label="Open phone interactions menu" class="md-icon-button"
+                           ng-click="cntxMenuCtrl.openMenu($mdOpenMenu, $event)">
+                    <md-tooltip style="font-size: 12pt;">
+                        {{ "other.more" | translate}} {{"other.options" | translate | lowercase}}
+                    </md-tooltip>
+                    <ng-md-icon icon="more_vert" class="text-grey"></ng-md-icon>
+                </md-button>
+                <md-menu-content width="4">
+                    <md-menu-item>
+                        <md-button>
+                            <ng-md-icon icon="open_in_new" class="text-grey"></ng-md-icon>
+                            {{"actions.open" | translate}}
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button>
+                            <ng-md-icon icon="receipt" class="text-grey"></ng-md-icon>
+                            {{"other.template" | translate}}
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-divider></md-menu-divider>
+                    <md-menu-item>
+                        <md-button>
+                            <ng-md-icon icon="file_download" class="text-grey"></ng-md-icon>
+                            {{"actions.download" | translate}}
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button>
+                            <ng-md-icon icon="watch_later" class="text-grey"></ng-md-icon>
+                            {{"actions.save" | translate}}
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button>
+                            <ng-md-icon icon="share" class="text-grey"></ng-md-icon>
+                            {{"actions.share" | translate}}
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </md-card-icon-actions>
+    </md-card-actions>
+    <md-card-footer layout="row" layout-align="space-between" style="background-color: #eee">
+        <div>
+            <md-tooltip style="font-size: 12pt">
+                {{ "other.number_of" | translate }} {{ "other.likes" | translate | lowercase }}
+            </md-tooltip>
+            <ng-md-icon icon="favorite_border" class="text-dark-red md-subhead"></ng-md-icon>
+            <span class="text-dark-red md-subhead">{{result.numberOfLikes}}</span>
         </div>
-        <div class="card-block">
-            {{result.name}}
+        <div>
+            <md-tooltip style="font-size: 12pt">
+                {{ "other.number_of" | translate }} {{ "other.views" | translate | lowercase }}
+            </md-tooltip>
+            <ng-md-icon icon="people_outline" class="md-subhead"></ng-md-icon>
+            <span class="md-subhead">{{result.numberOfViews}}</span>
         </div>
-    </div>
+        <div>
+            <md-tooltip style="font-size: 12pt">
+                {{ "other.rating" | translate }}
+            </md-tooltip>
+            <ng-md-icon icon="star_border" class="text-gold md-subhead"></ng-md-icon>
+            <span class="text-gold md-subhead">{{result.rating}}</span>
+        </div>
+    </md-card-footer>
 </md-card>
