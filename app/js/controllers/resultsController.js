@@ -3,7 +3,13 @@
  */
 App.controller("ResultsController", ["$scope", function ($scope) {
     $scope.results = items;
-    this.categoryData  = rt;
+    this.categoryData = rt;
+
+    var setMasonary = function() {
+        
+    };
+
+    setMasonary();
 }]);
 
 var rt = {
@@ -28,10 +34,25 @@ var items = [
             id: 2,
             firstName: "Aleksandar",
             lastName: "Kuzmanoski",
+            email: "aleksandarkuzmanoski11@gmail.com",
             cover: "https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/11156164_10203007807870841_5192745030243951016_n.jpg?oh=b31b5f0be935607086ab59e8e76fb806&oe=57F01FDD",
             image: "https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/11225436_10203432866617044_729904542407639638_n.jpg?oh=3b32be74a68498495535dc25c6cb2cc5&oe=57FAAB30",
             type: "person"
-        }
+        },
+        numberOfLikes: 20,
+        numberOfViews: 113,
+        rating: 3.5
+    },
+    {
+        id: 2,
+        firstName: "Viki",
+        lastName: "Peeva",
+        email: "peeva.viki@gmail.com",
+        cover: "https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/11156164_10203007807870841_5192745030243951016_n.jpg?oh=b31b5f0be935607086ab59e8e76fb806&oe=57F01FDD",
+        image: "https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/11225436_10203432866617044_729904542407639638_n.jpg?oh=3b32be74a68498495535dc25c6cb2cc5&oe=57FAAB30",
+        type: "person",
+        numberOfCvs: 3,
+        rating: 4.9
     },
     {
         id: 2,
@@ -46,17 +67,57 @@ var items = [
             id: 2,
             firstName: "Aleksandar",
             lastName: "Kuzmanoski",
+            email: "aleksandarkuzmanoski11@gmail.com",
             cover: "https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/11156164_10203007807870841_5192745030243951016_n.jpg?oh=b31b5f0be935607086ab59e8e76fb806&oe=57F01FDD",
             image: "https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/11225436_10203432866617044_729904542407639638_n.jpg?oh=3b32be74a68498495535dc25c6cb2cc5&oe=57FAAB30",
             type: "person"
-        }
+        },
+        numberOfLikes: 13,
+        numberOfViews: 150,
+        rating: 4.1
     },
     {
         id: 2,
         firstName: "Aleksandar",
         lastName: "Kuzmanoski",
+        email: "aleksandarkuzmanoski11@gmail.com",
         cover: "https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/11156164_10203007807870841_5192745030243951016_n.jpg?oh=b31b5f0be935607086ab59e8e76fb806&oe=57F01FDD",
         image: "https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/11225436_10203432866617044_729904542407639638_n.jpg?oh=3b32be74a68498495535dc25c6cb2cc5&oe=57FAAB30",
-        type: "person"
+        type: "person",
+        numberOfCvs: 3,
+        rating: 4.9
+    },
+    {
+        id: 2,
+        firstName: "Aleksandar",
+        lastName: "Kuzmanoski",
+        email: "aleksandarkuzmanoski11@gmail.com",
+        cover: "https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/11156164_10203007807870841_5192745030243951016_n.jpg?oh=b31b5f0be935607086ab59e8e76fb806&oe=57F01FDD",
+        image: "https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/11225436_10203432866617044_729904542407639638_n.jpg?oh=3b32be74a68498495535dc25c6cb2cc5&oe=57FAAB30",
+        type: "person",
+        numberOfCvs: 3,
+        rating: 4.9
+    },
+    {
+        id: 2,
+        firstName: "Aleksandar",
+        lastName: "Kuzmanoski",
+        email: "aleksandarkuzmanoski11@gmail.com",
+        cover: "https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/11156164_10203007807870841_5192745030243951016_n.jpg?oh=b31b5f0be935607086ab59e8e76fb806&oe=57F01FDD",
+        image: "https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/11225436_10203432866617044_729904542407639638_n.jpg?oh=3b32be74a68498495535dc25c6cb2cc5&oe=57FAAB30",
+        type: "person",
+        numberOfCvs: 3,
+        rating: 4.9
+    },
+    {
+        id: 2,
+        firstName: "Aleksandar",
+        lastName: "Kuzmanoski",
+        email: "aleksandarkuzmanoski11@gmail.com",
+        cover: "https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/11156164_10203007807870841_5192745030243951016_n.jpg?oh=b31b5f0be935607086ab59e8e76fb806&oe=57F01FDD",
+        image: "https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/11225436_10203432866617044_729904542407639638_n.jpg?oh=3b32be74a68498495535dc25c6cb2cc5&oe=57FAAB30",
+        type: "person",
+        numberOfCvs: 3,
+        rating: 4.9
     }
 ];

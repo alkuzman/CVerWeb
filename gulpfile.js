@@ -51,7 +51,7 @@ var CSS_APP = [
 var JS_LIB = [
     'app/bower_components/tether/dist/js/tether.js',
     'app/bower_components/angular/angular.js',
-/*  'app/bower_components/angular-route/angular-route.js',*/
+    /*  'app/bower_components/angular-route/angular-route.js',*/
     'app/bower_components/angular-ui-router/release/angular-ui-router.min.js',
     'app/bower_components/angular-resource/angular-resource.min.js',
     'app/bower_components/angular-translate/angular-translate.min.js',
@@ -63,7 +63,16 @@ var JS_LIB = [
     'app/bower_components/angular-animate/angular-animate.js',
     'app/bower_components/angular-material/angular-material.js',
     'app/bower_components/angular-messages/angular-messages.js',
-    'app/bower_components/angular-material-icons/angular-material-icons.js'
+    'app/bower_components/angular-material-icons/angular-material-icons.js',
+    'app/bower_components/ev-emitter/ev-emitter.js',
+    'app/bower_components/desandro-matches-selector/matches-selector.js',
+    'app/bower_components/fizzy-ui-utils/utils.js',
+    'app/bower_components/get-size/get-size.js',
+    'app/bower_components/outlayer/item.js',
+    'app/bower_components/outlayer/outlayer.js',
+    'app/bower_components/masonry/masonry.js',
+    'app/bower_components/imagesloaded/imagesloaded.js'
+
     /*'app/bower_components/bootstrap-material-design/dist/js/material.min.js',
     'app/bower_components/bootstrap-material-design/dist/js/ripples.min.js',*/
     /*'app/components/version/version.js',

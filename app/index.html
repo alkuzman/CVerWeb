@@ -22,23 +22,23 @@
 
 </head>
 <body layout="row">
-        <md-sidenav
-                class="md-sidenav-left"
-                md-component-id="left"
-                md-disable-backdrop
-                md-whiteframe="4" ui-view="sidebar"></md-sidenav>
-        <div layout="column" class="relative" layout-fill role="main">
-            <div ui-view="navbar"></div>
-            <md-content flex md-scroll-y layout-fill layout="column" class="main" ui-view="main"></md-content>
-        </div>
-        <md-sidenav
-                class="md-sidenav-right"
-                md-whiteframe="4"
-                layout="column"
-                md-disable-backdrop
-                md-component-id="right"
-                ui-view="container">
-        </md-sidenav>
+<md-sidenav
+        class="md-sidenav-left"
+        md-component-id="left"
+        md-disable-backdrop
+        md-whiteframe="4" ui-view="sidebar"></md-sidenav>
+<div layout="column" class="relative" layout-fill role="main">
+    <div ui-view="navbar"></div>
+    <md-content flex layout-fill layout="column" class="main" ui-view="main"></md-content>
+</div>
+<md-sidenav
+        class="md-sidenav-right"
+        md-whiteframe="4"
+        layout="column"
+        md-disable-backdrop
+        md-component-id="right"
+        ui-view="container">
+</md-sidenav>
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
 -->
