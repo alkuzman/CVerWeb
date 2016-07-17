@@ -21,7 +21,7 @@ App.config(['$mdThemingProvider', function($mdThemingProvider) {
             'default': '500',
             'hue-1': '50'
         })
-        .accentPalette('grey');
+        .accentPalette('pink');
     $mdThemingProvider.theme('secondary')
         .primaryPalette('cyan')
         .accentPalette('grey');
