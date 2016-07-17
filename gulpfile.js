@@ -71,7 +71,9 @@ var JS_LIB = [
     'app/bower_components/outlayer/item.js',
     'app/bower_components/outlayer/outlayer.js',
     'app/bower_components/masonry/masonry.js',
-    'app/bower_components/imagesloaded/imagesloaded.js'
+    'app/bower_components/imagesloaded/imagesloaded.js',
+    'app/bower_components/jquery-ui/jquery-ui.js',
+    'app/bower_components/angular-dragdrop/src/angular-dragdrop.js'
 
     /*'app/bower_components/bootstrap-material-design/dist/js/material.min.js',
     'app/bower_components/bootstrap-material-design/dist/js/ripples.min.js',*/
