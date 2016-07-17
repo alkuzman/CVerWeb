@@ -33,7 +33,8 @@ var CSS_LIB = [
     'app/bower_components/tether/dist/css/tether-theme-arrows.css',
     'app/bower_components/bootstrap/dist/css/bootstrap.min.css',
     'app/bower_components/angular-material/angular-material.css',
-    'app/bower_components/angular-material-icons/angular-material-icons.css'
+    'app/bower_components/angular-material-icons/angular-material-icons.css',
+    'app/bower_components/angular-loading-bar/src/loading-bar.js',
     //'app/bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
     /*'app/bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css',
     'app/bower_components/bootstrap-material-design/dist/css/ripples.min.css',*/
@@ -50,6 +51,7 @@ var CSS_APP = [
 
 var JS_LIB = [
     'app/bower_components/tether/dist/js/tether.js',
+    'app/bower_components/jquery/dist/jquery.min.js',
     'app/bower_components/angular/angular.js',
     /*  'app/bower_components/angular-route/angular-route.js',*/
     'app/bower_components/angular-ui-router/release/angular-ui-router.min.js',
@@ -57,7 +59,7 @@ var JS_LIB = [
     'app/bower_components/angular-translate/angular-translate.min.js',
     'app/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js',
     'app/bower_components/angular-sanitize/angular-sanitize.min.js',
-    'app/bower_components/jquery/dist/jquery.min.js',
+    'app/bower_components/angular-loading-bar/src/loading-bar.js',
     'app/bower_components/bootstrap/dist/js/bootstrap.min.js',
     'app/bower_components/angular-aria/angular-aria.js',
     'app/bower_components/angular-animate/angular-animate.js',
