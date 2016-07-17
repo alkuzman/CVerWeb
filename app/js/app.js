@@ -7,4 +7,5 @@ var App = angular.module('cver', [
     'ngMessages',
     'ngMdIcons',
     'material.svgAssetsCache',
-    'ngDragDrop']);
+    'ngDragDrop',
+    'angular-loading-bar']);

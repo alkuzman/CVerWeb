@@ -1,5 +1,4 @@
 App.controller('AuthController', ["$state", "$rootScope", function ($state, $rootScope) {
-    this.me = $rootScope.me;
 
     this.current = defaultUser;
 
@@ -34,9 +33,9 @@ App.controller('AuthController', ["$state", "$rootScope", function ($state, $roo
 
     this.login = function () {
         if (this.current.password === this.current.truePassword) {
-            this.me = this.current;
-            $rootScope.me = this.me;
-            $state.go("results");
+            $rootScope.auth.me = this.current;
+            this.current = undefined;
+            $state.go("main.results");
         }
         else {
             this.current.password = "";
@@ -52,10 +51,8 @@ App.controller('AuthController', ["$state", "$rootScope", function ($state, $roo
     }
 
     this.logout = function() {
-        this.me.password = "";
-        $rootScope.me = undefined;
-        this.me = undefined;
-        $state.go("home");
+        $rootScope.auth.me = undefined;
+        $state.go("main.home");
     }
 }]);
 

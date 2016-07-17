@@ -1,12 +1,12 @@
 <md-toolbar md-whiteframe="2" ng-hide="mainNavCtrl.showSearch">
-    <div class="md-toolbar-tools" ng-controller="AuthController as authCtrl">
-        <md-button ng-click="toggleLeft()" aria-label="Menu" class="md-icon-button" ng-show="authCtrl.me">
+    <div class="md-toolbar-tools">
+        <md-button ng-click="toggleLeft()" aria-label="Menu" class="md-icon-button" ng-show="auth.me">
             <md-tooltip md-direction="rigth" style="font-size: 12pt;">
                 {{ "actions.open" | translate }} {{ "other.navigational_menu" | translate | lowercase }}
             </md-tooltip>
             <ng-md-icon icon="menu"></ng-md-icon>
         </md-button>
-        <md-button ui-sref="home" aria-label="Home" class="btn-small" style="width: 85px !important;">
+        <md-button ui-sref="main.home" aria-label="Home" class="btn-small" style="width: 85px !important;">
             <md-tooltip md-direction="right" style="font-size: 12pt;">
                 {{ "other.homepage" | translate }}
             </md-tooltip>
@@ -19,13 +19,13 @@
             </md-tooltip>
             <ng-md-icon icon="search"></ng-md-icon>
         </md-button>
-        <md-button aria-label="Open Settings" ng-click="toggleRight()" class="md-icon-button" ng-show="authCtrl.me">
+        <md-button aria-label="Open Settings" ng-click="toggleRight()" class="md-icon-button" ng-show="auth.me">
             <md-tooltip md-direction="left" style="font-size: 12pt;">
                 {{ "actions.open" | translate }} {{ "cver.container" | translate | lowercase }}
             </md-tooltip>
             <ng-md-icon icon="more_vert"></ng-md-icon>
         </md-button>
-        <md-button ui-sref="auth" aria-label="Open Settings" class="md-icon-button" ng-hide="authCtrl.me">
+        <md-button ui-sref="auth" aria-label="Open Settings" class="md-icon-button" ng-hide="auth.me">
             <md-tooltip md-direction="left" style="font-size: 12pt;">
                 {{ "actions.login" | translate }}
             </md-tooltip>
