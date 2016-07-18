@@ -5,12 +5,9 @@
 App.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
 
-    $stateProvider.state('home', {
-        url: '/',
+    $stateProvider.state('main', {
+        abstract: true,
         views: {
-            main: {
-                templateUrl: "views/home.html"
-            },
             navbar: {
                 templateUrl: "views/navbar.html",
                 controller: "MainNavigationController",
@@ -22,67 +19,66 @@ App.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                 controllerAs: "tabCtrl"
             },
             sidebar: {
-                templateUrl: "views/sidebar.html",
-                controller: "AuthController",
-                controllerAs: "authCtrl"
+                templateUrl: "views/sidebar.html"
             }
         }
-    }).state("results", {
+    }).state('main.home', {
+        parent: "main",
+        url: '/',
+        views: {
+            "main@": {
+                templateUrl: "views/home.html"
+            }
+        }
+    }).state("main.results", {
+        parent: "main",
         url: '/results',
         views: {
-            main: {
+            "main@": {
                 templateUrl: "views/results/results.html",
                 controller: "ResultsController",
                 controllerAs: "resCtrl"
-            },
-            navbar: {
-                templateUrl: "views/navbar.html",
-                controller: "MainNavigationController",
-                controllerAs: "mainNavCtrl"
-            },
-            container: {
-                templateUrl: "views/container/container.html",
-                controller: "TabController",
-                controllerAs: "tabCtrl"
-            },
-            sidebar: {
-                templateUrl: "views/sidebar.html",
-                controller: "AuthController",
-                controllerAs: "authCtrl"
             }
         }
-    }).state("cv", {
-        url: '/cv',
+    }).state("main.resume", {
+        parent: "main",
+        url: '/resume',
         views: {
-            main: {
+            "main@": {
                 templateUrl: "views/cv/cv.html",
                 controller: "CvController"
-            },
-            navbar: {
-                templateUrl: "views/navbar.html",
-                controller: "MainNavigationController",
-                controllerAs: "mainNavCtrl"
-            },
-            container: {
-                templateUrl: "views/container/container.html",
-                controller: "TabController",
-                controllerAs: "tabCtrl"
-            },
-            sidebar: {
-                templateUrl: "views/sidebar.html",
-                controller: "AuthController",
-                controllerAs: "authCtrl"
             }
         }
+    }).state("main.resume.preview", {
+        url: '/resume/:id'
     }).state("auth", {
-        url: '/login',
+        url: '/auth',
         views: {
             main: {
                 templateUrl: "views/auth/auth.html",
                 controller: "AuthController",
                 controllerAs: "authCtrl"
+            },
+            "form@auth": {
+                templateUrl: "views/auth/forms/getUserForm.html"
             }
         }
-    })
+    }).state("auth.login", {
+        url: '/login',
+        parent: "auth",
+        views: {
+            "form@auth": {
+                templateUrl: "views/auth/forms/getLoginForm.html"
+            }
+        }
+    }).state("auth.register", {
+        url: '/register',
+        parent: "auth",
+        views: {
+            "form@auth": {
+                templateUrl: "views/auth/forms/registerForm.html"
+            }
+        }
+    });
 }]);
 

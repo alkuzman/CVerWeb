@@ -1,8 +1,14 @@
 {
   "cver": {
-    "create_your_resume": "CREATE YOUR RESUME"
+    "create_your_resume": "CREATE YOUR RESUME",
+    "container": "Container"
   },
   "actions": {
+    "open": "Open",
+    "save": "Save",
+    "see": "See",
+    "download": "Download",
+    "share": "Share",
     "login": "Login",
     "search": "Search",
     "register": "Register",
@@ -13,9 +19,15 @@
     "type_your_last_name": "Type your Last Name",
     "next": "Next",
     "stay_signed_in": "Remember me",
-    "forgot_password": "Forgot password"
+    "forgot_password": "Forgot password",
+    "add": "Add",
+    "invite": "Invite",
+    "like": "Like",
+    "follow": "Follow"
   },
   "other": {
+    "home": "Home",
+    "homepage": "Homepage",
     "or": "or",
     "help": "Help",
     "about": "About",
@@ -42,10 +54,28 @@
     "skill": "Skill",
     "all": "All",
     "cv": "Resume",
+    "cvs": "Resumes",
     "educational": "Educational",
     "job": "Job",
     "chronogogical": "Chronogogical",
     "functional": "Functional",
-    "my": "My"
+    "educational_sing": "Educational",
+    "job_sing": "Job",
+    "chronogogical_sing": "Chronogogical",
+    "functional_sin": "Functional",
+    "my": "My",
+    "call": "Call",
+    "certificate": "Certificate",
+    "certificates": "Certificates",
+    "projects": "Projects","certificates": "Certificates",
+    "projects": "Projects",
+    "navigational_menu": "Navigational menu",
+    "to": "To",
+    "options": "Options",
+    "number_of": "Number of",
+    "rating": "Rating",
+    "views": "Views",
+    "likes": "Likes",
+    "more": "More"
   }
 }

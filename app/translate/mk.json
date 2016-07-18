@@ -1,8 +1,14 @@
 {
   "cver": {
-    "create_your_resume": "Креирај го твоето CV"
+    "create_your_resume": "Креирај го твоето CV",
+    "container": "Контејнер"
   },
   "actions": {
+    "open": "Отвори",
+    "save": "Зачувај",
+    "see": "Погледни",
+    "download": "Симни",
+    "share": "Сподели",
     "login": "Најави се",
     "search": "Пребарај",
     "register": "Регистрирај се",
@@ -13,9 +19,15 @@
     "type_your_last_name": "Внеси го твоето презиме",
     "next": "Понатаму",
     "stay_signed_in": "Запомни ме",
-    "forgot_password": "Заборавена лозинка"
+    "forgot_password": "Заборавена лозинка",
+    "add": "Додади",
+    "invite": "Повикај",
+    "like": "Додади во листа на омилени",
+    "follow": "Следи"
   },
   "other": {
+    "home": "Дома",
+    "homepage": "Почетна страница",
     "or": "или",
     "help": "Помош",
     "about": "Информации за",
@@ -38,7 +50,10 @@
     "template": "Шаблон",
     "sync": "Синхронизација",
     "firstName": "Име",
+    "certificates": "Сертификати",
+    "projects": "Проекти",
     "cv": "CV",
+    "cvs": "CV-a",
     "lastName": "Презиме",
     "skill": "Вештина",
     "all": "Сите",
@@ -46,6 +61,20 @@
     "job": "Работни",
     "chronogogical": "Хронолошки",
     "functional": "Функционални",
-    "my": "Мои"
+    "educational_sing": "Образовно",
+    "job_sing": "Работно",
+    "chronogogical_sing": "Хронолошко",
+    "functional_sin": "Функционално",
+    "my": "Мои",
+    "call": "Конкурс",
+    "certificate": "Сертификат",
+    "navigational_menu": "Навигациско мени",
+    "to": "На",
+    "options": "Опции",
+    "number_of": "Број на",
+    "rating": "Рејтинг",
+    "views": "Прегледи",
+    "likes": "Лајкови",
+    "more": "Повеќе"
   }
 }
