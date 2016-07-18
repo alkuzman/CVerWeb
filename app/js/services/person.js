@@ -7,6 +7,16 @@ App.factory("Person", ["$state", "$resource", function ($state, $resource) {
             url: "core/users?email=:email",
             method: "GET",
             isArray: false
+        },
+        register: {
+            url: "core/register",
+            method: "POST",
+            isArray: false
+        },
+        login: {
+            url: "core/doLogin?username=:email&password=:password",
+            method: "POST",
+            isArray: false
         }
     });
 }]);

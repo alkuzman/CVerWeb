@@ -1,10 +1,10 @@
 <form id="loginForm" name="loginForm" ng-submit="loginForm.$valid && authCtrl.login()">
     <md-input-container flex="none" class="md-icon-float md-block">
         <!-- Use floating label instead of placeholder -->
-        <label>{{ 'actions.type_your_email' | translate }}</label>
+        <label>{{ 'actions.type_your_password' | translate }}</label>
         <md-icon md-font-set="material-icons">lock</md-icon>
         <input type="password" id="passwordLogin" name="password"
-               ng-model="authCtrl.current.password" required>
+               ng-model="authCtrl.current.user.password" required>
     </md-input-container>
     <md-button type="submit" class="md-raised md-primary full-width">{{ 'actions.login'
         | translate }}
