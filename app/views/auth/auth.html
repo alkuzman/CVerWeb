@@ -16,109 +16,53 @@
                 <div class="card-block">
                     <div style="height: 35px;">
                         <md-button class="md-icon-button md-primary" aria-label="Back"
-                                   ng-hide="authCtrl.checkStatus(authCtrl.getUserStatus)"
-                                   ng-click="authCtrl.statusBack()" class="pull-xs-left teal-text">
+                                   ng-hide="authCtrl.isGetUserForm();"
+                                   ng-click="authCtrl.backToGetUserForm()" class="pull-xs-left teal-text">
                             <ng-md-icon icon="arrow_back"></ng-md-icon>
                         </md-button>
                     </div>
                     <div class="text-xs-center">
-                        <img ng-src="/img/user.jpg" class="img-circle" ng-hide="authCtrl.current.image" width="150"
+                        <img ng-src="/img/user.jpg" class="img-circle" ng-hide="authCtrl.current.user.image" width="150"
                              height="150"/>
-                        <img ng-src="{{authCtrl.current.image}}" class="img-circle"
-                             ng-show="authCtrl.current.image" width="150" height="150"/>
+                        <img ng-src="{{authCtrl.current.user.image}}" class="img-circle"
+                             ng-show="authCtrl.current.user.image" width="150" height="150"/>
                     </div>
                     <div style="margin-top: 10px;">
                         <div class="text-xs-center">
-                            <strong>{{ authCtrl.current.firstName }} {{ authCtrl.current.lastName }}</strong>
+                            <strong>{{ authCtrl.current.user.firstName }} {{ authCtrl.current.user.lastName }}</strong>
                         </div>
                         <div class="text-xs-center">
-                            <span>{{authCtrl.current.email}}</span>
+                            <span>{{authCtrl.current.user.email}}</span>
                         </div>
                     </div>
                 </div>
-                <div class="card-block" style="padding-right: 35px;">
-                    <form id="getUserForm" name="getUserForm"
-                          ng-submit="getUserForm.$valid && authCtrl.getUser()" ng-show="authCtrl.checkStatus(authCtrl.getUserStatus);">
-                        <md-input-container flex="none" class="md-icon-float md-block">
-                            <!-- Use floating label instead of placeholder -->
-                            <label>{{ 'actions.type_your_email' | translate }}</label>
-                            <md-icon md-font-set="material-icons">email</md-icon>
-                            <input type="email" id="emailLogin" name="username"
-                                   ng-model="authCtrl.current.email" required>
-                        </md-input-container>
-                        <md-button type="submit" flex="none" class="md-raised md-primary full-width">{{ 'actions.next'
-                            | translate }}
-                        </md-button>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div class="pull-xs-right">
-                                    <md-button ui-sref="authHelp" class="md-primary">{{ 'other.help' | translate
-                                        }}?
-                                    </md-button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    <form id="loginForm" name="loginForm" ng-submit="loginForm.$valid && authCtrl.login()"
-                          ng-show="authCtrl.checkStatus(authCtrl.loginStatus);">
-                        <md-input-container flex="none" class="md-icon-float md-block">
-                            <!-- Use floating label instead of placeholder -->
-                            <label>{{ 'actions.type_your_password' | translate }}</label>
-                            <md-icon md-font-set="material-icons">lock</md-icon>
-                            <input type="password" id="passwordLogin" name="password"
-                                   ng-model="authCtrl.current.password" required>
-                        </md-input-container>
-                        <md-button type="submit" class="md-raised md-primary full-width">{{ 'actions.login'
-                            | translate }}
-                        </md-button>
-                        <div>
-                            <div class="pull-sm-left text-xs-center">
-                                <md-checkbox class="md-primary" aria-label="Stay signed in" style="margin: 10px 25px;">
-                                    {{'actions.stay_signed_in' | translate}}
-                                </md-checkbox>
-                            </div>
-                            <div class="pull-sm-right text-xs-center">
-                                <md-button ui-sref="loginPasswordHelp" class="md-primary">{{'actions.forgot_password' |
-                                    translate}}?
-                                </md-button>
-                            </div>
-                        </div>
-                    </form>
-                    <form id="registerForm" name="registerForm"
-                          ng-submit="registerForm.$valid && authCtrl.register()"
-                          ng-show="authCtrl.checkStatus(authCtrl.registerStatus);">
-                        <md-input-container class="md-icon-float md-block">
-                            <!-- Use floating label instead of placeholder -->
-                            <label>{{ 'actions.type_your_first_name' | translate }}</label>
-                            <md-icon md-font-set="material-icons">person</md-icon>
-                            <input type="text" id="firstNameRegister" name="firstName"
-                                   ng-model="authCtrl.current.firstName" required>
-                        </md-input-container>
-                        <md-input-container class="md-icon-float md-block">
-                            <!-- Use floating label instead of placeholder -->
-                            <label>{{ 'actions.type_your_last_name' | translate }}</label>
-                            <md-icon md-font-set="material-icons">person</md-icon>
-                            <input type="text" id="lastNameRegister" name="lastName"
-                                   ng-model="authCtrl.current.lastName" required>
-                        </md-input-container>
-                        <md-input-container class="md-icon-float md-block">
-                            <!-- Use floating label instead of placeholder -->
-                            <label>{{ 'actions.type_your_password' | translate }}</label>
-                            <md-icon md-font-set="material-icons">lock</md-icon>
-                            <input type="password" id="passwordRegister" name="password"
-                                   ng-model="authCtrl.current.password" required>
-                        </md-input-container>
-                        <md-input-container class="md-icon-float md-block">
-                            <!-- Use floating label instead of placeholder -->
-                            <label> {{ 'actions.retype_your_password' | translate }}</label>
-                            <md-icon md-font-set="material-icons">lock</md-icon>
-                            <input type="password" id="passwordConfirmRegister" name="password"
-                                   ng-model="authCtrl.current.confirmPassword"
-                                    required >
-                        </md-input-container>
-                        <md-button type="submit" class="md-raised md-primary full-width">{{ 'actions.register' | translate }}
-                        </md-button>
-                    </form>
+                <div class="card-block" style="padding-right: 35px;" ui-view="form">
+                </div>
+            </div>
+            <div flex="none" layout="row" layout-wrap style="margin-right: 15px;">
+                <div flex-xs="100" flex="50" style="padding-left: 5px; padding-right: 5px;">
+                    <md-button md-theme="facebook" class="md-raised md-primary full-width" aria-label="Back"
+                               ng-click="authCtrl.loginWithFacebook();" class="pull-xs-left teal-text">
+                        <i class="fa fa-facebook"> </i> Facebook
+                    </md-button>
+                </div>
+                <div flex-xs="100" flex="50" style="padding-left: 5px; padding-right: 5px;">
+                    <md-button md-theme="google" class="md-raised md-primary full-width" aria-label="Back"
+                               ng-click="authCtrl.loginWithGoogle();" class="pull-xs-left teal-text">
+                        <i class="fa fa-google-plus"> </i> Google +
+                    </md-button>
+                </div>
+                <div flex-xs="100" flex="50" style="padding-left: 5px; padding-right: 5px;">
+                    <md-button md-theme="linkedin" class="md-raised md-primary full-width" aria-label="Back"
+                               ng-click="authCtrl.loginWithLinkedIn();" class="pull-xs-left teal-text">
+                        <i class="fa fa-linkedin"> </i> LinkedIn
+                    </md-button>
+                </div>
+                <div flex-xs="100" flex="50" style="padding-left: 5px; padding-right: 5px;">
+                    <md-button md-theme="pinterest" class="md-raised md-primary full-width" aria-label="Back"
+                               ng-click="authCtrl.loginWithPinterest();" class="pull-xs-left teal-text">
+                        <i class="fa fa-pinterest-p"> </i> Pinterest
+                    </md-button>
                 </div>
             </div>
         </div>
