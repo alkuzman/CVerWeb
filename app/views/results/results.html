@@ -1,6 +1,40 @@
 <div flex layout="column">
+    <md-fab-speed-dial class="md-fab md-accent md-fling fixed-bottom-right" md-direction="up" md-open="true">
+        <md-fab-trigger>
+            <md-button aria-label="add" class="md-fab md-accent md-big">
+                <md-tooltip md-direction="left" style="font-size: 12pt;">
+                    {{ "actions.add" | translate }}
+                </md-tooltip>
+                <ng-md-icon icon="add"></ng-md-icon>
+            </md-button>
+        </md-fab-trigger>
+        <md-fab-actions>
+            <md-button aria-label="Certificat" ui-sref="certificate" class="md-fab md-raised md-mini">
+                <md-tooltip md-direction="left" style="font-size: 12pt;">
+                    {{ "other.certificate" | translate }}
+                </md-tooltip>
+                <ng-md-icon icon="card_membership" class="text-grey"></ng-md-icon>
+            </md-button>
+            <md-button aria-label="Call" ui-sref="call" class="md-fab md-raised md-mini">
+                <md-tooltip md-direction="left" style="font-size: 12pt;">
+                    {{ "other.call" | translate }}
+                </md-tooltip>
+                <ng-md-icon icon="contact_phone" class="text-grey"></ng-md-icon>
+            </md-button>
+            <md-button aria-label="Cv" ui-sref="cv" class="md-fab md-raised md-mini">
+                <md-tooltip md-direction="left" style="font-size: 12pt;">
+                    {{ "other.cv" | translate }}
+                </md-tooltip>
+                <ng-md-icon icon="receipt" class="text-grey"></ng-md-icon>
+            </md-button>
+        </md-fab-actions>
+    </md-fab-speed-dial>
     <div cver-category-selector="resCtrl.categoryData"></div>
-    <div flex class="card-columns">
-        <div cver-result-card="result" ng-repeat="result in results"></div>
+    <div>
+        <div class="grid" masonry='{ "itemSelector": ".grid-item", "columnWidth": 0 }'>
+            <div class="grid-item" masonry-tile ng-repeat="result in results">
+                <div cver-result-card="result"></div>
+            </div>
+        </div>
     </div>
 </div>

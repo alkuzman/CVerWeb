@@ -21,13 +21,22 @@ App.config(['$mdThemingProvider', function($mdThemingProvider) {
             'default': '500',
             'hue-1': '50'
         })
-        .accentPalette('grey');
+        .accentPalette('pink');
+
     $mdThemingProvider.theme('secondary')
         .primaryPalette('cyan')
         .accentPalette('grey');
-    $mdThemingProvider.theme('input', 'default')
-        .primaryPalette('grey')
 
+    $mdThemingProvider.theme('input', 'default')
+        .primaryPalette('grey');
+
+    $mdThemingProvider.theme('facebook').primaryPalette('indigo')
+
+    $mdThemingProvider.theme('google').primaryPalette('deep-orange');
+
+    $mdThemingProvider.theme('linkedin').primaryPalette('blue');
+
+    $mdThemingProvider.theme('pinterest').primaryPalette('red');
 }]);
 
 App.config(['$mdIconProvider', function($mdIconProvider) {
@@ -41,3 +50,7 @@ App.config(['$translateProvider', function ($translateProvider) {
     });
     $translateProvider.preferredLanguage('mk');
 }]);
+
+App.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
+    cfpLoadingBarProvider.includeBar = true;
+}])

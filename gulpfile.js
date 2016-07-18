@@ -33,7 +33,9 @@ var CSS_LIB = [
     'app/bower_components/tether/dist/css/tether-theme-arrows.css',
     'app/bower_components/bootstrap/dist/css/bootstrap.min.css',
     'app/bower_components/angular-material/angular-material.css',
-    'app/bower_components/angular-material-icons/angular-material-icons.css'
+    'app/bower_components/angular-material-icons/angular-material-icons.css',
+    'app/bower_components/angular-loading-bar/src/loading-bar.css',
+    'app/bower_components/font-awesome/css/font-awesome.css'
     //'app/bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
     /*'app/bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css',
     'app/bower_components/bootstrap-material-design/dist/css/ripples.min.css',*/
@@ -50,20 +52,32 @@ var CSS_APP = [
 
 var JS_LIB = [
     'app/bower_components/tether/dist/js/tether.js',
+    'app/bower_components/jquery/dist/jquery.min.js',
     'app/bower_components/angular/angular.js',
-/*  'app/bower_components/angular-route/angular-route.js',*/
+    /*  'app/bower_components/angular-route/angular-route.js',*/
     'app/bower_components/angular-ui-router/release/angular-ui-router.min.js',
     'app/bower_components/angular-resource/angular-resource.min.js',
     'app/bower_components/angular-translate/angular-translate.min.js',
     'app/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js',
     'app/bower_components/angular-sanitize/angular-sanitize.min.js',
-    'app/bower_components/jquery/dist/jquery.min.js',
+    'app/bower_components/angular-loading-bar/src/loading-bar.js',
     'app/bower_components/bootstrap/dist/js/bootstrap.min.js',
     'app/bower_components/angular-aria/angular-aria.js',
     'app/bower_components/angular-animate/angular-animate.js',
     'app/bower_components/angular-material/angular-material.js',
     'app/bower_components/angular-messages/angular-messages.js',
-    'app/bower_components/angular-material-icons/angular-material-icons.js'
+    'app/bower_components/angular-material-icons/angular-material-icons.js',
+    'app/bower_components/ev-emitter/ev-emitter.js',
+    'app/bower_components/desandro-matches-selector/matches-selector.js',
+    'app/bower_components/fizzy-ui-utils/utils.js',
+    'app/bower_components/get-size/get-size.js',
+    'app/bower_components/outlayer/item.js',
+    'app/bower_components/outlayer/outlayer.js',
+    'app/bower_components/masonry/masonry.js',
+    'app/bower_components/imagesloaded/imagesloaded.js',
+    'app/bower_components/jquery-ui/jquery-ui.js',
+    'app/bower_components/angular-dragdrop/src/angular-dragdrop.js'
+
     /*'app/bower_components/bootstrap-material-design/dist/js/material.min.js',
     'app/bower_components/bootstrap-material-design/dist/js/ripples.min.js',*/
     /*'app/components/version/version.js',
