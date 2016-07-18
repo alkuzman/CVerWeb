@@ -1,0 +1,22 @@
+<form id="getUserForm" name="getUserForm"
+      ng-submit="getUserForm.$valid && authCtrl.getUser()">
+    <md-input-container flex="none" class="md-icon-float md-block">
+        <!-- Use floating label instead of placeholder -->
+        <label>{{ 'actions.type_your_email' | translate }}</label>
+        <md-icon md-font-set="material-icons">email</md-icon>
+        <input type="email" id="emailLogin" name="username"
+               ng-model="authCtrl.current.user.email" required>
+    </md-input-container>
+    <md-button type="submit" flex="none" class="md-raised md-primary full-width">{{ 'actions.next'
+        | translate }}
+    </md-button>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="pull-xs-right">
+                <md-button ui-sref="authHelp" class="md-primary">{{ 'other.help' | translate
+                    }}?
+                </md-button>
+            </div>
+        </div>
+    </div>
+</form>

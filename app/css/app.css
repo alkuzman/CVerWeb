@@ -587,3 +587,12 @@ md-content {
     }
 
 }
+
+#loading-bar .bar {
+    background: deeppink;
+}
+
+#loading-bar-spinner .spinner-icon {
+    border-top-color: deeppink;
+    border-left-color: deeppink;
+}

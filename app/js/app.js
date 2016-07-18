@@ -1,4 +1,6 @@
 var App = angular.module('cver', [
+    'angular-loading-bar',
+    'ngAnimate',
     'pascalprecht.translate',
     'ui.router',
     'ngResource',
@@ -7,5 +9,4 @@ var App = angular.module('cver', [
     'ngMessages',
     'ngMdIcons',
     'material.svgAssetsCache',
-    'ngDragDrop',
-    'angular-loading-bar']);
+    'ngDragDrop']);

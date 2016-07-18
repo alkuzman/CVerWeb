@@ -34,7 +34,8 @@ var CSS_LIB = [
     'app/bower_components/bootstrap/dist/css/bootstrap.min.css',
     'app/bower_components/angular-material/angular-material.css',
     'app/bower_components/angular-material-icons/angular-material-icons.css',
-    'app/bower_components/angular-loading-bar/src/loading-bar.js',
+    'app/bower_components/angular-loading-bar/src/loading-bar.css',
+    'app/bower_components/font-awesome/css/font-awesome.css'
     //'app/bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
     /*'app/bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css',
     'app/bower_components/bootstrap-material-design/dist/css/ripples.min.css',*/
