@@ -1,4 +1,4 @@
-App.directive('cverMasonry',["$timeout", function($timeout) {
+App.directive('masonry',["$timeout", function($timeout) {
     return {
         restrict: 'AC',
         link: function(scope, elem, attrs) {
@@ -9,7 +9,7 @@ App.directive('cverMasonry',["$timeout", function($timeout) {
                 columnWidth: '.grid-sizer',
                 containerStyle: { position: 'relative' },
                 gutter: 0
-            }, angular.fromJson(attrs.cverMasonry));
+            }, angular.fromJson(attrs.masonry));
 
             var masonry = scope.masonry = new Masonry(container, options);
 
@@ -46,12 +46,12 @@ App.directive('cverMasonry',["$timeout", function($timeout) {
             scope.update();
         }
     };
-}]).directive('cverMasonryTile', function() {
+}]).directive('masonryTile', function() {
     return {
         restrict: 'AC',
         link: function(scope, elem) {
             elem.css('visibility', 'hidden');
-            var master = elem.parent('*[cvrMasonry]:first').scope(),
+            var master = elem.parent('*[masonry]:first').scope(),
                 update = master.update,
                 removeBrick = master.removeBrick,
                 appendBricks = master.appendBricks;

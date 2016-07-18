@@ -1,8 +1,8 @@
-App.controller('AuthController', ["$state", "$rootScope", "Person", function ($state, $rootScope, Person) {
+App.controller('AuthController', ["$state", "$rootScope", "$scope", "Person", function ($state, $rootScope, $scope, Person) {
     var controller = this;
 
     this.current = {};
-
+    
     this.isGetUserForm = function () {
         return $state.is("auth");
     }
@@ -28,26 +28,29 @@ App.controller('AuthController', ["$state", "$rootScope", "Person", function ($s
 
     this.onUserNotFound = function () {
         $state.go(".register");
-        //controller.setStatus(controller.registerStatus);
     }
 
     this.login = function () {
-        if (this.current.user.password === this.current.user.truePassword) {
-            $rootScope.auth.me = this.current.user;
-            this.current.user = undefined;
-            $state.go("main.results");
-        }
-        else {
-            this.current.user.password = "";
-        }
+        this.current.user.$login({email: controller.current.user.email ,password: controller.current.user.password}, controller.onUserLoggedIn, function(resultError) {
+            console.log(resultError);
+        });
     };
 
+    this.onUserLoggedIn = function(resultSuccess) {
+        $rootScope.auth.me = controller.current.user;
+        $state.go("main.results");
+    }
+
     this.register = function () {
-        this.current.user.truePassword = this.current.password;
-        if (!this.current.user.image)
-            this.current.user.image = "/img/user.jpg";
-        users.push(this.current.user);
-        this.login();
+        Person.register({}, this.current.user ,controller.onUserRegistered, function(resultError) {
+            console.log(resultError );
+            console.log("ERROR");
+        });
+    }
+
+    this.onUserRegistered = function(user) {
+        controller.current.user = user;
+        $state.go("^.login");
     }
 
     this.logout = function () {
