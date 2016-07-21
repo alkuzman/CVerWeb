@@ -1,8 +1,8 @@
 <div flex layout="column">
     <md-fab-speed-dial class="md-fab md-accent md-fling fixed-bottom-right" md-direction="up" md-open="true">
         <md-fab-trigger>
-            <md-button aria-label="add" class="md-fab md-accent md-big">
-                <md-tooltip md-direction="left" style="font-size: 12pt;">
+            <md-button aria-label="add" class="md-fab md-accent">
+                <md-tooltip md-direction="left">
                     {{ "actions.add" | translate }}
                 </md-tooltip>
                 <ng-md-icon icon="add"></ng-md-icon>
@@ -10,19 +10,19 @@
         </md-fab-trigger>
         <md-fab-actions>
             <md-button aria-label="Certificat" ui-sref="certificate" class="md-fab md-raised md-mini">
-                <md-tooltip md-direction="left" style="font-size: 12pt;">
+                <md-tooltip md-direction="left">
                     {{ "other.certificate" | translate }}
                 </md-tooltip>
                 <ng-md-icon icon="card_membership" class="text-grey"></ng-md-icon>
             </md-button>
             <md-button aria-label="Call" ui-sref="call" class="md-fab md-raised md-mini">
-                <md-tooltip md-direction="left" style="font-size: 12pt;">
+                <md-tooltip md-direction="left">
                     {{ "other.call" | translate }}
                 </md-tooltip>
                 <ng-md-icon icon="contact_phone" class="text-grey"></ng-md-icon>
             </md-button>
-            <md-button aria-label="Cv" ui-sref="cv" class="md-fab md-raised md-mini">
-                <md-tooltip md-direction="left" style="font-size: 12pt;">
+            <md-button aria-label="Cv" ui-sref="^.resume" class="md-fab md-raised md-mini">
+                <md-tooltip md-direction="left">
                     {{ "other.cv" | translate }}
                 </md-tooltip>
                 <ng-md-icon icon="receipt" class="text-grey"></ng-md-icon>

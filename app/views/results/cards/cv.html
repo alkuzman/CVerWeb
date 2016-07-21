@@ -24,13 +24,13 @@
     </a>
     <md-card-actions layout="row" layout-align="start center">
         <md-button class="md-icon-button" aria-label="Like">
-            <md-tooltip style="font-size: 12pt;">
+            <md-tooltip>
                 {{"actions.like" | translate}}
             </md-tooltip>
             <ng-md-icon icon="favorite" class="text-grey"></ng-md-icon>
         </md-button>
         <md-button class="md-icon-button" aria-label="Invite">
-            <md-tooltip style="font-size: 12pt;">
+            <md-tooltip>
                 {{ "actions.invite" | translate }} {{ "other.to" | translate | lowercase}} {{"other.call" | translate | lowercase}}
             </md-tooltip>
             <ng-md-icon icon="contact_phone" class="text-grey"></ng-md-icon>
@@ -39,7 +39,7 @@
             <md-menu class="no-padding" ng-controller="ContextMenuController as cntxMenuCtrl">
                 <md-button aria-label="Open phone interactions menu" class="md-icon-button"
                            ng-click="cntxMenuCtrl.openMenu($mdOpenMenu, $event)">
-                    <md-tooltip style="font-size: 12pt;">
+                    <md-tooltip>
                         {{ "other.more" | translate}} {{"other.options" | translate | lowercase}}
                     </md-tooltip>
                     <ng-md-icon icon="more_vert" class="text-grey"></ng-md-icon>
@@ -82,21 +82,21 @@
     </md-card-actions>
     <md-card-footer layout="row" layout-align="space-between" style="background-color: #eee">
         <div>
-            <md-tooltip style="font-size: 12pt">
+            <md-tooltip>
                 {{ "other.number_of" | translate }} {{ "other.likes" | translate | lowercase }}
             </md-tooltip>
             <ng-md-icon icon="favorite_border" class="text-dark-red md-subhead"></ng-md-icon>
             <span class="text-dark-red md-subhead">{{result.numberOfLikes}}</span>
         </div>
         <div>
-            <md-tooltip style="font-size: 12pt">
+            <md-tooltip>
                 {{ "other.number_of" | translate }} {{ "other.views" | translate | lowercase }}
             </md-tooltip>
             <ng-md-icon icon="people_outline" class="md-subhead"></ng-md-icon>
             <span class="md-subhead">{{result.numberOfViews}}</span>
         </div>
         <div>
-            <md-tooltip style="font-size: 12pt">
+            <md-tooltip>
                 {{ "other.rating" | translate }}
             </md-tooltip>
             <ng-md-icon icon="star_border" class="text-gold md-subhead"></ng-md-icon>

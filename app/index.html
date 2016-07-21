@@ -29,21 +29,12 @@
         md-whiteframe="4" ui-view="sidebar"></md-sidenav>
 <div layout="column" class="relative" layout-fill role="main">
     <div ui-view="navbar"></div>
-    <md-content flex layout-fill layout="column" class="main" ui-view="main"></md-content>
+    <md-content flex layout="column" class="main" ui-view="main"></md-content>
 </div>
-<md-sidenav
-        class="md-sidenav-right"
-        md-whiteframe="4"
-        layout="column"
-        md-disable-backdrop
-        md-component-id="right"
-        ui-view="container">
-</md-sidenav>
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
 -->
 <script src="dist/lib.min.js"></script>
-<script src="http://ngmaterial.assets.s3.amazonaws.com/svg-assets-cache.js"></script>
 <script src="dist/src.min.js"></script>
 <script src="dist/templates.js"></script>
 </body>

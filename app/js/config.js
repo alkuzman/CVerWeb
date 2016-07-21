@@ -8,7 +8,7 @@ App.config(['$resourceProvider', function($resourceProvider){
 }]);
 
 App.config(['$mdThemingProvider', function($mdThemingProvider) {
-    var customTealMap = $mdThemingProvider.extendPalette('teal', {
+    var customTealMap = $mdThemingProvider.extendPalette('cyan', {
         'contrastDefaultColor': 'light',
         'contrastDarkColors': ['50'],
         '50': 'ffffff'

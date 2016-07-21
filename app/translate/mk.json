@@ -23,9 +23,12 @@
     "add": "Додади",
     "invite": "Повикај",
     "like": "Додади во листа на омилени",
-    "follow": "Следи"
+    "follow": "Следи",
+    "preview": "Преглед"
   },
   "other": {
+    "style": "Стил",
+    "layout": "Изглед",
     "home": "Дома",
     "homepage": "Почетна страница",
     "or": "или",
@@ -64,7 +67,7 @@
     "educational_sing": "Образовно",
     "job_sing": "Работно",
     "chronogogical_sing": "Хронолошко",
-    "functional_sin": "Функционално",
+    "functional_sing": "Функционално",
     "my": "Мои",
     "call": "Конкурс",
     "certificate": "Сертификат",

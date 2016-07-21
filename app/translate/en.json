@@ -23,9 +23,12 @@
     "add": "Add",
     "invite": "Invite",
     "like": "Like",
-    "follow": "Follow"
+    "follow": "Follow",
+    "preview": "Preview"
   },
   "other": {
+    "style": "Style",
+    "layout": "Layout",
     "home": "Home",
     "homepage": "Homepage",
     "or": "or",
@@ -62,7 +65,7 @@
     "educational_sing": "Educational",
     "job_sing": "Job",
     "chronogogical_sing": "Chronogogical",
-    "functional_sin": "Functional",
+    "functional_sing": "Functional",
     "my": "My",
     "call": "Call",
     "certificate": "Certificate",

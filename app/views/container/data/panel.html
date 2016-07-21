@@ -1,19 +1,24 @@
-<md-input-container flex="none" class="md-icon-float md-block">
-    <!-- Use floating label instead of placeholder -->
-    <label>{{ 'actions.search' | translate }} {{ 'other.data' | translate}}</label>
-    <md-icon md-font-set="material-icons">search</md-icon>
-    <input type="search">
-</md-input-container>
-<div flex="none">
-    <md-tabs md-dynamic-height>
-        <md-tab label='{{ "other.all" | translate }}'>
-        </md-tab>
-        <md-tab ng-repeat="type in dataCtrl.types" label='{{ "other." + type.type | translate }}'>
-        </md-tab>
-    </md-tabs>
-</div>
-<md-content flex>
-    <div cver-data-card="dataEntry" ng-repeat="dataEntry in dataCtrl.data">
-
+<div flex layout-xs="column" layout-gt-xs="row">
+    <div flex-xs="none" flex-sm="50" flex-md="40" flex-lg="35" flex-xl="30" class="md-padding">
+        <md-input-container class="md-icon-float md-block">
+            <!-- Use floating label instead of placeholder -->
+            <label>{{ 'actions.search' | translate }} {{ 'other.data' | translate}}</label>
+            <md-icon md-font-set="material-icons">search</md-icon>
+            <input type="search">
+        </md-input-container>
+        <md-tabs md-dynamic-height>
+            <md-tab label='{{ "other.all" | translate }}'>
+            </md-tab>
+            <md-tab ng-repeat="type in dataCtrl.types" label='{{ "other." + type.type | translate }}'>
+            </md-tab>
+        </md-tabs>
     </div>
-</md-content>
+    <div flex-xs flex-sm="50" flex-md="60" flex-lg="65"
+         flex-xl="70" layout="column">
+        <md-content layout="column" flex class="md-padding">
+            <div flex="none" cver-data-card="dataEntry" ng-repeat="dataEntry in dataCtrl.data">
+
+            </div>
+        </md-content>
+    </div>
+</div>

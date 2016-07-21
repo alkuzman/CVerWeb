@@ -1,0 +1,91 @@
+<div class="cver-text-editor" md-whiteframe="2">
+    <div class="cver-text-editor-toolbar">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h3>
+                    {{ "other." + cv.template.type + "_sing" | lowercase | translate }} {{ "other.cv" | translate}}
+                </h3>
+                <span flex></span>
+                <md-button aria-label="Search" class="md-icon-button md-accent">
+                    <md-tooltip>
+                        {{ "actions.save" | translate }}
+                    </md-tooltip>
+                    <ng-md-icon icon="save"></ng-md-icon>
+                </md-button>
+                <md-button aria-label="Open Settings" class="md-icon-button md-accent">
+                    <md-tooltip>
+                        {{ "actions.download" | translate }}
+                    </md-tooltip>
+                    <ng-md-icon icon="file_download"></ng-md-icon>
+                </md-button>
+                <md-button aria-label="Open Settings" class="md-icon-button md-accent">
+                    <md-tooltip>
+                        {{ "actions.preview" | translate }}
+                    </md-tooltip>
+                    <ng-md-icon icon="aspect_ratio"></ng-md-icon>
+                </md-button>
+            </div>
+            <md-tabs md-swipe-content md-stretch-tabs md-dynamic-height md-selected="data.selectedIndex">
+                <md-tab aria-controls="tab1-style">
+                    <md-tab-label>{{ "other.style" | translate}}</md-tab-label>
+                </md-tab>
+                <md-tab aria-controls="tab2-layout">
+                    <md-tab-label>{{ "other.layout" | translate}}</md-tab-label>
+                </md-tab>
+                <md-tab aria-controls="tab2-layout">
+                    <md-tab-label><strong>{{ "other.templates" | translate}}</strong></md-tab-label>
+                </md-tab>
+                <md-tab aria-controls="tab2-layout">
+                    <md-tab-label><strong>{{ "other.data" | translate}}</strong></md-tab-label>
+                </md-tab>
+                <md-tab aria-controls="tab2-layout">
+                    <md-tab-label><strong>{{ "other.sync" | translate}}</strong></md-tab-label>
+                </md-tab>
+            </md-tabs>
+        </md-toolbar>
+        <div>
+            <ng-switch on="data.selectedIndex">
+                <div role="tabpanel" ng-switch-when="0">
+                    <md-button class="md-icon-button">
+                        <ng-md-icon icon="format_bold"></ng-md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button">
+                        <ng-md-icon icon="format_italic"></ng-md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button">
+                        <ng-md-icon icon="format_underline"></ng-md-icon>
+                    </md-button>
+                </div>
+                <div ng-switch-when="1" class="">
+                    <md-button class="md-icon-button">
+                        <ng-md-icon icon="format_italic"></ng-md-icon>
+                    </md-button>
+                </div>
+                <div role="tabpanel" ng-switch-when="2" layout="column" class="tab-content">
+                    <cver-templates-container flex layout="column"></cver-templates-container>
+                </div>
+                <div role="tabpanel" ng-switch-when="3" layout="column" class="tab-content">
+                    <cver-data-container flex layout="column"></cver-data-container>
+                </div>
+                <div role="tabpanel" ng-switch-when="4">
+                    <cver-sync-container layout="column"></cver-sync-container>
+                </div>
+            </ng-switch>
+        </div>
+    </div>
+    <div class="cver-text-editor-content">
+        <md-content layout="column" class="cver-text-editor-editable" flex>
+            <div flex contenteditable="true">
+                <cver-txt-editor>
+                </cver-txt-editor>
+            </div>
+        </md-content>
+    </div>
+    <div flex="none" class="cver-text-editor-footer" layout="row" layout-align="space-between none">
+        <div></div>
+        <div>
+            <span class="md-caption text-grey">Copyright 2016, CVer</span>
+            <ng-md-icon class="md-caption text-grey no-margin no-padding" size="20" icon="copyright"></ng-md-icon>
+        </div>
+    </div>
+</div>

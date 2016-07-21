@@ -1,16 +1,16 @@
-<div class="homepage" layout="column" flex>
+<md-content class="homepage" layout="column" flex layout-wrap>
+    <div flex="5">
+    </div>
     <div layout="row" flex>
         <div layout="column" flex-xs="90" flex-offset-xs="5" flex-sm="70" flex-offset-sm="15" flex-md="50"
              flex-offset-md="25" flex-lg="30" flex-offset-lg="35" flex-xl="30" flex-offset-xl="35">
-            <div flex="10">
-            </div>
             <div flex="none" class="text-xs-center">
                 <a href="/">
                     <img ng-src="/img/CVerCleanLogo.png" width="150" height="70"/>
                 </a>
-                <h2 class="text-white" style="margin-top: 30px;">
+                <h3 class="text-white" style="margin-top: 30px;">
                     {{ 'actions.login' | translate }} {{ 'other.or' | translate }} {{ 'actions.register' | translate }}
-                </h2>
+                </h3>
             </div>
             <div flex="none" class="card">
                 <div class="card-block">
@@ -22,17 +22,17 @@
                         </md-button>
                     </div>
                     <div class="text-xs-center">
-                        <img ng-src="/img/user.jpg" class="img-circle" ng-hide="authCtrl.current.user.image" width="150"
-                             height="150"/>
+                        <img ng-src="/img/user.jpg" class="img-circle" ng-hide="authCtrl.current.user.image" width="120"
+                             height="120"/>
                         <img ng-src="{{authCtrl.current.user.image}}" class="img-circle"
-                             ng-show="authCtrl.current.user.image" width="150" height="150"/>
+                             ng-show="authCtrl.current.user.image" width="120" height="120"/>
                     </div>
                     <div style="margin-top: 10px;">
                         <div class="text-xs-center">
-                            <strong>{{ authCtrl.current.user.firstName }} {{ authCtrl.current.user.lastName }}</strong>
+                            <strong class="md-caption">{{ authCtrl.current.user.firstName }} {{ authCtrl.current.user.lastName }}</strong>
                         </div>
                         <div class="text-xs-center">
-                            <span>{{authCtrl.current.user.email}}</span>
+                            <span class="md-caption">{{authCtrl.current.user.email}}</span>
                         </div>
                     </div>
                 </div>
@@ -67,4 +67,4 @@
             </div>
         </div>
     </div>
-</div>
+</md-content>

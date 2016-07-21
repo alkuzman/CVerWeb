@@ -6,7 +6,7 @@
     <div layout="row">
         <md-card-actions flex="25" layout="row" layout-align="start start">
             <md-button class="md-icon-button" aria-label="Invite">
-                <md-tooltip style="font-size: 12pt;">
+                <md-tooltip>
                     {{ "actions.invite" | translate }} {{ "other.to" | translate | lowercase}} {{"other.call" |
                     translate | lowercase}}
                 </md-tooltip>
@@ -23,7 +23,7 @@
             <md-menu class="no-padding" ng-controller="ContextMenuController as cntxMenuCtrl">
                 <md-button aria-label="Open phone interactions menu" class="md-icon-button"
                            ng-click="cntxMenuCtrl.openMenu($mdOpenMenu, $event)">
-                    <md-tooltip style="font-size: 12pt;">
+                    <md-tooltip>
                         {{ "other.more" | translate}} {{"other.options" | translate | lowercase}}
                     </md-tooltip>
                     <ng-md-icon icon="more_vert" class="text-grey"></ng-md-icon>
@@ -77,14 +77,14 @@
     </md-card-title>
     <md-card-footer layout="row" layout-align="space-between" style="background-color: #eee">
         <div>
-            <md-tooltip style="font-size: 12pt">
+            <md-tooltip>
                 {{ "other.number_of" | translate }} {{ "other.cvs" | translate | lowercase }}
             </md-tooltip>
             <ng-md-icon icon="receipt" class="text-grey md-subhead"></ng-md-icon>
             <span class="text-grey md-subhead">{{result.numberOfCvs}}</span>
         </div>
         <div>
-            <md-tooltip style="font-size: 12pt">
+            <md-tooltip>
                 {{ "other.rating" | translate }}
             </md-tooltip>
             <ng-md-icon icon="star_border" class="text-gold md-subhead"></ng-md-icon>

@@ -13,11 +13,6 @@ App.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                 controller: "MainNavigationController",
                 controllerAs: "mainNavCtrl"
             },
-            container: {
-                templateUrl: "views/container/container.html",
-                controller: "TabController",
-                controllerAs: "tabCtrl"
-            },
             sidebar: {
                 templateUrl: "views/sidebar.html"
             }
@@ -46,7 +41,8 @@ App.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
         views: {
             "main@": {
                 templateUrl: "views/cv/cv.html",
-                controller: "CvController"
+                controller: "CvController",
+                controllerAs: "cvCtrl"
             }
         }
     }).state("main.resume.preview", {
