@@ -1,6 +1,6 @@
 <md-toolbar md-whiteframe="2" ng-hide="mainNavCtrl.showSearch">
     <div class="md-toolbar-tools">
-        <md-button ng-click="toggleLeft()" aria-label="Menu" class="md-icon-button" ng-show="auth.me">
+        <md-button ng-click="toggleLeft()" aria-label="Menu" class="md-icon-button" ng-hide="isSideNavToggleHidden()">
             <md-tooltip md-direction="rigth">
                 {{ "actions.open" | translate }} {{ "other.navigational_menu" | translate | lowercase }}
             </md-tooltip>

@@ -1,7 +1,7 @@
 /**
  * Created by User on 7/11/2016.
  */
-App.controller('MainNavigationController',["$scope", "$timeout", "$mdSidenav", "$log", function ($scope, $timeout, $mdSidenav, $log) {
+App.controller('MainNavigationController',["$scope", "$timeout", "$mdSidenav", "$log", "$mdMedia", "$state", function ($scope, $timeout, $mdSidenav, $log, $mdMedia, $state) {
     this.showSearch = false;
     
     this.toggleShowSearch = function() {
@@ -9,9 +9,17 @@ App.controller('MainNavigationController',["$scope", "$timeout", "$mdSidenav", "
     }
     
     $scope.toggleLeft = buildDelayedToggler('left');
-    $scope.toggleRight = buildToggler('right');
-    $scope.isOpenRight = function(){
-        return $mdSidenav('right').isOpen();
+
+    $scope.goToState = function(value) {
+        $state.go(value);
+    }
+    
+    $scope.isSideNavOpen = function() {
+        return $mdMedia('gt-md') && $state.includes('main') && !$state.is('main.home');
+    };
+    
+    $scope.isSideNavToggleHidden = function () {
+        return $mdMedia('gt-md') || $state.includes('auth') || $state.is('main.home');
     };
     /**
      * Supplies a function that will continue to operate until the

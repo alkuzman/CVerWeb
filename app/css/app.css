@@ -600,13 +600,13 @@ md-content {
 @media only screen and (min-width: 1200px) {
     .grid-sizer,
     .grid-item {
-        width: 20%;
+        width: 25%;
         margin: 0px !important;
     }
     .fixed-bottom-right {
         position: fixed;
-        bottom: 0.8cm;
-        right:  0.8cm;
+        bottom: 0.7cm;
+        right:  0.7cm;
     }
 
 }
@@ -636,4 +636,12 @@ md-content {
 
 .tab-content {
     max-height: 300px !important;
+}
+
+.cver-user-avatar {
+    border-radius: 99%;
+}
+
+.md-toolbar-tools-bottom {
+    font-size: small;
 }

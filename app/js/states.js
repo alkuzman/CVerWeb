@@ -9,9 +9,7 @@ App.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
         abstract: true,
         views: {
             navbar: {
-                templateUrl: "views/navbar.html",
-                controller: "MainNavigationController",
-                controllerAs: "mainNavCtrl"
+                templateUrl: "views/navbar.html"
             },
             sidebar: {
                 templateUrl: "views/sidebar.html"

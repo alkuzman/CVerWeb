@@ -8,14 +8,10 @@ App.directive('cverCvEditor', function () {
             this.nonCompiledTemplate = $scope.cv.template.data;
             this.addDirectives = function(value) {
                 value = "<div>" + value + "</div>";
-                console.log(value);
                 var html = $(value);
-                console.log(html.html());
                 var firstName = html.find(".firstName");
                 firstName.empty();
-                console.log(html.html());
                 firstName.text("{{cv.firstName}}");
-                console.log(html.html());
                 this.compiledTemplate = html.html();
             }
         }],

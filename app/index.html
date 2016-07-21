@@ -21,11 +21,13 @@
     <link rel="stylesheet" href="dist/app.min.css">
 
 </head>
-<body layout="row" ng-cloak>
+<body layout="row" ng-cloak ng-controller="MainNavigationController as mainNavCtrl">
 <md-sidenav
         class="md-sidenav-left"
         md-component-id="left"
         md-disable-backdrop
+        layout="column"
+        md-is-locked-open="isSideNavOpen()"
         md-whiteframe="4" ui-view="sidebar"></md-sidenav>
 <div layout="column" class="relative" layout-fill role="main">
     <div ui-view="navbar"></div>

@@ -3,12 +3,12 @@
  */
 
 
-App.config(['$resourceProvider', function($resourceProvider){
+App.config(['$resourceProvider', function ($resourceProvider) {
     $resourceProvider.defaults.stripTrailingSlashes = false;
 }]);
 
-App.config(['$mdThemingProvider', function($mdThemingProvider) {
-    var customTealMap = $mdThemingProvider.extendPalette('cyan', {
+App.config(['$mdThemingProvider', function ($mdThemingProvider) {
+    var customTealMap = $mdThemingProvider.extendPalette('teal', {
         'contrastDefaultColor': 'light',
         'contrastDarkColors': ['50'],
         '50': 'ffffff'
@@ -18,8 +18,8 @@ App.config(['$mdThemingProvider', function($mdThemingProvider) {
 
     $mdThemingProvider.theme('default')
         .primaryPalette('customTeal', {
-            'default': '500',
-            'hue-1': '50'
+            "default": "500",
+            "hue-1": "50"
         })
         .accentPalette('pink');
 
@@ -39,7 +39,7 @@ App.config(['$mdThemingProvider', function($mdThemingProvider) {
     $mdThemingProvider.theme('pinterest').primaryPalette('red');
 }]);
 
-App.config(['$mdIconProvider', function($mdIconProvider) {
+App.config(['$mdIconProvider', function ($mdIconProvider) {
     $mdIconProvider.fontSet('md', 'material-icons');
 }]);
 
@@ -51,6 +51,6 @@ App.config(['$translateProvider', function ($translateProvider) {
     $translateProvider.preferredLanguage('mk');
 }]);
 
-App.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
+App.config(['cfpLoadingBarProvider', function (cfpLoadingBarProvider) {
     cfpLoadingBarProvider.includeBar = true;
 }])
