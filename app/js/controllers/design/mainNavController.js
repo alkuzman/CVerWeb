@@ -19,7 +19,7 @@ App.controller('MainNavigationController',["$scope", "$timeout", "$mdSidenav", "
     };
     
     $scope.isSideNavToggleHidden = function () {
-        return $mdMedia('gt-md') || $state.includes('auth') || $state.is('main.home');
+        return $state.includes('auth') || $state.is('main.home');
     };
     /**
      * Supplies a function that will continue to operate until the

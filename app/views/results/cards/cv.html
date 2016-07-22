@@ -18,7 +18,7 @@
             <span class="md-subhead">{{ "other." + result.template.category + "_sing" | lowercase | translate}} {{ "other.cv" | translate}}</span>
         </md-card-title-text>
     </md-card-title>
-    <a href="/#/cv/{{result.id}}">
+    <a ui-sref="main.resume({id:result.id})">
         <img class="md-card-image" ng-src="{{result.cover}}"
              alt="Card image cap">
     </a>

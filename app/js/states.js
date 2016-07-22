@@ -35,7 +35,7 @@ App.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
         }
     }).state("main.resume", {
         parent: "main",
-        url: '/resume',
+        url: '/resume/:id',
         views: {
             "main@": {
                 templateUrl: "views/cv/cv.html",
@@ -43,8 +43,26 @@ App.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                 controllerAs: "cvCtrl"
             }
         }
-    }).state("main.resume.preview", {
-        url: '/resume/:id'
+    }).state("main.resume.edit", {
+        parent: "main",
+        url: '/resume/:id/edit',
+        views: {
+            "main@": {
+                templateUrl: "views/cv/cvEdit.html",
+                controller: "CvController",
+                controllerAs: "cvCtrl"
+            }
+        }
+    }).state("main.resume.new", {
+        parent: "main",
+        url: '/new/resume',
+        views: {
+            "main@": {
+                templateUrl: "views/cv/cvEdit.html",
+                controller: "CvController",
+                controllerAs: "cvCtrl"
+            }
+        }
     }).state("auth", {
         url: '/auth',
         views: {

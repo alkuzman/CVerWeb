@@ -48,7 +48,7 @@ App.config(['$translateProvider', function ($translateProvider) {
         prefix: '../translate/',
         suffix: '.json'
     });
-    $translateProvider.preferredLanguage('mk');
+    $translateProvider.preferredLanguage('en');
 }]);
 
 App.config(['cfpLoadingBarProvider', function (cfpLoadingBarProvider) {

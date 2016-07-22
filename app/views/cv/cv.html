@@ -1,3 +1,12 @@
-<div flex layout="row">
-    <div class="padding" flex-xs="100" flex-sm="100" flex-md="90" flex-offset-md="5" flex-lg="80" flex-offset-lg="10" flex-xl="70" flex-offset-xl="15" cver-cv-editor="cvCtrl.cv"></div>
+<div layout="row">
+    <div class="md-padding" layout="row" flex-xs="100" flex-offset-sm="5" flex-sm="90" flex-offset-md="10" flex-md="80"
+         flex-offset-lg="10" flex-lg="80" flex-offset-xl="10" flex-xl="80">
+        <cver-scale flex>
+            <div class="wrap a4">
+                <div md-whiteframe="3" style="background: white; margin-bottom: 10px;">
+                    <div cver-show-item="cvCtrl.cv"></div>
+                </div>
+            </div>
+        </cver-scale>
+    </div>
 </div>

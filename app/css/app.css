@@ -364,7 +364,6 @@
     box-shadow: none;
 }
 
-
 .full-width {
     min-width: 100%;
 }
@@ -521,11 +520,13 @@ md-content {
     .grid-item {
         width: 100%;
     }
+
     .fixed-bottom-right {
         position: fixed;
         bottom: 0.5cm;
-        right:  0.5cm;
+        right: 0.5cm;
     }
+
     .md-button.md-fab.md-big {
     }
 
@@ -537,11 +538,13 @@ md-content {
     .grid-item {
         width: 100%;
     }
+
     .fixed-bottom-right {
         position: fixed;
         bottom: 0.5cm;
-        right:  0.5cm;
+        right: 0.5cm;
     }
+
     .md-button.md-fab.md-big {
     }
 
@@ -553,11 +556,13 @@ md-content {
     .grid-item {
         width: 50%;
     }
+
     .fixed-bottom-right {
         position: fixed;
         bottom: 0.5cm;
-        right:  0.5cm;
+        right: 0.5cm;
     }
+
     .md-button.md-fab.md-big {
     }
 
@@ -569,11 +574,13 @@ md-content {
     .grid-item {
         width: 33%;
     }
+
     .fixed-bottom-right {
         position: fixed;
         bottom: 0.6cm;
-        right:  0.6cm;
+        right: 0.6cm;
     }
+
     .md-button.md-fab.md-big {
         line-height: 4.8rem;
         width: 4.8rem;
@@ -588,10 +595,11 @@ md-content {
     .grid-item {
         width: 25%;
     }
+
     .fixed-bottom-right {
         position: fixed;
         bottom: 0.7cm;
-        right:  0.7cm;
+        right: 0.7cm;
     }
 
 }
@@ -603,10 +611,11 @@ md-content {
         width: 25%;
         margin: 0px !important;
     }
+
     .fixed-bottom-right {
         position: fixed;
         bottom: 0.7cm;
-        right:  0.7cm;
+        right: 0.7cm;
     }
 
 }
@@ -644,4 +653,24 @@ md-content {
 
 .md-toolbar-tools-bottom {
     font-size: small;
+}
+
+.scale {
+    -ms-transform: scale(2, 2); /* IE 9 */
+    -webkit-transform: scale(2, 2); /* Safari */
+    transform: scale(2, 2); /* Standard syntax */
+}
+
+.wrap {
+    transform-origin: top left;
+    position: absolute;
+    display: inline-block;
+}
+
+.a4 {
+    width: 21cm;
+}
+
+.cver-data {
+    border-bottom: thin dotted lightblue;
 }
