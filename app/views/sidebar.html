@@ -1,10 +1,15 @@
 <md-toolbar class="md-tall md-hue-2">
     <span flex></span>
     <div layout="column" class="md-toolbar-tools-bottom inset">
-        <cver-user-avatar></cver-user-avatar>
-        <span></span>
-        <div>{{auth.me.firstName}} {{auth.me.lastName}} Aleksandar Kuzmanoski</div>
-        <div>{{auth.me.email}}aleksandarkuzmanoski11@gmail.com</div>
+        <div ng-show="auth.me">
+            <cver-user-avatar></cver-user-avatar>
+            <span></span>
+            <div>{{auth.me.firstName}} {{auth.me.lastName}}</div>
+            <div>{{auth.me.email}}</div>
+        </div>
+        <div ng-hide="auth.me" layout="row" layout-align="end center">
+            <md-button ui-sref="auth" class="md-accent md-raised">{{ "actions.login" | translate }} <ng-md-icon icon="keyboard_tab"></ng-md-icon></md-button>
+        </div>
     </div>
 </md-toolbar>
 <md-content style="background: #fff">
