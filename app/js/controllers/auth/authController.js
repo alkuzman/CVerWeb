@@ -1,4 +1,4 @@
-App.controller('AuthController', ["$state", "$rootScope", "$scope", "Person", function ($state, $rootScope, $scope, Person) {
+App.controller('AuthController', ["$state", "$rootScope", "$scope", "Person", "$mdToast", function ($state, $rootScope, $scope, Person, $mdToast) {
     var controller = this;
 
     this.current = {};
@@ -32,9 +32,18 @@ App.controller('AuthController', ["$state", "$rootScope", "$scope", "Person", fu
 
     this.login = function () {
         this.current.user.$login({email: controller.current.user.email ,password: controller.current.user.password}, controller.onUserLoggedIn, function(resultError) {
-            console.log(resultError);
+            controller.onWrongPassword();
         });
     };
+
+    this.onWrongPassword = function () {
+        controller.current.user.password = "";
+        $mdToast.show({
+            hideDelay: 4000,
+            position: 'bottom right',
+            templateUrl: 'views/auth/error/wrongPasswordToast.html'
+        });
+    }
 
     this.onUserLoggedIn = function(resultSuccess) {
         $rootScope.auth.me = controller.current.user;

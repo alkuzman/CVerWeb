@@ -674,3 +674,7 @@ md-content {
 .cver-data {
     border-bottom: thin dotted lightblue;
 }
+
+.md-toast.error .md-toast-content {
+    background-color: rgba(200, 30, 30, .8)
+}
