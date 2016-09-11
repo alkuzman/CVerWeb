@@ -14,14 +14,15 @@ App.directive('cverScale', ["$window", function ($window) {
                 toScale.css('-ms-transform', scaleValue);
                 toScale.css('-webkit-transform', scaleValue);
                 toScale.css('transform', scaleValue);
-
             }
 
             angular.element($window).bind("resize", function() {
                 resize();
             });
 
-            resize();
+            scope.$on('$viewContentLoaded', function(){
+                resize();
+            });
         }
     };
 }]);

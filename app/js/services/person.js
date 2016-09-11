@@ -17,6 +17,11 @@ App.factory("Person", ["$state", "$resource", function ($state, $resource) {
             url: "core/doLogin?username=:email&password=:password",
             method: "POST",
             isArray: false
+        },
+        me: {
+            url: "core/users/me",
+            method: "GET",
+            isArray: false
         }
     });
 }]);

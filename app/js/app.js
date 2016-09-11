@@ -8,4 +8,7 @@ var App = angular.module('cver', [
     'ngMaterial',
     'ngMessages',
     'ngMdIcons',
-    'ngDragDrop']);
+    'ngDragDrop',
+    'angularMoment',
+    'xeditable',
+    'ui.bootstrap']);

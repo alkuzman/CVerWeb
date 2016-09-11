@@ -1,4 +1,4 @@
-<md-toolbar md-whiteframe="2" ng-hide="mainNavCtrl.showSearch">
+<md-toolbar md-whiteframe="2" md-scroll-shrink="" md-shrink-speed-factor="0.2" ng-if="true" ng-hide="mainNavCtrl.showSearch">
     <div class="md-toolbar-tools">
         <md-button ng-click="toggleLeft()" aria-label="Menu" class="md-icon-button" ng-hide="isSideNavToggleHidden()">
             <md-tooltip md-direction="rigth">
@@ -27,20 +27,23 @@
         </md-button>
     </div>
 </md-toolbar>
-<md-toolbar md-whiteframe="2" class="md-hue-1" ng-show="mainNavCtrl.showSearch">
-    <div class="md-toolbar-tools md-hue-1">
-        <md-button aria-label="Back" ng-click="mainNavCtrl.toggleShowSearch()">
-            <ng-md-icon icon="arrow_back"></ng-md-icon> Back
+<md-toolbar md-whiteframe="2" md-scroll-shrink="" md-shrink-speed-factor="0.2" class="md-hue-1" ng-show="mainNavCtrl.showSearch">
+    <div layout="row" class="md-toolbar-tools md-hue-1">
+        <md-button class="md-icon-button" ng-click="mainNavCtrl.toggleShowSearch()">
+            <ng-md-icon icon="arrow_back"></ng-md-icon>
         </md-button>
-        <md-input-container md-theme="input" flex>
-            <label>&nbsp;</label>
-            <input placeholder="Search CVer" style="margin-top: 25px;">
-        </md-input-container>
-        <md-button aria-label="Search" class="md-icon-button">
-            <md-tooltip md-direction="left">
-                {{ "actions.search" | translate }}
-            </md-tooltip>
-            <ng-md-icon icon="search"></ng-md-icon>
-        </md-button>
+        <form flex layout="row" id="getUserForm" name="getUserForm"
+              ng-submit="mainNavCtrl.executeSearch()" style="margin-top: 25px;">
+            <md-input-container flex md-theme="input">
+                <label>&nbsp;</label>
+                <input ng-model="mainNavCtrl.query" placeholder="Search CVer">
+            </md-input-container>
+            <md-button flex="none" type="submit" aria-label="Search" class="md-icon-button" style="margin-top: 12px;">
+                <md-tooltip md-direction="left">
+                    {{ "actions.search" | translate }}
+                </md-tooltip>
+                <ng-md-icon icon="search"></ng-md-icon>
+            </md-button>
+        </form>
     </div>
 </md-toolbar>

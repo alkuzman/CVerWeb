@@ -8,56 +8,53 @@ App.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
     $stateProvider.state('main', {
         abstract: true,
         views: {
-            navbar: {
-                templateUrl: "views/navbar.html"
-            },
-            sidebar: {
-                templateUrl: "views/sidebar.html"
+            main: {
+                templateUrl: "views/main.html"
             }
         }
     }).state('main.home', {
-        parent: "main",
         url: '/',
+        parent: "main",
         views: {
-            "main@": {
+            "main": {
                 templateUrl: "views/home.html"
             }
         }
-    }).state("main.results", {
+    }).state("main.entity", {
+        url: '/entity?query=:q&type=:t&owner=:o',
         parent: "main",
-        url: '/results',
         views: {
-            "main@": {
+            "main": {
                 templateUrl: "views/results/results.html",
                 controller: "ResultsController",
                 controllerAs: "resCtrl"
             }
         }
-    }).state("main.resume", {
-        parent: "main",
+    }).state("main.entity.resume", {
+        parent: "main.entity",
         url: '/resume/:id',
         views: {
-            "main@": {
+            "main@main": {
                 templateUrl: "views/cv/cv.html",
                 controller: "CvController",
                 controllerAs: "cvCtrl"
             }
         }
-    }).state("main.resume.edit", {
-        parent: "main",
-        url: '/resume/:id/edit',
+    }).state("main.entity.resume.edit", {
+        parent: "main.entity.resume",
+        url: '/edit',
         views: {
-            "main@": {
+            "main@main": {
                 templateUrl: "views/cv/cvEdit.html",
                 controller: "CvController",
                 controllerAs: "cvCtrl"
             }
         }
-    }).state("main.resume.new", {
-        parent: "main",
+    }).state("main.entity.newResume", {
+        parent: "main.entity",
         url: '/new/resume',
         views: {
-            "main@": {
+            "main@main": {
                 templateUrl: "views/cv/cvEdit.html",
                 controller: "CvController",
                 controllerAs: "cvCtrl"
@@ -91,6 +88,24 @@ App.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                 templateUrl: "views/auth/forms/registerForm.html"
             }
         }
+    }).state("main.entity.person", {
+        url: '/person/:id',
+        parent: "main.entity"
+    }).state("main.entity.organization", {
+        url: "/organization/:id",
+        parent: "main.entity"
+    }).state("main.entity.certificate", {
+        url: "/certificate/:id",
+        parent: "main.entity"
+    }).state("main.entity.template", {
+        url: "/template/:id",
+        parent: "main.entity"
+    }).state("main.entity.project", {
+        url: "/project/:id",
+        parent: "main.entity"
+    }).state("main.entity.call", {
+        url: "/call/:id",
+        parent: "main.entity"
     });
 }]);
 

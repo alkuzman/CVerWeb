@@ -3,6 +3,11 @@
  */
 App.directive('cverTemplatesContainer', function () {
     return {
+        scope: {
+            setTemplate: "=cverTemplatesContainer",
+            currentTemplate: "=currentTemplate",
+            templateType: "=templateType"
+        },
         controller: "TemplatesController",
         controllerAs: "templatesCtrl",
         templateUrl: "views/container/templates/panel.html"

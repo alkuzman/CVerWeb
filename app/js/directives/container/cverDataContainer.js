@@ -3,6 +3,10 @@
  */
 App.directive('cverDataContainer', function () {
     return {
+        scope: {
+            dataType: "=templateType",
+            setData: "=cverSetDataCallback"
+        },
         controller: "DataController",
         controllerAs: "dataCtrl",
         templateUrl: "views/container/data/panel.html"

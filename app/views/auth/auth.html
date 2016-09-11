@@ -1,10 +1,8 @@
-<md-content class="homepage" layout="column" flex layout-wrap>
-    <div flex="5">
-    </div>
+<md-content class="homepage" flex layout="column" layout-wrap>
     <div layout="row" flex>
         <div layout="column" flex-xs="90" flex-offset-xs="5" flex-sm="70" flex-offset-sm="15" flex-md="50"
              flex-offset-md="25" flex-lg="30" flex-offset-lg="35" flex-xl="30" flex-offset-xl="35">
-            <div flex="none" class="text-xs-center">
+            <div flex="none" class="text-center" style="margin-top: 20px;">
                 <a href="/">
                     <img ng-src="/img/CVerCleanLogo.png" width="150" height="70"/>
                 </a>
@@ -12,8 +10,8 @@
                     {{ 'actions.login' | translate }} {{ 'other.or' | translate }} {{ 'actions.register' | translate }}
                 </h3>
             </div>
-            <div flex="none" class="card">
-                <div class="card-block">
+            <md-card flex="none">
+                <md-card-content>
                     <div style="height: 35px;">
                         <md-button class="md-icon-button md-primary" aria-label="Back"
                                    ng-hide="authCtrl.isGetUserForm();"
@@ -21,46 +19,46 @@
                             <ng-md-icon icon="arrow_back"></ng-md-icon>
                         </md-button>
                     </div>
-                    <div class="text-xs-center">
-                        <img ng-src="/img/user.jpg" class="img-circle" ng-hide="authCtrl.current.user.profilePictureURL" width="120"
+                    <div class="text-center">
+                        <img ng-src="/img/user.jpg" class="img-circle" ng-hide="authCtrl.current.user.profilePictureUrl" width="120"
                              height="120"/>
-                        <img ng-src="{{authCtrl.current.user.profilePictureURL}}" class="img-circle"
-                             ng-show="authCtrl.current.user.profilePictureURL" width="120" height="120"/>
+                        <img ng-src="{{authCtrl.current.user.profilePictureUrl}}" class="img-circle"
+                             ng-show="authCtrl.current.user.profilePictureUrl" width="120" height="120"/>
                     </div>
                     <div style="margin-top: 10px;">
-                        <div class="text-xs-center">
+                        <div class="text-center">
                             <strong class="md-caption">{{ authCtrl.current.user.firstName }} {{ authCtrl.current.user.lastName }}</strong>
                         </div>
-                        <div class="text-xs-center">
+                        <div class="text-center">
                             <span class="md-caption">{{authCtrl.current.user.email}}</span>
                         </div>
                     </div>
-                </div>
-                <div class="card-block" style="padding-right: 35px;" ui-view="form">
-                </div>
-            </div>
+                </md-card-content>
+                <md-card-content style="padding-right: 35px;" ui-view="form">
+                </md-card-content>
+            </md-card>
             <div flex="none" layout="row" layout-wrap style="margin-right: 15px;">
                 <div flex-xs="100" flex="50" style="padding-left: 5px; padding-right: 5px;">
                     <md-button md-theme="facebook" class="md-raised md-primary full-width" aria-label="Back"
-                               ng-click="authCtrl.loginWithFacebook();" class="pull-xs-left teal-text">
+                               ng-click="authCtrl.loginWithFacebook();" class="teal-text">
                         <i class="fa fa-facebook" style="padding-right: 3px;"> </i> Facebook
                     </md-button>
                 </div>
                 <div flex-xs="100" flex="50" style="padding-left: 5px; padding-right: 5px;">
                     <md-button md-theme="google" class="md-raised md-primary full-width" aria-label="Back"
-                               ng-click="authCtrl.loginWithGoogle();" class="pull-xs-left teal-text">
+                               ng-click="authCtrl.loginWithGoogle();" class="teal-text">
                         <i class="fa fa-google-plus" style="padding-right: 3px;"> </i> Google +
                     </md-button>
                 </div>
                 <div flex-xs="100" flex="50" style="padding-left: 5px; padding-right: 5px;">
                     <md-button md-theme="linkedin" class="md-raised md-primary full-width" aria-label="Back"
-                               ng-click="authCtrl.loginWithLinkedIn();" class="pull-xs-left teal-text">
+                               ng-click="authCtrl.loginWithLinkedIn();" class="teal-text">
                         <i class="fa fa-linkedin" style="padding-right: 3px;"> </i> LinkedIn
                     </md-button>
                 </div>
                 <div flex-xs="100" flex="50" style="padding-left: 5px; padding-right: 5px;">
                     <md-button md-theme="pinterest" class="md-raised md-primary full-width" aria-label="Back"
-                               ng-click="authCtrl.loginWithPinterest();" class="pull-xs-left teal-text">
+                               ng-click="authCtrl.loginWithPinterest();" class="teal-text">
                         <i class="fa fa-pinterest-p" style="padding-right: 3px;"> </i> Pinterest
                     </md-button>
                 </div>

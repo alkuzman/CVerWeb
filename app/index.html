@@ -13,6 +13,7 @@
     <title>CVer</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="img/CVerLogo.png">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Material Design fonts -->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,700">
@@ -21,17 +22,8 @@
     <link rel="stylesheet" href="dist/app.min.css">
 
 </head>
-<body layout="row" ng-cloak ng-controller="MainNavigationController as mainNavCtrl">
-<md-sidenav
-        class="md-sidenav-left"
-        md-component-id="left"
-        md-disable-backdrop
-        layout="column"
-        md-whiteframe="4" ui-view="sidebar"></md-sidenav>
-<div layout="column" class="relative" layout-fill role="main">
-    <div ui-view="navbar"></div>
-    <md-content flex layout="column" class="main" ui-view="main"></md-content>
-</div>
+<body ng-cloak ng-controller="MainNavigationController as mainNavCtrl">
+<div ui-view="main" flex="none" layout="column" layout-fill role="main"></div>
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
 -->

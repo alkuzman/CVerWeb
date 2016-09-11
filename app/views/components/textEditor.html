@@ -3,22 +3,31 @@
         <md-toolbar class="md-hue-2">
             <div class="md-toolbar-tools">
                 <h3>
-                    {{ item.name }}
+                    <md-tooltip>
+                        {{item.title}}
+                    </md-tooltip>
+                    <span editable-text='item.name' class='inlineEditText'>{{item.name | cverEmptyTextFilter}}</span>
                 </h3>
                 <span flex></span>
-                <md-button aria-label="Search" class="md-icon-button md-accent">
+                <md-button ng-click="saveItem(item);" aria-label="save" class="md-icon-button">
                     <md-tooltip>
                         {{ "actions.save" | translate }}
                     </md-tooltip>
                     <ng-md-icon icon="save"></ng-md-icon>
                 </md-button>
-                <md-button aria-label="Open Settings" class="md-icon-button md-accent">
+                <md-button aria-label="download" class="md-icon-button">
                     <md-tooltip>
                         {{ "actions.download" | translate }}
                     </md-tooltip>
                     <ng-md-icon icon="file_download"></ng-md-icon>
                 </md-button>
-                <md-button aria-label="Open Settings" class="md-icon-button md-accent">
+                <md-button aria-label="print" class="md-icon-button">
+                    <md-tooltip>
+                        {{ "actions.print" | translate }}
+                    </md-tooltip>
+                    <ng-md-icon icon="print"></ng-md-icon>
+                </md-button>
+                <md-button aria-label="preview" class="md-icon-button">
                     <md-tooltip>
                         {{ "actions.preview" | translate }}
                     </md-tooltip>
@@ -46,26 +55,33 @@
         <div>
             <ng-switch on="data.selectedIndex">
                 <div role="tabpanel" ng-switch-when="0">
-                    <md-button class="md-icon-button">
+                    <md-button aria-label="bold" class="md-icon-button">
                         <ng-md-icon icon="format_bold"></ng-md-icon>
                     </md-button>
-                    <md-button class="md-icon-button">
+                    <md-button aria-label="italic" class="md-icon-button">
                         <ng-md-icon icon="format_italic"></ng-md-icon>
                     </md-button>
-                    <md-button class="md-icon-button">
+                    <md-button aria-label="underline" class="md-icon-button">
                         <ng-md-icon icon="format_underline"></ng-md-icon>
                     </md-button>
                 </div>
                 <div ng-switch-when="1" class="">
-                    <md-button class="md-icon-button">
+                    <md-button aria-label="italic" class="md-icon-button">
                         <ng-md-icon icon="format_italic"></ng-md-icon>
                     </md-button>
                 </div>
                 <div role="tabpanel" ng-switch-when="2" layout="column" class="tab-content">
-                    <cver-templates-container flex layout="column"></cver-templates-container>
+                    <div cver-templates-container="cverEditorCtrl.setTemplate" current-template="item.template" template-type="item.type" flex layout="column"></div>
                 </div>
                 <div role="tabpanel" ng-switch-when="3" layout="column" class="tab-content">
-                    <cver-data-container flex layout="column"></cver-data-container>
+                    <cver-data-container ng-show="auth.me" flex layout="column" data-type="item.type" cver-set-data-callback="cverEditorCtrl.setData"></cver-data-container>
+                    <md-button ng-hide="auth.me" ui-sref="auth">
+                        Login
+                        <md-tooltip md-direction="bottom">
+                            {{ "actions.login_for_data" | translate }}
+                        </md-tooltip>
+                        <ng-md-icon icon="keyboard_tab"></ng-md-icon>
+                    </md-button>
                 </div>
                 <div role="tabpanel" ng-switch-when="4">
                     <cver-sync-container layout="column"></cver-sync-container>

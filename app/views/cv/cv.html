@@ -1,11 +1,12 @@
 <div layout="row">
-    <div class="md-padding" layout="row" flex-xs="100" flex-offset-sm="5" flex-sm="90" flex-offset-md="10" flex-md="80"
+    <div layout="row" flex-xs="100" flex-offset-sm="5" flex-sm="90" flex-offset-md="10" flex-md="80"
          flex-offset-lg="10" flex-lg="80" flex-offset-xl="10" flex-xl="80">
-        <cver-scale flex>
-            <div class="wrap a4">
-                <div md-whiteframe="3" style="background: white; margin-bottom: 10px;">
-                    <div cver-show-item="cvCtrl.cv"></div>
-                </div>
+        <cver-scale style="overflow: auto" flex>
+            <div class="wrap a4 md-padding">
+                <md-card>
+                    <div cver-show-item="cvCtrl.data.cv" cver-bind-callback="cvCtrl.bind">
+                    </div>
+                </md-card>
             </div>
         </cver-scale>
     </div>

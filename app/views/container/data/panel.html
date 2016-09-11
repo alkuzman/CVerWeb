@@ -1,24 +1,35 @@
-<div flex layout-xs="column" layout-gt-xs="row">
-    <div flex-xs="none" flex-sm="50" flex-md="40" flex-lg="35" flex-xl="30" class="md-padding">
-        <md-input-container class="md-icon-float md-block">
-            <!-- Use floating label instead of placeholder -->
-            <label>{{ 'actions.search' | translate }} {{ 'other.data' | translate}}</label>
-            <md-icon md-font-set="material-icons">search</md-icon>
-            <input type="search">
-        </md-input-container>
-        <md-tabs md-dynamic-height>
-            <md-tab label='{{ "other.all" | translate }}'>
-            </md-tab>
-            <md-tab ng-repeat="type in dataCtrl.types" label='{{ "other." + type.type | translate }}'>
-            </md-tab>
-        </md-tabs>
+<div flex layout="column">
+    <div flex="none" class="padding-left padding-right padding-top">
+        <div>
+            <form id="queryData" name="queryData"
+                  ng-submit="dataCtrl.queryChanged()">
+                <md-autocomplete flex
+                                 md-colors="{color: 'default-accent-600'}"
+                                 class="no-error-spacer md-accent"
+                                 md-input-name="autocompleteField"
+                                 md-no-cache="dataCtrl.noCache"
+                                 md-search-text="dataCtrl.query"
+                                 md-items="item in dataCtrl.autocomplete(dataCtrl.query)"
+                                 md-item-text="item | cverHtmlToPlaintext"
+                                 placeholder="{{ 'actions.search' | translate }} {{ 'other.data' | translate}}">
+                    <md-item-template>
+                        <span md-highlight-text="dataCtrl.query">{{item | cverHtmlToPlaintext}}</span>
+                    </md-item-template>
+                </md-autocomplete>
+                <md-tabs ng-show="dataCtrl.types.length" md-selected="dataCtrl.type" md-dynamic-height
+                         class="no-margin no-padding">
+                    <md-tab ng-repeat="type in dataCtrl.types" ng-click="dataCtrl.tabChanged()"
+                            label='{{ "cver.data." + type | lowercase | translate }}'>
+                    </md-tab>
+                </md-tabs>
+            </form>
+        </div>
     </div>
-    <div flex-xs flex-sm="50" flex-md="60" flex-lg="65"
-         flex-xl="70" layout="column">
-        <md-content layout="column" flex class="md-padding">
-            <div flex="none" cver-data-card="dataEntry" ng-repeat="dataEntry in dataCtrl.data">
-
+    <div flex layout="column">
+        <div flex layout="row" class="x-scroll-container">
+            <div layout="column" style="max-width: 250px;" ng-repeat="dataEntry in dataCtrl.data"
+                 cver-data-card="dataEntry" cver-set-data-callback="setData" flex="none">
             </div>
-        </md-content>
+        </div>
     </div>
 </div>

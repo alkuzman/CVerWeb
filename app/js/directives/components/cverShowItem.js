@@ -4,14 +4,20 @@
 App.directive('cverShowItem', ["$compile", function ($compile) {
     return {
         scope: {
-            item: "=cverShowItem"
+            item: "=cverShowItem",
+            bind: "=cverBindCallback"
         },
         controller: ["$scope", function ($scope) {
-            this.compiledTemplate = $scope.item.addDirectives($scope.item.template.data);
+            this.compiledTemplate = $scope.bind($scope.item.template.value);
         }],
         link: function (scope, element, attrs, ctrl) {
-            element.html(ctrl.compiledTemplate);
-            $compile(element.contents())(scope);
+            scope.$watch(function (scope) {
+                if (scope.item.template != undefined)
+                    return scope.item.template.value;
+            }, function (value) {
+                element.html(scope.bind(value));
+                $compile(element.contents())(scope);
+            });
         }
     };
 }]);

@@ -21,7 +21,9 @@ App.config(['$mdThemingProvider', function ($mdThemingProvider) {
             "default": "500",
             "hue-1": "50"
         })
-        .accentPalette('pink');
+        .accentPalette('pink')
+        .warnPalette('red')
+        .backgroundPalette('grey');
 
     $mdThemingProvider.theme('secondary')
         .primaryPalette('cyan')
@@ -43,7 +45,13 @@ App.config(['$mdIconProvider', function ($mdIconProvider) {
     $mdIconProvider.fontSet('md', 'material-icons');
 }]);
 
+App.run(['editableOptions', 'editableThemes', function (editableOptions, editableThemes) {
+    // set `default` theme
+    editableOptions.theme = 'bs3';
+}]);
+
 App.config(['$translateProvider', function ($translateProvider) {
+    $translateProvider.useSanitizeValueStrategy('escape');
     $translateProvider.useStaticFilesLoader({
         prefix: '../translate/',
         suffix: '.json'
@@ -53,4 +61,8 @@ App.config(['$translateProvider', function ($translateProvider) {
 
 App.config(['cfpLoadingBarProvider', function (cfpLoadingBarProvider) {
     cfpLoadingBarProvider.includeBar = true;
-}])
+}]);
+
+App.run(['amMoment', function(amMoment) {
+    amMoment.changeLocale('en');
+}]);

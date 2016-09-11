@@ -4,14 +4,17 @@
 App.directive('cverDataCard', function () {
     return {
         scope: {
-            data: '=cverDataCard'
+            data: '=cverDataCard',
+            setData: '=cverSetDataCallback'
         },
-        template: '<ng-include src="getTemplateUrl()"/>',
-        controller: ['$scope', function($scope) {
+        template: '<ng-include flex src="getTemplateUrl()" include-replace/>',
+        controller: ['$scope', function ($scope) {
             //function used on the ng-include to resolve the template
-            $scope.getTemplateUrl = function() {
-                return "views/container/data/cards/" + $scope.data.type + ".html";
+            $scope.getTemplateUrl = function () {
+                return "views/container/data/cards/" + $scope.data.type.toLowerCase() + ".html";
             }
-        }]
+
+        }],
+        controllerAs: "dataCardCtrl"
     }
 });

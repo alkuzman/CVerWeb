@@ -1,0 +1,68 @@
+<md-card style="max-height: 100%;" layout="column">
+    <div flex="none" layout="row" class="padding-top padding-left padding-right">
+        <div flex>
+            <b class="md-caption">{{ "cver.data." + data.type | lowercase | translate }}:</b>
+            <span class="md-caption">{{data.name | limitTo: 20}}</span>
+        </div>
+    </div>
+    <div ng-click="tempCtrl.setTemplate(template)" style="width: 100%; overflow: hidden; position: relative;" flex>
+        <img style="width: 100%; min-height: inherit; object-fit: contain;" ng-src="{{data.url}}"
+             class="md-card-image" alt="Washed Out">
+    </div>
+    <div flex="none" layout="row">
+        <div flex style="padding-top: 2.5px;">
+            <div ng-switch="owner.type" ng-repeat="owner in data.owners">
+                <a ui-sref="main.entity.person({id: owner.identifier.id})" ng-switch-when="Person">
+                    <md-tooltip>{{owner.firstName}} {{owner.lastName}}</md-tooltip>
+                    <img class="img-circle" width="25" height="25"
+                         style="margin-top: 5px; margin-left: 2.5px; margin-right: 0px;"
+                         ng-src="{{owner.profilePictureUrl}}"/>
+                </a>
+                <a ui-sref="main.entity.organization({id: owner.identifier.id})" ng-switch-when="Organization">
+                    <md-tooltip>{{owner.name}}</md-tooltip>
+                    <img class="img-circle" width="25" height="25"
+                         style="margin-top: 5px; margin-left: 2.5px; margin-right: 0px;"
+                         ng-src="{{owner.profilePictureUrl}}"/>
+                </a>
+            </div>
+        </div>
+        <div flex="none">
+            <md-card-actions class="no-margin" layout="row" layout-align="start center">
+                <md-card-icon-actions>
+                    <md-menu class="no-padding" ng-controller="ContextMenuController as cntxMenuCtrl">
+                        <md-button aria-label="Open phone interactions menu" class="md-icon-button no-margin"
+                                   md-colors="{color: 'secondary-accent-600'}"
+                                   ng-click="cntxMenuCtrl.openMenu($mdOpenMenu, $event)">
+                            <md-tooltip>
+                                {{ "other.more" | translate}} {{"other.options" | translate | lowercase}}
+                            </md-tooltip>
+                            <ng-md-icon icon="more_vert"></ng-md-icon>
+                        </md-button>
+                        <md-menu-content width="4">
+                            <md-menu-item>
+                                <md-button md-colors="{color: 'secondary-accent-600'}">
+                                    <ng-md-icon icon="group"></ng-md-icon>
+                                    {{"other.owners" | translate}}
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-divider>
+                            </md-menu-divider>
+                            <md-menu-item>
+                                <md-button ng-click="setData(data, data.type);" md-colors="{color: 'secondary-accent-600'}">
+                                    <ng-md-icon icon="done"></ng-md-icon>
+                                    {{"actions.apply" | translate}}
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button md-colors="{color: 'secondary-accent-600'}">
+                                    <ng-md-icon icon="done_all"></ng-md-icon>
+                                    {{"actions.approve" | translate}}
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                </md-card-icon-actions>
+            </md-card-actions>
+        </div>
+    </div>
+</md-card>

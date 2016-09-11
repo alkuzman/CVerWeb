@@ -1,35 +1,4 @@
-<div flex layout="column">
-    <md-fab-speed-dial class="md-fab md-accent md-fling fixed-bottom-right" md-direction="up" md-open="true">
-        <md-fab-trigger>
-            <md-button aria-label="add" class="md-fab md-accent">
-                <md-tooltip md-direction="left">
-                    {{ "actions.add" | translate }}
-                </md-tooltip>
-                <ng-md-icon icon="add"></ng-md-icon>
-            </md-button>
-        </md-fab-trigger>
-        <md-fab-actions>
-            <md-button aria-label="Certificat" ui-sref="certificate" class="md-fab md-raised md-mini">
-                <md-tooltip md-direction="left">
-                    {{ "other.certificate" | translate }}
-                </md-tooltip>
-                <ng-md-icon icon="card_membership" class="text-grey"></ng-md-icon>
-            </md-button>
-            <md-button aria-label="Call" ui-sref="call" class="md-fab md-raised md-mini">
-                <md-tooltip md-direction="left">
-                    {{ "other.call" | translate }}
-                </md-tooltip>
-                <ng-md-icon icon="contact_phone" class="text-grey"></ng-md-icon>
-            </md-button>
-            <md-button aria-label="Cv" ui-sref="^.resume.new" class="md-fab md-raised md-mini">
-                <md-tooltip md-direction="left">
-                    {{ "other.cv" | translate }}
-                </md-tooltip>
-                <ng-md-icon icon="receipt" class="text-grey"></ng-md-icon>
-            </md-button>
-        </md-fab-actions>
-    </md-fab-speed-dial>
-    <div cver-category-selector="resCtrl.categoryData"></div>
+<div flex="none" layout="column">
     <div>
         <div class="grid" masonry='{ "itemSelector": ".grid-item", "columnWidth": 0 }'>
             <div class="grid-item" masonry-tile ng-repeat="result in results">

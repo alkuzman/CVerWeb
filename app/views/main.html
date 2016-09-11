@@ -1,0 +1,131 @@
+<md-sidenav
+        class="md-sidenav-left"
+        md-component-id="left"
+        layout="column"
+        md-whiteframe="4" ui-view="sidebar">
+    <md-toolbar class="md-tall md-hue-2">
+        <span flex></span>
+        <div layout="column" class="md-toolbar-tools-bottom inset">
+            <div ng-show="auth.me">
+                <cver-user-avatar></cver-user-avatar>
+                <span></span>
+                <div>{{auth.me.firstName}} {{auth.me.lastName}}</div>
+                <div>{{auth.me.email}}</div>
+            </div>
+            <div ng-hide="auth.me" layout="row" layout-align="end center">
+                <md-button ui-sref="auth" class="md-accent md-raised">{{ "actions.login" | translate }}
+                    <ng-md-icon icon="keyboard_tab"></ng-md-icon>
+                </md-button>
+            </div>
+        </div>
+    </md-toolbar>
+    <md-content style="background: #fff">
+        <md-list flex>
+            <md-subheader>Navigation</md-subheader>
+            <md-list-item ui-sref="main.home">
+                <ng-md-icon icon="home" class="no-margin" style="margin-right: 10px !important;"></ng-md-icon>
+                <p style="padding-left: 0px !important;">Home</p>
+            </md-list-item>
+            <md-list-item ui-sref="main.entity.resume.new">
+                <ng-md-icon icon="add" class="no-margin" style="margin-right: 10px !important;"></ng-md-icon>
+                <p style="padding-left: 0px !important;">Create new Resume</p>
+            </md-list-item>
+            <md-list-item ui-sref="main.entity">
+                <ng-md-icon icon="view_quilt" class="no-margin" style="margin-right: 10px !important;"></ng-md-icon>
+                <p style="padding-left: 0px !important;">Search Board</p>
+            </md-list-item>
+        </md-list>
+    </md-content>
+</md-sidenav>
+<md-fab-speed-dial ng-hide="isSideNavToggleHidden()" class="md-fling fixed-bottom-right" md-direction="up" md-open="true">
+    <md-fab-trigger>
+        <md-button aria-label="add" class="md-fab md-accent">
+            <md-tooltip md-direction="left">
+                {{ "actions.create" | translate }}
+            </md-tooltip>
+            <ng-md-icon icon="add"></ng-md-icon>
+        </md-button>
+    </md-fab-trigger>
+    <md-fab-actions>
+        <md-button aria-label="Certificat" ui-sref="main.entity.newCertificate" class="md-fab md-raised md-mini" md-colors="{color: 'secondary-accent-600'}">
+            <md-tooltip md-direction="left">
+                {{ "other.certificate" | translate }}
+            </md-tooltip>
+            <ng-md-icon icon="card_membership"></ng-md-icon>
+        </md-button>
+        <md-button aria-label="Call" ui-sref="main.entity.newCall" class="md-fab md-raised md-mini" md-colors="{color: 'secondary-accent-600'}">
+            <md-tooltip md-direction="left">
+                {{ "other.call" | translate }}
+            </md-tooltip>
+            <ng-md-icon icon="contact_phone"></ng-md-icon>
+        </md-button>
+        <md-button aria-label="Cv" ui-sref="main.entity.newResume" class="md-fab md-raised md-mini" md-colors="{color: 'secondary-accent-600'}">
+            <md-tooltip md-direction="left">
+                {{ "other.cv" | translate }}
+            </md-tooltip>
+            <ng-md-icon icon="description"></ng-md-icon>
+        </md-button>
+    </md-fab-actions>
+</md-fab-speed-dial>
+<div layout="column" style="overflow: hidden;" layout-fill>
+    <md-toolbar flex="none" md-whiteframe="2" md-scroll-shrink="" md-shrink-speed-factor="0.5" ng-if="true"
+    >
+        <div class="md-toolbar-tools" ng-hide="mainNavCtrl.showSearch">
+            <md-button ng-click="toggleLeft()" aria-label="Menu" class="md-icon-button"
+                       ng-hide="isSideNavToggleHidden()">
+                <md-tooltip md-direction="rigth">
+                    {{ "actions.open" | translate }} {{ "other.navigational_menu" | translate | lowercase }}
+                </md-tooltip>
+                <ng-md-icon icon="menu"></ng-md-icon>
+            </md-button>
+            <md-button ui-sref="main.home" aria-label="Home" class="btn-small" style="width: 85px !important;">
+                <md-tooltip md-direction="right">
+                    {{ "other.homepage" | translate }}
+                </md-tooltip>
+                <img ng-src="img/CverCleanLogo.png" width="80" height="35"/>
+            </md-button>
+            <span flex></span>
+            <md-button aria-label="Search" ng-click="mainNavCtrl.toggleShowSearch()" class="md-icon-button">
+                <md-tooltip md-direction="bottom">
+                    {{ "actions.search" | translate }}
+                </md-tooltip>
+                <ng-md-icon icon="search"></ng-md-icon>
+            </md-button>
+            <md-button ui-sref="auth" aria-label="Open Settings" class="md-icon-button" ng-hide="auth.me">
+                <md-tooltip md-direction="left">
+                    {{ "actions.login" | translate }}
+                </md-tooltip>
+                <ng-md-icon icon="keyboard_tab"></ng-md-icon>
+            </md-button>
+        </div>
+        <div layout="row" class="md-toolbar-tools" ng-show="mainNavCtrl.showSearch">
+            <md-button aria-label="Back" class="md-icon-button" ng-click="mainNavCtrl.back()">
+                <ng-md-icon icon="arrow_back"></ng-md-icon>
+            </md-button>
+            <form flex layout="row" id="getUserForm" name="getUserForm"
+                  ng-submit="mainNavCtrl.queryChanged()">
+                    <md-autocomplete flex
+                                     md-colors="{color: 'default-accent-600'}"
+                                     class="no-error-spacer md-accent"
+                                     md-input-name="autocompleteField"
+                                     md-no-cache="mainNavCtrl.noCache"
+                                     md-search-text="mainNavCtrl.query"
+                                     md-items="item in mainNavCtrl.querySearch(mainNavCtrl.query)"
+                                     md-item-text="item | cverHtmlToPlaintext"
+                                     placeholder="{{ 'actions.search' | translate }}">
+                        <md-item-template>
+                            <span md-highlight-text="mainNavCtrl.query">{{item | cverHtmlToPlaintext}}</span>
+                        </md-item-template>
+                    </md-autocomplete>
+            </form>
+        </div>
+        <md-tabs md-stretch-tabs md-selected="mainNavCtrl.type" ng-show="mainNavCtrl.showSearch && mainNavCtrl.types.length">
+            <md-tab id="tab1" aria-controls="tab1-content" ng-click="mainNavCtrl.tabChanged()" ng-repeat="type in mainNavCtrl.types">
+                {{ "cver.entity." + type | lowercase | translate }}
+            </md-tab>
+        </md-tabs>
+    </md-toolbar>
+    <md-content layout-fill>
+        <ui-view style="min-height: 100%" layout="column" name="main"></ui-view>
+    </md-content>
+</div>

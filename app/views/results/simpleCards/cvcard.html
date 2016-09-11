@@ -1,0 +1,12 @@
+<md-card layout="column">
+    <div style="width: 100%; overflow: hidden; position: relative;" flex>
+        <img style="width: 100%; min-height: inherit; object-fit: contain;" ng-src="{{result.coverPictureUrl}}"
+             class="md-card-image" alt="Washed Out">
+    </div>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">{{result.name}}</span>
+            <span class="md-subheader">{{result.description | limitTo: 140}}</span>
+        </md-card-title-text>
+    </md-card-title>
+</md-card>

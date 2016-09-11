@@ -352,10 +352,14 @@
 }
 
 .border-teal {
+    border: teal solid thick;
+}
+
+.border-white {
     border: white solid thick;
 }
 
-.center-image {
+.half-up {
     position: relative;
     margin-top: -50%;
 }
@@ -386,6 +390,56 @@
 
 .no-margin-right {
     margin-right: 0px !important;
+}
+
+.no-margin-top {
+    margin-top: 0px; !important;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0px !important;
+}
+
+.no-padding-left {
+    padding-left: 0px !important;
+}
+
+.padding-left {
+    padding-left: 10px;
+}
+.padding-right {
+    padding-right: 10px;
+}
+
+.padding-top {
+    padding-top: 10px;
+}
+
+md-chips.small md-chip {
+    height: auto !important;
+    margin-top: 5px;
+    margin-right: 5px;
+    padding: 5px;
+}
+
+md-chips.small md-chip .md-chip-content {
+    line-height: 10px;
+}
+
+md-chips.small md-chip-template {
+    font-size: 10px;
+}
+
+.no-padding-right {
+    padding-right: 0px !important;
+}
+
+.no-margin-top {
+    padding-top: 0px; !important;
+}
+
+.no-margin-bottom {
+    padding-bottom: 0px !important;
 }
 
 .navigation-drawer-container {
@@ -536,7 +590,7 @@ md-content {
 @media only screen and (min-width: 320px) {
     .grid-sizer,
     .grid-item {
-        width: 100%;
+        width: 50%;
     }
 
     .fixed-bottom-right {
@@ -554,7 +608,7 @@ md-content {
 @media only screen and (min-width: 480px) {
     .grid-sizer,
     .grid-item {
-        width: 50%;
+        width: 33.33%;
     }
 
     .fixed-bottom-right {
@@ -568,11 +622,15 @@ md-content {
 
 }
 
+.md-card-header-text {
+    max-height: none;
+}
+
 /* Small Devices, Tablets */
 @media only screen and (min-width: 768px) {
     .grid-sizer,
     .grid-item {
-        width: 33%;
+        width: 25%;
     }
 
     .fixed-bottom-right {
@@ -589,11 +647,25 @@ md-content {
 
 }
 
+.x-scroll-container {
+    overflow-x: scroll;
+}
+
+.cver-text-editor .md-errors-spacer {
+    height: 0px !important;
+    min-height: 0px !important;
+}
+
+.no-error-spacer .md-errors-spacer {
+    height: 0px !important;
+    min-height: 0px !important;
+}
+
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
     .grid-sizer,
     .grid-item {
-        width: 25%;
+        width: 20%;
     }
 
     .fixed-bottom-right {
@@ -608,7 +680,7 @@ md-content {
 @media only screen and (min-width: 1200px) {
     .grid-sizer,
     .grid-item {
-        width: 25%;
+        width: 16.666%;
         margin: 0px !important;
     }
 
@@ -640,7 +712,7 @@ md-content {
 .cver-text-editor .cver-text-editor-editable {
     background-color: white;
     min-height: 30vh !important;
-    max-height: 70vh !important;
+    max-height: 60vh !important;
 }
 
 .tab-content {
@@ -651,8 +723,33 @@ md-content {
     border-radius: 99%;
 }
 
+md-card[md-ink-ripple] {
+    position: relative;
+}
+
+.md-user-avatar {
+    height: 100%;
+    object-fit: cover;
+    background: white;
+}
+
 .md-toolbar-tools-bottom {
     font-size: small;
+}
+
+.cover-img {
+    width: 100%;
+    max-height: 60vh;
+}
+
+[layout="row"] > [flex="0"],
+[layout="row"] > [flex=""] {
+   min-width: 0;
+}
+
+[layout="column"] > [flex="0"],
+[layout="column"] > [flex=""] {
+   min-height: 0;
 }
 
 .scale {
@@ -661,14 +758,47 @@ md-content {
     transform: scale(2, 2); /* Standard syntax */
 }
 
+.inlineEditText {
+}
+
+.editable-click {
+    color: inherit;
+}
+.editable-click:hover {
+    color: inherit;
+}
+
+.editable:hover {
+    cursor: pointer;
+}
+
+[editable-form] {
+    box-shadow: 10px;
+    background: white;
+}
+
+input.editable-input {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+}
+
+[editable-form] input {
+    color: #0a0a0a;
+}
+
 .wrap {
     transform-origin: top left;
     position: absolute;
     display: inline-block;
 }
 
+.wp {
+    position: absolute;
+    display: inline-block;
+}
+
 .a4 {
-    width: 21cm;
+    width: 25cm;
 }
 
 .cver-data {
@@ -677,4 +807,21 @@ md-content {
 
 .md-toast.error .md-toast-content {
     background-color: rgba(200, 30, 30, .8)
+}
+
+.resizable-image {
+    position:relative;
+    display:inline-block;
+}
+
+.resizable-image > img {
+    object-fit: cover;
+    position:absolute;
+    min-height:100%;
+    display:block;
+    width: 100%;
+}
+
+.img-background {
+    background: lightgrey;
 }

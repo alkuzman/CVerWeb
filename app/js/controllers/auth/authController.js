@@ -16,8 +16,8 @@ App.controller('AuthController', ["$state", "$rootScope", "$scope", "Person", "$
 
     this.getUser = function () {
         Person.getByEmail({email: this.current.user.email}, controller.onUserFound, function (resultError) {
-            if(resultError.status === 404);
-            controller.onUserNotFound();
+            if(resultError.status === 404)
+                controller.onUserNotFound();
         });
     };
 
@@ -27,6 +27,7 @@ App.controller('AuthController', ["$state", "$rootScope", "$scope", "Person", "$
     }
 
     this.onUserNotFound = function () {
+        this.current.user.type = "Person";
         $state.go(".register");
     }
 
@@ -47,10 +48,11 @@ App.controller('AuthController', ["$state", "$rootScope", "$scope", "Person", "$
 
     this.onUserLoggedIn = function(resultSuccess) {
         $rootScope.auth.me = controller.current.user;
-        $state.go("main.results");
+        $state.go("main.entity");
     }
 
     this.register = function () {
+        this.current.user.type = "Person"
         Person.register({}, this.current.user ,controller.onUserRegistered, function(resultError) {
             console.log(resultError );
             console.log("ERROR");
