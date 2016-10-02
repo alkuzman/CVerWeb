@@ -75,7 +75,7 @@ App.controller('CallController', ["Call", "Entity", "$mdToast", "$mdDialog", "$s
                 controllerAs: "itemCtrl",
                 templateUrl: "views/dialogs/chooseItemDialog.html",
                 parent: angular.element(document.body),
-                targetEvent: this.ev,
+                targetEvent: me.ev,
                 clickOutsideToClose:true
             }).then(function (cv) {
                 me.apply(me.call.identifier.id, cv.identifier.id);

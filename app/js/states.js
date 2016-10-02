@@ -90,7 +90,12 @@ App.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
         }
     }).state("main.entity.person", {
         url: '/person/:id',
-        parent: "main.entity"
+        parent: "main.entity",
+        views: {
+            "main@main": {
+                templateUrl: "views/person/person.html"
+            }
+        }
     }).state("main.entity.organization", {
         url: "/organization/:id",
         parent: "main.entity"
